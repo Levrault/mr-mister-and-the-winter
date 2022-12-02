@@ -14,7 +14,7 @@ func physics_process(delta: float) -> void:
 
 
 func enter(_msg: Dictionary = {}) -> void:
-	return
+	owner.animation_player.play("idle")
 
 
 func exit() -> void:
