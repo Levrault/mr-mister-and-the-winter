@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b8t6nl122xdfq" path="res://src/environment/KitchenWallAndFloor.tscn" id="1_egs3l"]
 [ext_resource type="PackedScene" uid="uid://ivw74e5wb534" path="res://src/environment/InvisibleWall.tscn" id="2_q2gsr"]
-[ext_resource type="PackedScene" uid="uid://cnnr2axuc28q8" path="res://src/player/Player.tscn" id="2_uveji"]
+[ext_resource type="PackedScene" uid="uid://i0q4gox17vdo" path="res://src/player/Player.tscn" id="2_uveji"]
 
 [sub_resource type="Environment" id="Environment_h4a5h"]
 background_mode = 1
@@ -22,8 +22,10 @@ environment = SubResource("Environment_h4a5h")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121937, 0, -0.0914524)
 
 [node name="Player" parent="." instance=ExtResource("2_uveji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0659626, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.690882, -0.464714, 0.553825, 0, 0.766044, 0.642788, -0.722967, -0.444091, 0.529247, 4.56914, 4.50004, 4.1511)
+transform = Transform3D(0.690882, -0.464714, 0.553825, 0, 0.766044, 0.642788, -0.722967, -0.444091, 0.529247, 4.5771, 4.49703, 3.97588)
 current = true
-fov = 46.4
+fov = 47.4
+near = 0.1

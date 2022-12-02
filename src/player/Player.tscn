@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnnr2axuc28q8"]
+[gd_scene load_steps=8 format=3 uid="uid://i0q4gox17vdo"]
 
 [ext_resource type="Script" path="res://src/player/Player.gd" id="1_qler6"]
 [ext_resource type="PackedScene" uid="uid://bff4aanthlaj1" path="res://assets_raw/mr_mister.glb" id="1_xktf5"]
+[ext_resource type="Script" path="res://src/commons/state_machine/StateMachine.gd" id="3_7asoy"]
+[ext_resource type="Script" path="res://src/player/state_machine/Move.gd" id="4_d3e3n"]
+[ext_resource type="Script" path="res://src/player/state_machine/Idle.gd" id="5_r30nh"]
+[ext_resource type="Script" path="res://src/player/state_machine/Walk.gd" id="6_p7rhy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pxdd2"]
 radius = 0.22014
@@ -15,5 +19,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.352379, 0)
 shape = SubResource("CapsuleShape3D_pxdd2")
 
 [node name="Model" parent="." instance=ExtResource("1_xktf5")]
+
+[node name="StateMachine" type="Node3D" parent="."]
+script = ExtResource("3_7asoy")
+initial_state = NodePath("Move/Idle")
+
+[node name="Move" type="Node3D" parent="StateMachine"]
+script = ExtResource("4_d3e3n")
+
+[node name="Idle" type="Node3D" parent="StateMachine/Move"]
+script = ExtResource("5_r30nh")
+
+[node name="Walk" type="Node3D" parent="StateMachine/Move"]
+script = ExtResource("6_p7rhy")
 
 [editable path="Model"]
