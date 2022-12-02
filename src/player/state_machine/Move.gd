@@ -1,7 +1,7 @@
 extends State
 
-@export var max_speed_default := 5.0
-@export var friction_default := 4.5
+@export var max_speed_default := 2.0
+@export var friction_default := 10.0
 @export var angular_acceleration := 7.0
 
 

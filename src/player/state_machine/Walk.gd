@@ -3,7 +3,7 @@
 extends State
 class_name PlayerWalkState
 
-@export var max_speed := 5.0
+@export var max_speed := 2.0
 
 
 func unhandled_input(event: InputEvent) -> void:
@@ -19,6 +19,7 @@ func physics_process(delta: float) -> void:
 func enter(msg: Dictionary = {}) -> void:
 	_parent.enter(msg)
 	_parent.max_speed = max_speed
+	owner.animation_player.play("walk")
 
 
 func exit() -> void:
