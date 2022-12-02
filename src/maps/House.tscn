@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://db2yplxya10o7"]
+
+[ext_resource type="PackedScene" uid="uid://b8t6nl122xdfq" path="res://src/environment/KitchenWallAndFloor.tscn" id="1_egs3l"]
+[ext_resource type="PackedScene" uid="uid://ivw74e5wb534" path="res://src/environment/InvisibleWall.tscn" id="2_q2gsr"]
+[ext_resource type="PackedScene" uid="uid://cnnr2axuc28q8" path="res://src/player/Player.tscn" id="2_uveji"]
+
+[sub_resource type="Environment" id="Environment_h4a5h"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="HouseMap" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h4a5h")
+
+[node name="Environments" type="Node3D" parent="."]
+
+[node name="KitchenWallAndFloor" parent="Environments" instance=ExtResource("1_egs3l")]
+
+[node name="InvisibleWall" parent="Environments" instance=ExtResource("2_q2gsr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121937, 0, -0.0914524)
+
+[node name="Player" parent="." instance=ExtResource("2_uveji")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.690882, -0.464714, 0.553825, 0, 0.766044, 0.642788, -0.722967, -0.444091, 0.529247, 4.56914, 4.50004, 4.1511)
+current = true
+fov = 46.4

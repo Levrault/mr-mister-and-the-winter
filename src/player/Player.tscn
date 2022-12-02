@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnnr2axuc28q8"]
+
+[ext_resource type="Script" path="res://src/player/Player.gd" id="1_qler6"]
+[ext_resource type="PackedScene" uid="uid://bff4aanthlaj1" path="res://assets_raw/mr_mister.glb" id="1_xktf5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pxdd2"]
+radius = 0.22014
+height = 0.693565
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_qler6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.352379, 0)
+shape = SubResource("CapsuleShape3D_pxdd2")
+
+[node name="Model" parent="." instance=ExtResource("1_xktf5")]
+
+[editable path="Model"]
