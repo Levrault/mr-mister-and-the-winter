@@ -1,18 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://db2yplxya10o7"]
+[gd_scene load_steps=7 format=3 uid="uid://db2yplxya10o7"]
 
 [ext_resource type="PackedScene" uid="uid://b8t6nl122xdfq" path="res://src/environment/KitchenWallAndFloor.tscn" id="1_egs3l"]
+[ext_resource type="LightmapGIData" uid="uid://cqddx3twj841w" path="res://src/maps/House.lmbake" id="1_p5a21"]
 [ext_resource type="PackedScene" uid="uid://ivw74e5wb534" path="res://src/environment/InvisibleWall.tscn" id="2_q2gsr"]
 [ext_resource type="PackedScene" uid="uid://i0q4gox17vdo" path="res://src/player/Player.tscn" id="2_uveji"]
+[ext_resource type="PackedScene" uid="uid://dnjgvx6ny3ul3" path="res://src/environment/StorageCabinet.tscn" id="3_ke62t"]
 
 [sub_resource type="Environment" id="Environment_h4a5h"]
 background_mode = 1
+background_color = Color(0.152941, 0.152941, 0.152941, 1)
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
+ssao_enabled = true
+ssil_enabled = true
 
 [node name="HouseMap" type="Node3D"]
 
+[node name="LightmapGI" type="LightmapGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.11378, 0)
+visible = false
+interior = true
+light_data = ExtResource("1_p5a21")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_h4a5h")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.257555, -0.908641, 0.32869, 0.255467, 0.392095, 0.883741, -0.931881, -0.143643, 0.333114, 4.46226, 4.45126, 3.94514)
+light_energy = 1.5
+light_indirect_energy = 1.5
+light_bake_mode = 1
+shadow_enabled = true
 
 [node name="Environments" type="Node3D" parent="."]
 
@@ -20,6 +38,12 @@ environment = SubResource("Environment_h4a5h")
 
 [node name="InvisibleWall" parent="Environments" instance=ExtResource("2_q2gsr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121937, 0, -0.0914524)
+
+[node name="StorageCabinet" parent="Environments" instance=ExtResource("3_ke62t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58024, 0, 0.372358)
+
+[node name="StorageCabinet2" parent="Environments" instance=ExtResource("3_ke62t")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.71027, 0, -2.21416)
 
 [node name="Player" parent="." instance=ExtResource("2_uveji")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0659626, 0)

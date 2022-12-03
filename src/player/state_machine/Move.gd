@@ -1,4 +1,5 @@
 extends State
+class_name Move
 
 @export var max_speed_default := 2.0
 @export var friction_default := 10.0
@@ -52,7 +53,7 @@ func physics_process(delta: float) -> void:
 	input_direction = Input.get_vector("move_left", "move_right", "move_forwards", "move_backwards")
 	var direction: Vector3 = (owner.transform.basis * Vector3(input_direction.x, 0, input_direction.y)).normalized()
 	
-	owner.velocity = calculate_velocity(
+	owner.velocity = Move.calculate_velocity(
 		direction,
 		max_speed,
 		owner.velocity,

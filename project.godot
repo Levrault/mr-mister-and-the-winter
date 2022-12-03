@@ -10,6 +10,11 @@ config_version=5
 
 _global_script_classes=[{
 "base": "State",
+"class": &"Move",
+"language": &"GDScript",
+"path": "res://src/player/state_machine/Move.gd"
+}, {
+"base": "State",
 "class": &"PlayerWalkState",
 "language": &"GDScript",
 "path": "res://src/player/state_machine/Walk.gd"
@@ -25,6 +30,7 @@ _global_script_classes=[{
 "path": "res://src/commons/state_machine/StateMachine.gd"
 }]
 _global_script_class_icons={
+"Move": "",
 "PlayerWalkState": "",
 "State": "res://editor/icons/state.svg",
 "StateMachine": "res://editor/icons/state_machine.svg"
