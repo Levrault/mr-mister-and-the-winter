@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c3t45h3g16agm"
-path="res://.godot/imported/n64_cartridge_pile.glb-7a6bb89206b93ef3a1d03aa4340a7046.scn"
+uid="uid://b41yy0sdccll0"
+path="res://.godot/imported/n64_cartridges_pile.glb-c986f3a19341f9df762cf116315ff296.scn"
 
 [deps]
 
-source_file="res://assets_raw/n64_cartridge_pile.glb"
-dest_files=["res://.godot/imported/n64_cartridge_pile.glb-7a6bb89206b93ef3a1d03aa4340a7046.scn"]
+source_file="res://assets_raw/n64_cartridges_pile.glb"
+dest_files=["res://.godot/imported/n64_cartridges_pile.glb-c986f3a19341f9df762cf116315ff296.scn"]
 
 [params]
 

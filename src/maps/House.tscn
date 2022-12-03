@@ -1,10 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://db2yplxya10o7"]
+[gd_scene load_steps=14 format=3 uid="uid://db2yplxya10o7"]
 
 [ext_resource type="PackedScene" uid="uid://b8t6nl122xdfq" path="res://src/environment/KitchenWallAndFloor.tscn" id="1_egs3l"]
 [ext_resource type="LightmapGIData" uid="uid://cqddx3twj841w" path="res://src/maps/House.lmbake" id="1_p5a21"]
 [ext_resource type="PackedScene" uid="uid://ivw74e5wb534" path="res://src/environment/InvisibleWall.tscn" id="2_q2gsr"]
 [ext_resource type="PackedScene" uid="uid://i0q4gox17vdo" path="res://src/player/Player.tscn" id="2_uveji"]
 [ext_resource type="PackedScene" uid="uid://dnjgvx6ny3ul3" path="res://src/environment/StorageCabinet.tscn" id="3_ke62t"]
+[ext_resource type="PackedScene" uid="uid://b8dovyjdkr6wv" path="res://src/environment/Fridge.tscn" id="5_44vik"]
+[ext_resource type="PackedScene" uid="uid://b3idgts06d20d" path="res://src/environment/Stove.tscn" id="6_3730n"]
+[ext_resource type="PackedScene" uid="uid://c3t13xp7bqqsv" path="res://src/environment/Sink.tscn" id="7_iv6pp"]
+[ext_resource type="PackedScene" uid="uid://dsljrlewhs2e8" path="res://src/environment/Table.tscn" id="8_5gclv"]
+[ext_resource type="PackedScene" uid="uid://cndya70nmv4ui" path="res://src/environment/LowTable.tscn" id="9_3jirb"]
+[ext_resource type="PackedScene" uid="uid://cusuhd538cbmh" path="res://src/environment/N64.tscn" id="10_3xu6x"]
+[ext_resource type="PackedScene" uid="uid://cgeaxvf7a30vy" path="res://src/environment/N64CartridgesPile.tscn" id="11_o7mbh"]
 
 [sub_resource type="Environment" id="Environment_h4a5h"]
 background_mode = 1
@@ -13,6 +20,8 @@ ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 ssao_enabled = true
 ssil_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_sky_affect = 0.449
 
 [node name="HouseMap" type="Node3D"]
 
@@ -22,15 +31,15 @@ visible = false
 interior = true
 light_data = ExtResource("1_p5a21")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_h4a5h")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.257555, -0.908641, 0.32869, 0.255467, 0.392095, 0.883741, -0.931881, -0.143643, 0.333114, 4.46226, 4.45126, 3.94514)
 light_energy = 1.5
 light_indirect_energy = 1.5
 light_bake_mode = 1
 shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h4a5h")
 
 [node name="Environments" type="Node3D" parent="."]
 
@@ -44,6 +53,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58024, 0, 0.372358)
 
 [node name="StorageCabinet2" parent="Environments" instance=ExtResource("3_ke62t")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.71027, 0, -2.21416)
+
+[node name="Fridge" parent="Environments" instance=ExtResource("5_44vik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.867052, 0, -2.53111)
+
+[node name="Stove" parent="Environments" instance=ExtResource("6_3730n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.80529, 0, -2.52476)
+
+[node name="Sink" parent="Environments" instance=ExtResource("7_iv6pp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8586, 0, -2.53142)
+
+[node name="Table" parent="Environments" instance=ExtResource("8_5gclv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12786, -0.0786202, 0.604432)
+
+[node name="LowTable" parent="Environments" instance=ExtResource("9_3jirb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71124, 0, 0.998221)
+
+[node name="n64" parent="Environments" instance=ExtResource("10_3xu6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72423, 0, 2.1707)
+
+[node name="N64CartridgesPile" parent="Environments/n64" instance=ExtResource("11_o7mbh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0208552, 0.10721, -0.310762)
 
 [node name="Player" parent="." instance=ExtResource("2_uveji")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0659626, 0)
