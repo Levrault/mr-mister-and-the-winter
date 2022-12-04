@@ -1,0 +1,134 @@
+[gd_scene load_steps=21 format=3 uid="uid://db2yplxya10o7"]
+
+[ext_resource type="LightmapGIData" uid="uid://cqddx3twj841w" path="res://src/maps/KitchenAndLivingRoom.lmbake" id="1_4gxxf"]
+[ext_resource type="PackedScene" uid="uid://b8t6nl122xdfq" path="res://src/environment/KitchenWallAndFloor.tscn" id="2_im26h"]
+[ext_resource type="PackedScene" uid="uid://ivw74e5wb534" path="res://src/environment/InvisibleWall.tscn" id="3_16tj8"]
+[ext_resource type="PackedScene" uid="uid://dnjgvx6ny3ul3" path="res://src/environment/StorageCabinet.tscn" id="4_v5llw"]
+[ext_resource type="PackedScene" uid="uid://b8dovyjdkr6wv" path="res://src/environment/Fridge.tscn" id="5_1vd32"]
+[ext_resource type="PackedScene" uid="uid://b3idgts06d20d" path="res://src/environment/Stove.tscn" id="6_b8yh6"]
+[ext_resource type="PackedScene" uid="uid://c3t13xp7bqqsv" path="res://src/environment/Sink.tscn" id="7_sfcht"]
+[ext_resource type="PackedScene" uid="uid://dsljrlewhs2e8" path="res://src/environment/Table.tscn" id="8_h7npr"]
+[ext_resource type="PackedScene" uid="uid://bjje2t0htyrms" path="res://src/environment/Chair.tscn" id="9_g6jtb"]
+[ext_resource type="PackedScene" uid="uid://bh1j7cxyi8nmn" path="res://src/environment/Cup.tscn" id="10_61pxw"]
+[ext_resource type="PackedScene" uid="uid://cndya70nmv4ui" path="res://src/environment/LowTable.tscn" id="11_0dlgj"]
+[ext_resource type="PackedScene" uid="uid://cusuhd538cbmh" path="res://src/environment/N64.tscn" id="12_5cbjx"]
+[ext_resource type="PackedScene" uid="uid://cgeaxvf7a30vy" path="res://src/environment/N64CartridgesPile.tscn" id="13_y3ri3"]
+[ext_resource type="PackedScene" uid="uid://dt7jxpb7h5ctj" path="res://src/environment/TvFurniture.tscn" id="14_xs8cb"]
+[ext_resource type="PackedScene" uid="uid://busjv06mc1gmm" path="res://src/environment/Tv.tscn" id="15_etraq"]
+[ext_resource type="PackedScene" uid="uid://d1c4d2uernomf" path="res://src/environment/Couch.tscn" id="16_lcit1"]
+[ext_resource type="PackedScene" uid="uid://dvmnbnugknsy6" path="res://src/environment/Tablet.tscn" id="17_rt0y8"]
+[ext_resource type="PackedScene" uid="uid://dym2664pv4cp5" path="res://src/environment/Can.tscn" id="18_p864y"]
+[ext_resource type="PackedScene" uid="uid://i0q4gox17vdo" path="res://src/player/Player.tscn" id="19_5454n"]
+
+[sub_resource type="Environment" id="Environment_h4a5h"]
+background_mode = 1
+background_color = Color(0.152941, 0.152941, 0.152941, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ssao_enabled = true
+ssil_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_sky_affect = 0.449
+
+[node name="Kitchen" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h4a5h")
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.11378, 0)
+bounces = 16
+interior = true
+use_denoiser = false
+light_data = ExtResource("1_4gxxf")
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(0.257555, -0.908641, 0.32869, 0.255467, 0.392095, 0.883741, -0.931881, -0.143643, 0.333114, 4.46226, 4.45126, 3.94514)
+light_energy = 1.5
+light_indirect_energy = 1.5
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.83144, 1.00268, -2.52999)
+light_energy = 0.4
+light_bake_mode = 1
+omni_range = 1.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83446, 1.00268, -2.52999)
+light_energy = 0.4
+light_bake_mode = 1
+omni_range = 1.0
+
+[node name="Environments" type="Node3D" parent="."]
+
+[node name="KitchenWallAndFloor" parent="Environments" instance=ExtResource("2_im26h")]
+
+[node name="InvisibleWall" parent="Environments" instance=ExtResource("3_16tj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121937, 0, -0.0914524)
+
+[node name="StorageCabinet" parent="Environments" instance=ExtResource("4_v5llw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58024, 0, 0.372358)
+
+[node name="StorageCabinet2" parent="Environments" instance=ExtResource("4_v5llw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.71027, 0, -2.21416)
+
+[node name="Fridge" parent="Environments" instance=ExtResource("5_1vd32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.867052, 0, -2.53111)
+
+[node name="Stove" parent="Environments" instance=ExtResource("6_b8yh6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.80529, 0, -2.52476)
+
+[node name="Sink" parent="Environments" instance=ExtResource("7_sfcht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8586, 0, -2.53142)
+
+[node name="Table" parent="Environments" instance=ExtResource("8_h7npr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32792, -0.0786202, 0.993438)
+
+[node name="Chair" parent="Environments/Table" instance=ExtResource("9_g6jtb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.744668)
+
+[node name="Cup" parent="Environments/Table" instance=ExtResource("10_61pxw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.174544, 0.621467, -0.189725)
+
+[node name="LowTable" parent="Environments" instance=ExtResource("11_0dlgj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71124, 0, 0.998221)
+
+[node name="n64" parent="Environments" instance=ExtResource("12_5cbjx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72423, 0, 2.1707)
+
+[node name="N64CartridgesPile" parent="Environments/n64" instance=ExtResource("13_y3ri3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0208552, 0.10721, -0.310762)
+
+[node name="TvFurniture" parent="Environments" instance=ExtResource("14_xs8cb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69345, 0, 1.05331)
+
+[node name="TV" parent="Environments/TvFurniture" instance=ExtResource("15_etraq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.090523, 0.572947, 0.072988)
+
+[node name="Couch" parent="Environments" instance=ExtResource("16_lcit1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.466805, 0, 0.955842)
+
+[node name="Tablet" parent="Environments" instance=ExtResource("17_rt0y8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17955, 1.05166, -2.50992)
+
+[node name="Tablet2" parent="Environments" instance=ExtResource("17_rt0y8")]
+transform = Transform3D(-3.06289e-08, 0, -0.605259, 0, 0.273133, 0, 0.700707, 0, -2.64567e-08, -2.93377, 1.05166, 1.81752)
+
+[node name="Tablet3" parent="Environments" instance=ExtResource("17_rt0y8")]
+transform = Transform3D(-3.06289e-08, 0, -0.605259, 0, 0.273133, 0, 0.700707, 0, -2.64567e-08, -2.93377, 0.555772, 1.81752)
+
+[node name="Can" parent="Environments" instance=ExtResource("18_p864y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.568153, 0, -2.53733)
+
+[node name="Player" parent="." instance=ExtResource("19_5454n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0222287, 0.0659626, -0.466807)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.690882, -0.464714, 0.553825, 0, 0.766044, 0.642788, -0.722967, -0.444091, 0.529247, 4.5771, 4.49703, 3.97588)
+current = true
+fov = 47.4
+near = 0.1

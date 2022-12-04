@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dym2664pv4cp5"]
+
+[ext_resource type="PackedScene" uid="uid://cobwd2khgbhm3" path="res://assets_raw/can.glb" id="1_g1g0i"]
+
+[node name="Can" instance=ExtResource("1_g1g0i")]
+
+[node name="Can" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.231, 0)
