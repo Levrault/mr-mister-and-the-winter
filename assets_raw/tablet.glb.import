@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://jsbho2rx7f26"
-path="res://.godot/imported/kitchen_wall.glb-dc4a3e9b0eb17f55d54495428e9de1ea.scn"
+uid="uid://bagoqts3e1wgd"
+path="res://.godot/imported/tablet.glb-12dc397afaa44fbe3bea32a3af8addac.scn"
 
 [deps]
 
-source_file="res://assets_raw/kitchen_wall.glb"
-dest_files=["res://.godot/imported/kitchen_wall.glb-dc4a3e9b0eb17f55d54495428e9de1ea.scn"]
+source_file="res://assets_raw/tablet.glb"
+dest_files=["res://.godot/imported/tablet.glb-12dc397afaa44fbe3bea32a3af8addac.scn"]
 
 [params]
 
