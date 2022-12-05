@@ -41,8 +41,9 @@ static func calculate_velocity(
 
 
 func unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("jump"):
-		_state_machine.transition_to("Move/Air", { impulse = true })
+	if event.is_action_pressed("interact") and owner.object_to_interact != null:
+		owner.object_to_interact.start_interaction()
+		_state_machine.transition_to("Move/Idle/Interact")
 		return
 
 
@@ -68,4 +69,4 @@ func physics_process(delta: float) -> void:
 func lerp_rotation_to_direction(direction: Vector3, delta: float) -> void:
 	if not (Input.is_action_pressed("move_forwards") or Input.is_action_pressed("move_backwards") or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")): 
 		return
-	owner.model.rotation.y = lerp_angle(owner.model.rotation.y, atan2(direction.x, direction.z),  delta * angular_acceleration)
+	owner.pivot.rotation.y = lerp_angle(owner.pivot.rotation.y, atan2(direction.x, direction.z),  delta * angular_acceleration)
