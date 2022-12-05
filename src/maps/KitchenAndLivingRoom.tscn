@@ -25,18 +25,18 @@ background_mode = 1
 background_color = Color(0.152941, 0.152941, 0.152941, 1)
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
-ssao_enabled = true
-ssil_enabled = true
+reflected_light_source = 1
 volumetric_fog_density = 0.01
 volumetric_fog_sky_affect = 0.449
 
-[node name="Kitchen" type="Node3D"]
+[node name="KitchenAndLivingRoom" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_h4a5h")
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.11378, 0)
+quality = 0
 interior = true
 light_data = ExtResource("1_4gxxf")
 
@@ -47,6 +47,7 @@ transform = Transform3D(0.257555, -0.908641, 0.32869, 0.255467, 0.392095, 0.8837
 light_energy = 1.5
 light_bake_mode = 1
 shadow_enabled = true
+directional_shadow_mode = 0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.83144, 1.00268, -2.52999)
