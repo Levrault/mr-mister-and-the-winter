@@ -37,9 +37,7 @@ environment = SubResource("Environment_h4a5h")
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.11378, 0)
-bounces = 16
 interior = true
-use_denoiser = false
 light_data = ExtResource("1_4gxxf")
 
 [node name="Lights" type="Node3D" parent="."]
@@ -47,7 +45,6 @@ light_data = ExtResource("1_4gxxf")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights"]
 transform = Transform3D(0.257555, -0.908641, 0.32869, 0.255467, 0.392095, 0.883741, -0.931881, -0.143643, 0.333114, 4.46226, 4.45126, 3.94514)
 light_energy = 1.5
-light_indirect_energy = 1.5
 light_bake_mode = 1
 shadow_enabled = true
 
