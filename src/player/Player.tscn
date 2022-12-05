@@ -460,12 +460,4 @@ script = ExtResource("5_r30nh")
 [node name="Walk" type="Node3D" parent="StateMachine/Move"]
 script = ExtResource("6_p7rhy")
 
-[node name="Menu" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [editable path="Model"]

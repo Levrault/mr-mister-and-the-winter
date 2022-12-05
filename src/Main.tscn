@@ -1,18 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvwnagq8fscb8"]
+[gd_scene load_steps=7 format=3 uid="uid://bvwnagq8fscb8"]
 
 [ext_resource type="PackedScene" uid="uid://db2yplxya10o7" path="res://src/maps/KitchenAndLivingRoom.tscn" id="1_1cyha"]
 [ext_resource type="Material" uid="uid://udnog05k51g5" path="res://assets/shaders/gausian-blur.tres" id="1_3tc83"]
 [ext_resource type="Script" path="res://src/Main.gd" id="1_yu8vo"]
 [ext_resource type="Material" uid="uid://bemv70xu8yyxf" path="res://assets/shaders/dither_band.tres" id="2_c80kd"]
+[ext_resource type="PackedScene" uid="uid://cd1daxr7ti3k5" path="res://src/menu/Menu.tscn" id="4_7qaxk"]
 [ext_resource type="Material" uid="uid://b3qmyswubafo1" path="res://assets/shaders/crt_tv.tres" id="5_lx0oi"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_yu8vo")
 
 [node name="N64Layer" type="CanvasLayer" parent="."]
+process_mode = 3
 
 [node name="HBlur" type="SubViewportContainer" parent="N64Layer"]
 unique_name_in_owner = true
+process_mode = 3
 material = ExtResource("1_3tc83")
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,14 +24,17 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 stretch_shrink = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="SubViewport" type="SubViewport" parent="N64Layer/HBlur"]
+process_mode = 3
 handle_input_locally = false
-size = Vector2i(640, 480)
+size = Vector2i(640, 360)
 render_target_update_mode = 4
 
 [node name="DitherBand" type="SubViewportContainer" parent="N64Layer/HBlur/SubViewport"]
 unique_name_in_owner = true
+process_mode = 3
 material = ExtResource("2_c80kd")
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,12 +44,18 @@ grow_vertical = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="N64Layer/HBlur/SubViewport/DitherBand"]
+process_mode = 3
 handle_input_locally = false
 msaa_3d = 2
-size = Vector2i(640, 480)
+size = Vector2i(1280, 720)
 render_target_update_mode = 4
 
-[node name="KitchenAndLivingRoom" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport" instance=ExtResource("1_1cyha")]
+[node name="Menu" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport" instance=ExtResource("4_7qaxk")]
+
+[node name="World" type="Node3D" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport"]
+process_mode = 1
+
+[node name="KitchenAndLivingRoom" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport/World" instance=ExtResource("1_1cyha")]
 
 [node name="CrtTvEffect" type="ColorRect" parent="N64Layer"]
 unique_name_in_owner = true
