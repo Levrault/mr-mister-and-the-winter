@@ -4,12 +4,16 @@ class_name Interactable
 @export_multiline var text := "undefined"
 
 
+func _ready() -> void:
+	add_to_group("interactable")
+
+
 func start_interaction() -> void:
-	return
+	Events.start_dialog.emit(text)
 
 
 func stop_interaction() -> void:
-	return
+	Events.stop_dialog.emit()
 
 
 func show_text() -> void:

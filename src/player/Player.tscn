@@ -395,7 +395,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rnenn"]
-size = Vector3(0.5, 1, 0.5)
+size = Vector3(0.248, 1, 0.5)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_qler6")

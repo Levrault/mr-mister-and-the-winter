@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b8t6nl122xdfq" path="res://src/environment/KitchenWallAndFloor.tscn" id="2_im26h"]
 [ext_resource type="PackedScene" uid="uid://ivw74e5wb534" path="res://src/environment/InvisibleWall.tscn" id="3_16tj8"]
 [ext_resource type="PackedScene" uid="uid://dnjgvx6ny3ul3" path="res://src/environment/StorageCabinet.tscn" id="4_v5llw"]
-[ext_resource type="PackedScene" uid="uid://b8dovyjdkr6wv" path="res://src/environment/Fridge.tscn" id="5_1vd32"]
+[ext_resource type="PackedScene" uid="uid://d1a5d3bs8gak0" path="res://src/environment/Fridge.tscn" id="5_1vd32"]
 [ext_resource type="PackedScene" uid="uid://b3idgts06d20d" path="res://src/environment/Stove.tscn" id="6_b8yh6"]
 [ext_resource type="PackedScene" uid="uid://c3t13xp7bqqsv" path="res://src/environment/Sink.tscn" id="7_sfcht"]
 [ext_resource type="PackedScene" uid="uid://dsljrlewhs2e8" path="res://src/environment/Table.tscn" id="8_h7npr"]
@@ -36,6 +36,7 @@ environment = SubResource("Environment_h4a5h")
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.11378, 0)
+visible = false
 quality = 0
 interior = true
 light_data = ExtResource("1_4gxxf")
