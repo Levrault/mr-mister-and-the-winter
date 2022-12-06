@@ -398,6 +398,10 @@ _data = {
 size = Vector3(0.248, 1, 0.5)
 
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 5
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 script = ExtResource("1_qler6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

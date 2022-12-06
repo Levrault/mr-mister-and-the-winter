@@ -3,7 +3,6 @@ extends Node3D
 
 func _ready() -> void:
 	Events.retro_filter_changed.connect(_on_Retro_filter_changed)
-	hide()
 
 
 func _on_Retro_filter_changed(value: bool) -> void:

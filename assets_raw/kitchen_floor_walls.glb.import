@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bdrgxqfm5nrhm"
-path="res://.godot/imported/invisible_wall.glb-0939043b79761c6ea105c761b254d75b.scn"
+uid="uid://jsbho2rx7f26"
+path="res://.godot/imported/kitchen_floor_walls.glb-246dbb03826e78a0e702deefa5eb8489.scn"
 
 [deps]
 
-source_file="res://assets_raw/invisible_wall.glb"
-dest_files=["res://.godot/imported/invisible_wall.glb-0939043b79761c6ea105c761b254d75b.scn"]
+source_file="res://assets_raw/kitchen_floor_walls.glb"
+dest_files=["res://.godot/imported/kitchen_floor_walls.glb-246dbb03826e78a0e702deefa5eb8489.scn"]
 
 [params]
 
