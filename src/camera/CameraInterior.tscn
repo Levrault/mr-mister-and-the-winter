@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://fcpswayn6336"]
+
+[node name="CameraInterior" type="Camera3D"]
+transform = Transform3D(0.690882, -0.464714, 0.553825, 0, 0.766044, 0.642788, -0.722967, -0.444091, 0.529247, 4.5771, 4.49703, 3.97588)
+current = true
+fov = 47.4
+near = 0.1

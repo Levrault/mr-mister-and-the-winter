@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3vhkfr4rj3ki"]
+
+[ext_resource type="Environment" uid="uid://ck1htmu8kds5b" path="res://src/maps/WorldEnvironment.tres" id="1_asfp0"]
+[ext_resource type="PackedScene" uid="uid://bnq1tmpsus5f8" path="res://src/vfx/DirectionalLightInterior.tscn" id="2_5la2y"]
+[ext_resource type="PackedScene" uid="uid://v25kgops4x25" path="res://src/environment/BedroomFloorAndWalls.tscn" id="2_56vnp"]
+[ext_resource type="PackedScene" uid="uid://fcpswayn6336" path="res://src/camera/CameraInterior.tscn" id="2_vh4lf"]
+[ext_resource type="PackedScene" uid="uid://gu206vgjtmd6" path="res://src/Portal/Portal.tscn" id="4_nnb2x"]
+[ext_resource type="PackedScene" uid="uid://bj5i2xl26glq6" path="res://src/environment/BedroomInvisibleWalls.tscn" id="5_vw8at"]
+[ext_resource type="PackedScene" uid="uid://i0q4gox17vdo" path="res://src/player/Player.tscn" id="7_llsmb"]
+
+[node name="Bedroom" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_asfp0")
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" parent="Lights" instance=ExtResource("2_5la2y")]
+
+[node name="Environments" type="Node3D" parent="."]
+
+[node name="BedroomFloorAndWalls" parent="Environments" instance=ExtResource("2_56vnp")]
+
+[node name="BedroomInvisibleWalls" parent="Environments" instance=ExtResource("5_vw8at")]
+
+[node name="PortalToKitchen" parent="Environments" instance=ExtResource("4_nnb2x")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.31839, 0.0780835, 0)
+next_map = "res://src/maps/KitchenAndLivingRoom.tscn"
+portal_id = "PortalToBedroom"
+
+[node name="CameraInterior" parent="." instance=ExtResource("2_vh4lf")]
+
+[node name="Player" parent="." instance=ExtResource("7_llsmb")]
+
+[editable path="Environments/PortalToKitchen"]

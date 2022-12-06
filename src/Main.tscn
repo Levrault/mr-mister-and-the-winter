@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgg8vllsvtf8v"]
+[gd_scene load_steps=9 format=3 uid="uid://cg1rqvlnlomxe"]
 
 [ext_resource type="PackedScene" uid="uid://db2yplxya10o7" path="res://src/maps/KitchenAndLivingRoom.tscn" id="1_1cyha"]
 [ext_resource type="Material" uid="uid://udnog05k51g5" path="res://assets/shaders/gausian-blur.tres" id="1_3tc83"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" path="res://src/ui/Menu.tscn" id="4_7qaxk"]
 [ext_resource type="PackedScene" uid="uid://bti12fbs07jit" path="res://src/ui/Dialog.tscn" id="5_llyv1"]
 [ext_resource type="Material" uid="uid://b3qmyswubafo1" path="res://assets/shaders/crt_tv.tres" id="5_lx0oi"]
+[ext_resource type="Script" path="res://src/commons/ScenesManager.gd" id="6_12i7x"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_yu8vo")
@@ -55,10 +56,11 @@ render_target_update_mode = 4
 
 [node name="Dialog" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport" instance=ExtResource("5_llyv1")]
 
-[node name="World" type="Node3D" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport"]
+[node name="ScenesManager" type="Node3D" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport"]
 process_mode = 1
+script = ExtResource("6_12i7x")
 
-[node name="KitchenAndLivingRoom" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport/World" instance=ExtResource("1_1cyha")]
+[node name="KitchenAndLivingRoom" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport/ScenesManager" instance=ExtResource("1_1cyha")]
 
 [node name="CrtTvEffect" type="ColorRect" parent="N64Layer"]
 unique_name_in_owner = true
