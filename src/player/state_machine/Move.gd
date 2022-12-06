@@ -69,4 +69,4 @@ func physics_process(delta: float) -> void:
 func lerp_rotation_to_direction(direction: Vector3, delta: float) -> void:
 	if not (Input.is_action_pressed("move_forwards") or Input.is_action_pressed("move_backwards") or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")): 
 		return
-	owner.pivot.rotation.y = lerp_angle(owner.pivot.rotation.y, atan2(direction.x, direction.z),  delta * angular_acceleration)
+	owner.pivot.rotation.y = lerp_angle(owner.pivot.rotation.y, atan2(-direction.x, -direction.z),  delta * angular_acceleration)

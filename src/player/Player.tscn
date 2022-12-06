@@ -423,7 +423,7 @@ texture = ExtResource("2_nyia6")
 [node name="Pivot" type="Node3D" parent="."]
 
 [node name="InteractablesDetectorArea3D" type="Area3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.518614, 0.341707)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.518614, -0.377399)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("2_yb3j3")
@@ -432,6 +432,7 @@ script = ExtResource("2_yb3j3")
 shape = SubResource("BoxShape3D_rnenn")
 
 [node name="Model" parent="Pivot" instance=ExtResource("1_xktf5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="HandLeft" parent="Pivot/Model" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.253098, 0.324332, 0.0142959)

@@ -11,6 +11,6 @@ func show() -> void:
 	$AnimationPlayer.play("open")
 
 
-func _on_Animation_finished(anim_name: String) -> void:
+func _on_Animation_finished(_anim_name: String) -> void:
 	hide()
 	Events.loading_screen_animation_finished.emit()

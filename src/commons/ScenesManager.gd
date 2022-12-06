@@ -9,13 +9,13 @@ var last_portal_id := ""
 var loading_screen = null
 
 
-func _ready():
+func _ready() -> void:
 	Events.map_changed_for.connect(_on_Map_changed_for)
 	current_scene = get_child(0)
 	set_process(false)
 
 
-func _process(time):
+func _process(_delta: float):
 	status = ResourceLoader.load_threaded_get_status(scene_path)
 	if status == ResourceLoader.THREAD_LOAD_LOADED and can_add_resource_on_process:
 		var resource := ResourceLoader.load_threaded_get(scene_path)
