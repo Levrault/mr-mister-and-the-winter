@@ -8,6 +8,7 @@ var object_to_interact: Node3D = null
 @onready var animation_player := $AnimationPlayer
 @onready var exclamation_point := $ExclamationPoint
 @onready var state_machine := $StateMachine
+@onready var inventory := $Inventory
 
 
 func _ready() -> void:

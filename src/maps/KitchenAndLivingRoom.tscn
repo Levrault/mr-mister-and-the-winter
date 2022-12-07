@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://db2yplxya10o7"]
+[gd_scene load_steps=27 format=3 uid="uid://db2yplxya10o7"]
 
 [ext_resource type="LightmapGIData" uid="uid://cqddx3twj841w" path="res://src/maps/KitchenAndLivingRoom.lmbake" id="1_4gxxf"]
 [ext_resource type="Environment" uid="uid://ck1htmu8kds5b" path="res://src/maps/WorldEnvironment.tres" id="1_w71gw"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c3t13xp7bqqsv" path="res://src/environment/Sink.tscn" id="7_sfcht"]
 [ext_resource type="PackedScene" uid="uid://dsljrlewhs2e8" path="res://src/environment/Table.tscn" id="8_h7npr"]
 [ext_resource type="PackedScene" uid="uid://bjje2t0htyrms" path="res://src/environment/Chair.tscn" id="9_g6jtb"]
-[ext_resource type="PackedScene" uid="uid://bh1j7cxyi8nmn" path="res://src/environment/Cup.tscn" id="10_61pxw"]
+[ext_resource type="PackedScene" uid="uid://dgqetnxlxf3bf" path="res://src/environment/Cup.tscn" id="10_61pxw"]
 [ext_resource type="PackedScene" uid="uid://cndya70nmv4ui" path="res://src/environment/LowTable.tscn" id="11_0dlgj"]
 [ext_resource type="PackedScene" uid="uid://cusuhd538cbmh" path="res://src/environment/N64.tscn" id="12_5cbjx"]
 [ext_resource type="PackedScene" uid="uid://cgeaxvf7a30vy" path="res://src/environment/N64CartridgesPile.tscn" id="13_y3ri3"]
@@ -21,9 +21,10 @@
 [ext_resource type="PackedScene" uid="uid://dvmnbnugknsy6" path="res://src/environment/Tablet.tscn" id="17_rt0y8"]
 [ext_resource type="PackedScene" uid="uid://dym2664pv4cp5" path="res://src/environment/Can.tscn" id="18_p864y"]
 [ext_resource type="PackedScene" uid="uid://gu206vgjtmd6" path="res://src/Portal/Portal.tscn" id="19_0po74"]
-[ext_resource type="PackedScene" uid="uid://i0q4gox17vdo" path="res://src/player/Player.tscn" id="19_5454n"]
+[ext_resource type="PackedScene" uid="uid://btkr2kjpfejc2" path="res://src/player/Player.tscn" id="19_5454n"]
 [ext_resource type="PackedScene" uid="uid://dprjlpxmbe257" path="res://src/Portal/DoorInterior.tscn" id="21_2lvg4"]
 [ext_resource type="PackedScene" uid="uid://bypeafkir4xg8" path="res://src/Portal/DoorExterior.tscn" id="22_28po3"]
+[ext_resource type="PackedScene" uid="uid://bweb5oil4fa3" path="res://src/environment/CoffeeMachine.tscn" id="24_0mhiy"]
 [ext_resource type="PackedScene" uid="uid://fcpswayn6336" path="res://src/camera/CameraInterior.tscn" id="24_sgcm8"]
 
 [node name="KitchenAndLivingRoom" type="Node3D"]
@@ -81,7 +82,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32792, -0.0786202, 0.99343
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.744668)
 
 [node name="Cup" parent="Environments/Table" instance=ExtResource("10_61pxw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.174544, 0.621467, -0.189725)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.174544, 0.621467, -0.189725)
 
 [node name="LowTable" parent="Environments" instance=ExtResource("11_0dlgj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71124, 0, 0.998221)
@@ -98,6 +99,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69345, 0, 1.05331)
 [node name="TV" parent="Environments/TvFurniture" instance=ExtResource("15_etraq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.090523, 0.572947, 0.072988)
 
+[node name="TvFurniture2" parent="Environments" instance=ExtResource("14_xs8cb")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.80616, 0.00690004, 1.85632)
+
 [node name="Couch" parent="Environments" instance=ExtResource("16_lcit1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.466805, 0, 0.955842)
 
@@ -106,9 +110,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17955, 1.05166, -2.50992)
 
 [node name="Tablet2" parent="Environments" instance=ExtResource("17_rt0y8")]
 transform = Transform3D(-3.06289e-08, 0, -0.605259, 0, 0.273133, 0, 0.700707, 0, -2.64567e-08, -2.93377, 1.05166, 1.81752)
-
-[node name="Tablet3" parent="Environments" instance=ExtResource("17_rt0y8")]
-transform = Transform3D(-3.06289e-08, 0, -0.605259, 0, 0.273133, 0, 0.700707, 0, -2.64567e-08, -2.93377, 0.555772, 1.81752)
 
 [node name="Can" parent="Environments" instance=ExtResource("18_p864y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.568153, 0, -2.53733)
@@ -126,6 +127,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0174669, 0, -2.84473)
 
 [node name="DoorExterior" parent="Environments/PortalToExterior" instance=ExtResource("22_28po3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0427649)
+
+[node name="CoffeeMachine" parent="Environments" instance=ExtResource("24_0mhiy")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.74548, 0.609096, 2.27117)
 
 [node name="Player" parent="." instance=ExtResource("19_5454n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0222287, 0.0659626, -0.466807)

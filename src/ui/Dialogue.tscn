@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bti12fbs07jit"]
+[gd_scene load_steps=3 format=3 uid="uid://duldg06gsyh41"]
 
-[ext_resource type="Script" path="res://src/ui/Dialog.gd" id="1_kygcq"]
+[ext_resource type="Script" path="res://src/ui/Dialogue.gd" id="1_3nduq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf87p"]
 bg_color = Color(0, 0, 0, 0.784314)
@@ -9,14 +9,14 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[node name="Dialog" type="Control"]
+[node name="Dialogue" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_kygcq")
+script = ExtResource("1_3nduq")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(400, 180)
@@ -31,7 +31,6 @@ offset_right = 150.0
 offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(200, 90)
 theme_override_styles/panel = SubResource("StyleBoxFlat_bf87p")
 
@@ -52,3 +51,35 @@ offset_bottom = 172.0
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat semper risus, porttitor tristique tellus lobortis vel. Phasellus eget rhoncus nisl. Morbi faucibus tortor eget iaculis fringilla."
 scroll_active = false
+
+[node name="QuestionContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 88.0
+offset_top = 71.0
+offset_right = 162.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="No" type="Button" parent="QuestionContainer"]
+offset_right = 34.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "NO
+"
+
+[node name="Yes" type="Button" parent="QuestionContainer"]
+offset_left = 66.0
+offset_right = 102.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YES"

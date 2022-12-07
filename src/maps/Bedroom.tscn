@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://fcpswayn6336" path="res://src/camera/CameraInterior.tscn" id="2_vh4lf"]
 [ext_resource type="PackedScene" uid="uid://gu206vgjtmd6" path="res://src/Portal/Portal.tscn" id="4_nnb2x"]
 [ext_resource type="PackedScene" uid="uid://bj5i2xl26glq6" path="res://src/environment/BedroomInvisibleWalls.tscn" id="5_vw8at"]
-[ext_resource type="PackedScene" uid="uid://i0q4gox17vdo" path="res://src/player/Player.tscn" id="7_llsmb"]
+[ext_resource type="PackedScene" uid="uid://cs6et4k0h70cg" path="res://src/player/Player.tscn" id="7_llsmb"]
 
 [node name="Bedroom" type="Node3D"]
 
