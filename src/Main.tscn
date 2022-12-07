@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cg1rqvlnlomxe"]
+[gd_scene load_steps=9 format=3 uid="uid://ntp16k7odix"]
 
 [ext_resource type="PackedScene" uid="uid://db2yplxya10o7" path="res://src/maps/KitchenAndLivingRoom.tscn" id="1_1cyha"]
 [ext_resource type="Material" uid="uid://udnog05k51g5" path="res://assets/shaders/gausian-blur.tres" id="1_3tc83"]
 [ext_resource type="Script" path="res://src/Main.gd" id="1_yu8vo"]
 [ext_resource type="Material" uid="uid://bemv70xu8yyxf" path="res://assets/shaders/dither_band.tres" id="2_c80kd"]
 [ext_resource type="PackedScene" path="res://src/ui/Menu.tscn" id="4_7qaxk"]
-[ext_resource type="PackedScene" uid="uid://bti12fbs07jit" path="res://src/ui/Dialog.tscn" id="5_llyv1"]
+[ext_resource type="PackedScene" uid="uid://duldg06gsyh41" path="res://src/ui/Dialogue.tscn" id="5_llyv1"]
 [ext_resource type="Material" uid="uid://b3qmyswubafo1" path="res://assets/shaders/crt_tv.tres" id="5_lx0oi"]
 [ext_resource type="Script" path="res://src/commons/ScenesManager.gd" id="6_12i7x"]
 
@@ -54,7 +54,7 @@ render_target_update_mode = 4
 
 [node name="Menu" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport" instance=ExtResource("4_7qaxk")]
 
-[node name="Dialog" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport" instance=ExtResource("5_llyv1")]
+[node name="Dialogue" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport" instance=ExtResource("5_llyv1")]
 
 [node name="ScenesManager" type="Node3D" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport"]
 process_mode = 1

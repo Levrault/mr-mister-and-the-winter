@@ -42,10 +42,11 @@ static func calculate_velocity(
 
 func unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and owner.object_to_interact != null:
-		owner.object_to_interact.start_interaction()
 		_state_machine.transition_to("Move/Idle/Interact")
 		return
-
+	if event.is_action_pressed("inventory"):
+		_state_machine.transition_to("Move/Idle/CheckInventory")
+		return
 
 func physics_process(delta: float) -> void:
 	if not owner.is_on_floor():
