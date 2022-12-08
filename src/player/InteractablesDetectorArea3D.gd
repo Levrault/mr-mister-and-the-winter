@@ -9,19 +9,25 @@ func _ready() -> void:
 
 
 func _on_Body_entered(body: Node3D) -> void:
-	print("can interact with %s" % body.get_name())
+	print_debug("Player can interact with %s" % body.owner.get_name())
 	owner.object_to_interact = body.owner
-	owner.exclamation_point.show()
+	
+	if owner.inventory.has_item_equipped():
+		owner.combine_indicator.show()
+		return
+	owner.interaction_indicator.show()
 
 
 func _on_Body_exited(_body: Node3D) -> void:
 	owner.object_to_interact = null
-	owner.exclamation_point.hide()
+	owner.interaction_indicator.hide()
+	owner.combine_indicator.hide()
 
 
+# Used for portals
 func _on_Area_entered(_area: Area3D) -> void:
-	owner.exclamation_point.show()
+	owner.interaction_indicator.show()
 
 
 func _on_Area_exited(_area: Area3D) -> void:
-	owner.exclamation_point.hide()
+	owner.interaction_indicator.hide()

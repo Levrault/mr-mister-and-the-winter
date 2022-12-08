@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://src/player/ui/InventoryItem.gd" id="1_pgnrq"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_eo5jl"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ju2mb"]
 size = Vector2(32, 32)
 
 [node name="InventoryItem" type="TextureButton"]
 custom_minimum_size = Vector2(32, 32)
-texture_focused = SubResource("PlaceholderTexture2D_eo5jl")
+texture_focused = SubResource("PlaceholderTexture2D_ju2mb")
 script = ExtResource("1_pgnrq")

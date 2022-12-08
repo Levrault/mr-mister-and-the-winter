@@ -6,7 +6,8 @@ var object_to_interact: Node3D = null
 
 @onready var pivot := $Pivot
 @onready var animation_player := $AnimationPlayer
-@onready var exclamation_point := $ExclamationPoint
+@onready var interaction_indicator := $InteractionIndicator
+@onready var combine_indicator := $CombineIndicator
 @onready var state_machine := $StateMachine
 @onready var inventory := $Inventory
 

@@ -1,11 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://db2yplxya10o7"]
+[gd_scene load_steps=28 format=3 uid="uid://db2yplxya10o7"]
 
 [ext_resource type="LightmapGIData" uid="uid://cqddx3twj841w" path="res://src/maps/KitchenAndLivingRoom.lmbake" id="1_4gxxf"]
 [ext_resource type="Environment" uid="uid://ck1htmu8kds5b" path="res://src/maps/WorldEnvironment.tres" id="1_w71gw"]
 [ext_resource type="PackedScene" uid="uid://61wb7y3t7hv0" path="res://src/environment/KitchenWallAndFloor.tscn" id="2_im26h"]
 [ext_resource type="Script" path="res://src/commons/Lightmap.gd" id="3_2cuf3"]
 [ext_resource type="PackedScene" uid="uid://bnq1tmpsus5f8" path="res://src/vfx/DirectionalLightInterior.tscn" id="3_rh4jf"]
-[ext_resource type="PackedScene" uid="uid://dnjgvx6ny3ul3" path="res://src/environment/StorageCabinet.tscn" id="4_v5llw"]
+[ext_resource type="PackedScene" path="res://src/environment/StorageCabinet.tscn" id="4_v5llw"]
 [ext_resource type="PackedScene" uid="uid://d1a5d3bs8gak0" path="res://src/environment/Fridge.tscn" id="5_1vd32"]
 [ext_resource type="PackedScene" uid="uid://b3idgts06d20d" path="res://src/environment/Stove.tscn" id="6_b8yh6"]
 [ext_resource type="PackedScene" uid="uid://c3t13xp7bqqsv" path="res://src/environment/Sink.tscn" id="7_sfcht"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://bypeafkir4xg8" path="res://src/Portal/DoorExterior.tscn" id="22_28po3"]
 [ext_resource type="PackedScene" uid="uid://bweb5oil4fa3" path="res://src/environment/CoffeeMachine.tscn" id="24_0mhiy"]
 [ext_resource type="PackedScene" uid="uid://fcpswayn6336" path="res://src/camera/CameraInterior.tscn" id="24_sgcm8"]
+[ext_resource type="PackedScene" path="res://src/environment/KitchenInvisibleWalls.tscn" id="25_ypq1y"]
 
 [node name="KitchenAndLivingRoom" type="Node3D"]
 
@@ -131,7 +132,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0427649)
 [node name="CoffeeMachine" parent="Environments" instance=ExtResource("24_0mhiy")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.74548, 0.609096, 2.27117)
 
+[node name="InvisibleWall" parent="Environments" instance=ExtResource("25_ypq1y")]
+
 [node name="Player" parent="." instance=ExtResource("19_5454n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0222287, 0.0659626, -0.466807)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83906, 0.0659626, 1.87727)
 
 [node name="CameraInterior" parent="." instance=ExtResource("24_sgcm8")]

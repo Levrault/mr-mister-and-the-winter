@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1pp2fysp5cft"
-path="res://.godot/imported/cup.png-6955d0145f6be0381f525883a904ef32.ctex"
+uid="uid://4plbt48pccam"
+path="res://.godot/imported/cup_focused.png-05a43bbc00edf62fdee7e9fea4ddd3e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/inventory/cup.png"
-dest_files=["res://.godot/imported/cup.png-6955d0145f6be0381f525883a904ef32.ctex"]
+source_file="res://assets/textures/inventory/cup_focused.png"
+dest_files=["res://.godot/imported/cup_focused.png-05a43bbc00edf62fdee7e9fea4ddd3e7.ctex"]
 
 [params]
 

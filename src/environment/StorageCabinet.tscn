@@ -1,7 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://dnjgvx6ny3ul3"]
+[gd_scene load_steps=18 format=3]
 
 [ext_resource type="PackedScene" uid="uid://bm78mg31rjho4" path="res://assets_raw/storage_cabinet.glb" id="1_2hgr5"]
-[ext_resource type="Script" path="res://src/commons/interactables/InteractableWithDoor.gd" id="2_kgbbs"]
+[ext_resource type="Script" path="res://src/commons/interactables/InteractableWithAnimations.gd" id="2_kgbbs"]
 [ext_resource type="AudioStream" uid="uid://cjlrthpe2ghuh" path="res://assets/sfx/doorOpen_1.ogg" id="3_kvdyg"]
 [ext_resource type="AudioStream" uid="uid://cjq072rpuc00q" path="res://assets/sfx/doorClose_1.ogg" id="4_iv3i7"]
 
