@@ -1,17 +1,28 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3vhkfr4rj3ki"]
+[gd_scene load_steps=13 format=3 uid="uid://b3vhkfr4rj3ki"]
 
 [ext_resource type="Environment" uid="uid://ck1htmu8kds5b" path="res://src/maps/WorldEnvironment.tres" id="1_asfp0"]
 [ext_resource type="PackedScene" uid="uid://bnq1tmpsus5f8" path="res://src/vfx/DirectionalLightInterior.tscn" id="2_5la2y"]
 [ext_resource type="PackedScene" uid="uid://v25kgops4x25" path="res://src/environment/BedroomFloorAndWalls.tscn" id="2_56vnp"]
+[ext_resource type="LightmapGIData" uid="uid://bgcm3bk7gbfny" path="res://src/maps/Bedroom.lmbake" id="2_kjh7q"]
 [ext_resource type="PackedScene" uid="uid://fcpswayn6336" path="res://src/camera/CameraInterior.tscn" id="2_vh4lf"]
 [ext_resource type="PackedScene" uid="uid://gu206vgjtmd6" path="res://src/Portal/Portal.tscn" id="4_nnb2x"]
 [ext_resource type="PackedScene" uid="uid://bj5i2xl26glq6" path="res://src/environment/BedroomInvisibleWalls.tscn" id="5_vw8at"]
-[ext_resource type="PackedScene" uid="uid://cs6et4k0h70cg" path="res://src/player/Player.tscn" id="7_llsmb"]
+[ext_resource type="PackedScene" uid="uid://8hoqcii85hha" path="res://src/environment/Bed.tscn" id="6_8pqek"]
+[ext_resource type="PackedScene" uid="uid://btkr2kjpfejc2" path="res://src/player/Player.tscn" id="7_llsmb"]
+[ext_resource type="PackedScene" uid="uid://c0bgda4oqmi3m" path="res://src/environment/Drawers.tscn" id="8_4duhs"]
+[ext_resource type="PackedScene" path="res://src/environment/StorageCabinet.tscn" id="9_1x23u"]
+[ext_resource type="PackedScene" uid="uid://otypngwm5bkh" path="res://src/environment/Lamp.tscn" id="10_mv84l"]
 
 [node name="Bedroom" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_asfp0")
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+visible = false
+quality = 0
+interior = true
+light_data = ExtResource("2_kjh7q")
 
 [node name="Lights" type="Node3D" parent="."]
 
@@ -28,8 +39,27 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.3183
 next_map = "res://src/maps/KitchenAndLivingRoom.tscn"
 portal_id = "PortalToBedroom"
 
+[node name="Bed" parent="Environments" instance=ExtResource("6_8pqek")]
+transform = Transform3D(0.905953, 0, -0.00928188, 0, 0.906, 0, 0.00928188, 0, 0.905953, -1, 0, 0)
+
+[node name="Drawers" parent="Environments" instance=ExtResource("8_4duhs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77467, 0.0243569, 1.43775)
+
+[node name="Drawers3" parent="Environments" instance=ExtResource("8_4duhs")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.03561, 0.0243569, 1.43775)
+
+[node name="Drawers2" parent="Environments" instance=ExtResource("8_4duhs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, -1.77467, 0.0243569, -0.90823)
+
+[node name="StorageCabinet" parent="Environments" instance=ExtResource("9_1x23u")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.00986, 0, -1.39486)
+
+[node name="Lamp" parent="Environments" instance=ExtResource("10_mv84l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86165, 0.525674, -0.997775)
+
 [node name="CameraInterior" parent="." instance=ExtResource("2_vh4lf")]
 
 [node name="Player" parent="." instance=ExtResource("7_llsmb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.908801, 0, 0)
 
 [editable path="Environments/PortalToKitchen"]

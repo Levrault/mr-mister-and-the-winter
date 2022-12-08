@@ -98,7 +98,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0208552, 0.10721, -0.310762
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69345, 0, 1.05331)
 
 [node name="TV" parent="Environments/TvFurniture" instance=ExtResource("15_etraq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.090523, 0.572947, 0.072988)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.090523, 0.572947, 0.0280211)
 
 [node name="TvFurniture2" parent="Environments" instance=ExtResource("14_xs8cb")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.80616, 0.00690004, 1.85632)
@@ -123,11 +123,13 @@ portal_id = "PortalToKitchen"
 [node name="DoorInterior" parent="Environments/PortalToBedroom" instance=ExtResource("21_2lvg4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0860081, 0.067885, -0.0666816)
 
-[node name="PortalToExterior" parent="Environments" instance=ExtResource("19_0po74")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0174669, 0, -2.84473)
+[node name="PortalToYard" parent="Environments" instance=ExtResource("19_0po74")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0174669, 0, -2.84473)
+next_map = "res://src/maps/Yard.tscn"
+portal_id = "PortalToKitchen"
 
-[node name="DoorExterior" parent="Environments/PortalToExterior" instance=ExtResource("22_28po3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0427649)
+[node name="DoorExterior" parent="Environments/PortalToYard" instance=ExtResource("22_28po3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0.0427649)
 
 [node name="CoffeeMachine" parent="Environments" instance=ExtResource("24_0mhiy")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.74548, 0.609096, 2.27117)
@@ -138,3 +140,5 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.745
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83906, 0.0659626, 1.87727)
 
 [node name="CameraInterior" parent="." instance=ExtResource("24_sgcm8")]
+
+[editable path="Environments/PortalToYard"]

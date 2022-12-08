@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkk7lh371oh73"]
+
+[ext_resource type="PackedScene" uid="uid://cbk728mshuu75" path="res://assets_raw/yard_floor.glb" id="1_dy8nk"]
+[ext_resource type="Material" uid="uid://cjxho1teaf0bj" path="res://assets/materials/floor.tres" id="2_kon46"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_o3jbl"]
+data = PackedVector3Array(-3.3733, -0.0725, 2.4976, -3.374, 0.0725, -3.0733, -3.3733, 0.0725, 2.4976, -3.3733, -0.0725, 2.4976, -3.374, -0.0725, -3.0733, -3.374, 0.0725, -3.0733, -3.374, -0.0725, -3.0733, 2.9899, 0.0725, -3.0733, -3.374, 0.0725, -3.0733, -3.374, -0.0725, -3.0733, 2.9899, -0.0725, -3.0733, 2.9899, 0.0725, -3.0733, 2.9899, -0.0725, -3.0733, 2.9907, 0.0725, 2.4976, 2.9899, 0.0725, -3.0733, 2.9899, -0.0725, -3.0733, 2.9907, -0.0725, 2.4976, 2.9907, 0.0725, 2.4976, 2.9907, -0.0725, 2.4976, -3.3733, 0.0725, 2.4976, 2.9907, 0.0725, 2.4976, 2.9907, -0.0725, 2.4976, -3.3733, -0.0725, 2.4976, -3.3733, 0.0725, 2.4976, -3.374, -0.0725, -3.0733, 2.9907, -0.0725, 2.4976, 2.9899, -0.0725, -3.0733, -3.374, -0.0725, -3.0733, -3.3733, -0.0725, 2.4976, 2.9907, -0.0725, 2.4976, 2.9899, 0.0725, -3.0733, -3.3733, 0.0725, 2.4976, -3.374, 0.0725, -3.0733, 2.9899, 0.0725, -3.0733, 2.9907, 0.0725, 2.4976, -3.3733, 0.0725, 2.4976)
+
+[node name="YardFloor" instance=ExtResource("1_dy8nk")]
+
+[node name="YardFloor001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_kon46")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="YardFloor001" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="YardFloor001/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_o3jbl")
