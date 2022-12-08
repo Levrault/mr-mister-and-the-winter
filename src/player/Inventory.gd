@@ -40,6 +40,11 @@ func show_item(id: InventoryManager.Item) -> void:
 		item.hide()
 
 
+func hide_item() -> void:
+	for item in items:
+		item.hide()
+
+
 func show_item_to_take() -> void:
 	show_item(item_to_take_id)
 
@@ -49,11 +54,6 @@ func show_equipped_item() -> void:
 		if item.id == item_equipped_id:
 			item.show()
 			continue
-		item.hide()
-
-
-func hide_item() -> void:
-	for item in items:
 		item.hide()
 
 
@@ -73,6 +73,16 @@ func add_item(id: InventoryManager.Item) -> void:
 		func():
 			hide()
 	)
+
+
+func remove_item(id: InventoryManager.Item) -> void:
+	hide_item()
+	items.erase(id)
+	
+	for item in hbox_container.get_children():
+		if item.id == id:
+			item.queue_free()
+			return
 
 
 func show_ui() -> void:
@@ -99,8 +109,12 @@ func hide_ui() -> void:
 	)
 
 
+func has_item_equipped() -> bool:
+	return item_equipped_id != -1
+
+
 func _on_Inventory_item_pressed(id: InventoryManager.Item) -> void:
-	print_debug("Player has choose %s from his inventory" % InventoryManager.Item.find_key(id))
+	print_debug("Player has choose %s from his inventory" % InventoryManager.item_to_string(id))
 	inventory_item_equipped.emit(id)
 	item_equipped_id = id
 	show_equipped_item()

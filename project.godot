@@ -9,6 +9,16 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Interactable",
+"class": &"Collectable",
+"language": &"GDScript",
+"path": "res://src/commons/interactables/Collectable.gd"
+}, {
+"base": "Interactable",
+"class": &"Combinable",
+"language": &"GDScript",
+"path": "res://src/commons/interactables/Combinable.gd"
+}, {
 "base": "Node",
 "class": &"Interactable",
 "language": &"GDScript",
@@ -40,6 +50,8 @@ _global_script_classes=[{
 "path": "res://src/commons/state_machine/StateMachine.gd"
 }]
 _global_script_class_icons={
+"Collectable": "",
+"Combinable": "",
 "Interactable": "",
 "Move": "",
 "Player": "",

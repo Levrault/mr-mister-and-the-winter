@@ -20,12 +20,12 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_Body_entered(body: Node3D) -> void:
 	if not body is Player:
 		return
-	body.exclamation_point.show()
+	body.interaction_indicator.show()
 	set_process_unhandled_input(true)
 
 
 func _on_Body_exited(body: Node3D) -> void:
 	if not body is Player:
 		return
-	body.exclamation_point.hide()
+	body.interaction_indicator.hide()
 	set_process_unhandled_input(false)
