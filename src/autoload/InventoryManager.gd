@@ -2,6 +2,7 @@ extends Node
 
 enum Item {
 	CUP,
+	THERMOSTAT_BUTTON,
 	TIRE_1,
 	TIRE_2,
 	TIRE_3,
@@ -11,14 +12,6 @@ enum Item {
 
 var items := []
 var destroyed_items := []
-
-
-func _ready() -> void:
-	# to remove
-	items.append(Item.CUP)
-	items.append(Item.TIRE_1)
-	items.append(Item.TIRE_2)
-	items.append(Item.SHOVEL)
 
 
 func add_item(id: Item) -> void:

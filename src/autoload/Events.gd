@@ -14,3 +14,5 @@ signal loading_screen_animation_finished
 signal map_changed_for(path, portal_id)
 
 signal inventory_item_added(id)
+
+signal quest_accomplished(id)

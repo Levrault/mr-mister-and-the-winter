@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmpqfa7egcxtn"]
+
+[ext_resource type="PackedScene" uid="uid://c7ebsiywtrgkj" path="res://assets_raw/thermostat_button.glb" id="1_750ky"]
+[ext_resource type="Script" path="res://src/commons/interactables/Collectable.gd" id="2_64c6u"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cpkdq"]
+data = PackedVector3Array(0, -0.0364, -0.0728, 0.0631, 0.0364, -0.0364, 0, 0.0364, -0.0728, 0, -0.0364, -0.0728, 0.0631, -0.0364, -0.0364, 0.0631, 0.0364, -0.0364, 0.0631, -0.0364, -0.0364, 0.0631, 0.0364, 0.0364, 0.0631, 0.0364, -0.0364, 0.0631, -0.0364, -0.0364, 0.0631, -0.0364, 0.0364, 0.0631, 0.0364, 0.0364, 0.0631, -0.0364, 0.0364, 0, 0.0364, 0.0728, 0.0631, 0.0364, 0.0364, 0.0631, -0.0364, 0.0364, 0, -0.0364, 0.0728, 0, 0.0364, 0.0728, 0, -0.0364, 0.0728, -0.0631, 0.0364, 0.0364, 0, 0.0364, 0.0728, 0, -0.0364, 0.0728, -0.0631, -0.0364, 0.0364, -0.0631, 0.0364, 0.0364, 0.0631, 0.0364, 0.0364, 0, 0.0364, -0.0728, 0.0631, 0.0364, -0.0364, 0, 0.0364, -0.0728, -0.0631, 0.0364, 0.0364, -0.0631, 0.0364, -0.0364, -0.0631, 0.0364, 0.0364, 0.0631, 0.0364, 0.0364, 0, 0.0364, 0.0728, 0, 0.0364, -0.0728, 0.0631, 0.0364, 0.0364, -0.0631, 0.0364, 0.0364, -0.0631, -0.0364, 0.0364, -0.0631, 0.0364, -0.0364, -0.0631, 0.0364, 0.0364, -0.0631, -0.0364, 0.0364, -0.0631, -0.0364, -0.0364, -0.0631, 0.0364, -0.0364, -0.0631, -0.0364, -0.0364, 0, 0.0364, -0.0728, -0.0631, 0.0364, -0.0364, -0.0631, -0.0364, -0.0364, 0, -0.0364, -0.0728, 0, 0.0364, -0.0728, -0.0631, -0.0364, -0.0364, 0.0631, -0.0364, -0.0364, 0, -0.0364, -0.0728, 0.0631, -0.0364, -0.0364, 0, -0.0364, 0.0728, 0.0631, -0.0364, 0.0364, 0, -0.0364, 0.0728, -0.0631, -0.0364, -0.0364, -0.0631, -0.0364, 0.0364, 0.0631, -0.0364, -0.0364, -0.0631, -0.0364, -0.0364, 0, -0.0364, 0.0728)
+
+[node name="ThermostatButton" instance=ExtResource("1_750ky")]
+script = ExtResource("2_64c6u")
+quest = 0
+id = 1
+text = "Hey, this is the button of my overpriced thermostat!"
+
+[node name="ThermostatButton" parent="." index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.0248252, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ThermostatButton" index="0"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ThermostatButton/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_cpkdq")

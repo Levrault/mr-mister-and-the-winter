@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://btkr2kjpfejc2"]
+[gd_scene load_steps=26 format=3 uid="uid://btkr2kjpfejc2"]
 
 [ext_resource type="Script" path="res://src/player/Player.gd" id="1_qler6"]
 [ext_resource type="PackedScene" uid="uid://bff4aanthlaj1" path="res://assets_raw/mr_mister.glb" id="1_xktf5"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://dgqetnxlxf3bf" path="res://src/environment/Cup.tscn" id="5_1dfnk"]
 [ext_resource type="Script" path="res://src/player/state_machine/Idle.gd" id="5_r30nh"]
 [ext_resource type="Script" path="res://src/player/state_machine/Walk.gd" id="6_p7rhy"]
+[ext_resource type="PackedScene" uid="uid://dmpqfa7egcxtn" path="res://src/environment/ThermostatButton.tscn" id="7_lnxki"]
+[ext_resource type="PackedScene" uid="uid://d2odaiw3v6a6q" path="res://src/environment/Wheel.tscn" id="8_xenq2"]
 [ext_resource type="Script" path="res://src/player/state_machine/Interact.gd" id="9_w1d6x"]
 [ext_resource type="Script" path="res://src/player/state_machine/Take.gd" id="12_n2yqy"]
 [ext_resource type="Script" path="res://src/player/state_machine/CheckInventory.gd" id="12_o3ux7"]
@@ -667,7 +669,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rnenn"]
-size = Vector3(0.248, 1, 0.5)
+size = Vector3(0.309, 1.056, 0.5)
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 5
@@ -724,12 +726,33 @@ cast_shadow = 0
 [node name="Cup" parent="Pivot/Model/HandRight" index="0" instance=ExtResource("5_1dfnk")]
 transform = Transform3D(-0.0413624, -2.49966, -2.22173e-07, 2.49966, -0.0413624, 2.18527e-07, -2.22173e-07, -2.18527e-07, 2.5, 0.0259711, -0.0834436, 0.0669395)
 visible = false
-can_be_queue_free = false
 text = "A nice coffee cup"
 
 [node name="StaticBody3D" parent="Pivot/Model/HandRight/Cup/Cup" index="0"]
 collision_layer = 0
-collision_mask = 0
+
+[node name="CollisionShape3D" parent="Pivot/Model/HandRight/Cup/Cup/StaticBody3D" index="0"]
+disabled = true
+
+[node name="ThermostatButton" parent="Pivot/Model/HandRight" index="1" instance=ExtResource("7_lnxki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0499876, -0.0781817, -2.79397e-09)
+visible = false
+
+[node name="StaticBody3D" parent="Pivot/Model/HandRight/ThermostatButton/ThermostatButton" index="0"]
+collision_layer = 0
+
+[node name="CollisionShape3D" parent="Pivot/Model/HandRight/ThermostatButton/ThermostatButton/StaticBody3D" index="0"]
+disabled = true
+
+[node name="Wheel" parent="Pivot/Model/HandRight" index="2" instance=ExtResource("8_xenq2")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.160667, -0.0296003, 0.0508756)
+visible = false
+
+[node name="StaticBody3D" parent="Pivot/Model/HandRight/Wheel/Wheel" index="0"]
+collision_layer = 0
+
+[node name="CollisionShape3D" parent="Pivot/Model/HandRight/Wheel/Wheel/StaticBody3D" index="0"]
+disabled = true
 
 [node name="Hat" parent="Pivot/Model" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000830734, 0.57391, -0.0476565)
@@ -811,8 +834,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Inventory/PanelContainer"]
-offset_right = 400.0
-offset_bottom = 32.0
 
 [editable path="Pivot/Model"]
 [editable path="Pivot/Model/HandRight/Cup"]
+[editable path="Pivot/Model/HandRight/ThermostatButton"]
+[editable path="Pivot/Model/HandRight/Wheel"]

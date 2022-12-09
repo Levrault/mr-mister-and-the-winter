@@ -44,9 +44,10 @@ func unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and owner.object_to_interact != null:
 		_state_machine.transition_to("Move/Idle/Interact")
 		return
-	if event.is_action_pressed("inventory"):
+	if event.is_action_pressed("inventory") and not owner.inventory.visible:
 		_state_machine.transition_to("Move/Idle/CheckInventory")
 		return
+
 
 func physics_process(delta: float) -> void:
 	if not owner.is_on_floor():

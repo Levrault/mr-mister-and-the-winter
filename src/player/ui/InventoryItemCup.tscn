@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqac2k3yh20qi"]
-
-[ext_resource type="PackedScene" uid="uid://ffgpkouclfho" path="res://src/player/ui/InventoryItem.tscn" id="1_5sfqx"]
-[ext_resource type="Texture2D" uid="uid://bkfg638uln23s" path="res://assets/textures/inventory/cup.png" id="2_as1rh"]
-
-[node name="InventoryItemCup" instance=ExtResource("1_5sfqx")]
-texture_normal = ExtResource("2_as1rh")

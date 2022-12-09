@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://b3vhkfr4rj3ki"]
+[gd_scene load_steps=19 format=3 uid="uid://b3vhkfr4rj3ki"]
 
 [ext_resource type="Environment" uid="uid://ck1htmu8kds5b" path="res://src/maps/WorldEnvironment.tres" id="1_asfp0"]
+[ext_resource type="Script" path="res://src/maps/Bedroom.gd" id="1_pn465"]
 [ext_resource type="PackedScene" uid="uid://bnq1tmpsus5f8" path="res://src/vfx/DirectionalLightInterior.tscn" id="2_5la2y"]
 [ext_resource type="PackedScene" uid="uid://v25kgops4x25" path="res://src/environment/BedroomFloorAndWalls.tscn" id="2_56vnp"]
 [ext_resource type="LightmapGIData" uid="uid://bgcm3bk7gbfny" path="res://src/maps/Bedroom.lmbake" id="2_kjh7q"]
@@ -12,8 +13,18 @@
 [ext_resource type="PackedScene" uid="uid://c0bgda4oqmi3m" path="res://src/environment/Drawers.tscn" id="8_4duhs"]
 [ext_resource type="PackedScene" path="res://src/environment/StorageCabinet.tscn" id="9_1x23u"]
 [ext_resource type="PackedScene" uid="uid://otypngwm5bkh" path="res://src/environment/Lamp.tscn" id="10_mv84l"]
+[ext_resource type="PackedScene" uid="uid://8aglll3cx8t1" path="res://src/environment/Thermostat.tscn" id="12_q8c1d"]
+[ext_resource type="PackedScene" uid="uid://dmpqfa7egcxtn" path="res://src/environment/ThermostatButton.tscn" id="13_ecojn"]
+[ext_resource type="PackedScene" uid="uid://d2odaiw3v6a6q" path="res://src/environment/Wheel.tscn" id="14_x7udd"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1lhbj"]
+size = Vector2(0.7, 0.7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5hc42"]
+albedo_color = Color(0.0313726, 0.301961, 0.207843, 1)
 
 [node name="Bedroom" type="Node3D"]
+script = ExtResource("1_pn465")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_asfp0")
@@ -22,6 +33,7 @@ environment = ExtResource("1_asfp0")
 visible = false
 quality = 0
 interior = true
+use_denoiser = false
 light_data = ExtResource("2_kjh7q")
 
 [node name="Lights" type="Node3D" parent="."]
@@ -35,18 +47,25 @@ light_data = ExtResource("2_kjh7q")
 [node name="BedroomInvisibleWalls" parent="Environments" instance=ExtResource("5_vw8at")]
 
 [node name="PortalToKitchen" parent="Environments" instance=ExtResource("4_nnb2x")]
+unique_name_in_owner = true
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.31839, 0.0780835, 0)
 next_map = "res://src/maps/KitchenAndLivingRoom.tscn"
 portal_id = "PortalToBedroom"
+text = "GRRRRR! It's way too cold to leave this room! I need to setup the temperature for tonigh"
+
+[node name="PortalDirection" type="MeshInstance3D" parent="Environments/PortalToKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.356945, 0, 1.03392e-08)
+mesh = SubResource("PlaneMesh_1lhbj")
+surface_material_override/0 = SubResource("StandardMaterial3D_5hc42")
 
 [node name="Bed" parent="Environments" instance=ExtResource("6_8pqek")]
 transform = Transform3D(0.905953, 0, -0.00928188, 0, 0.906, 0, 0.00928188, 0, 0.905953, -1, 0, 0)
 
 [node name="Drawers" parent="Environments" instance=ExtResource("8_4duhs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77467, 0.0243569, 1.43775)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77467, 0.0243569, 2.06255)
 
 [node name="Drawers3" parent="Environments" instance=ExtResource("8_4duhs")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.03561, 0.0243569, 1.43775)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.03561, 0.0243569, 1.40698)
 
 [node name="Drawers2" parent="Environments" instance=ExtResource("8_4duhs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, -1.77467, 0.0243569, -0.90823)
@@ -57,9 +76,19 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.0098
 [node name="Lamp" parent="Environments" instance=ExtResource("10_mv84l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86165, 0.525674, -0.997775)
 
+[node name="Thermostat" parent="Environments" instance=ExtResource("12_q8c1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02872, 0.761112, 0.90149)
+
+[node name="ThermostatButton" parent="Environments" instance=ExtResource("13_ecojn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.339728, 0.0840748, -1.60829)
+
+[node name="Wheel" parent="Environments" instance=ExtResource("14_x7udd")]
+transform = Transform3D(0.785727, 0.618573, 0, -0.618573, 0.785727, 0, 0, 0, 1, 0.0721576, 0.419561, 0.056132)
+text = "Hey!? This is a real wheel"
+
 [node name="CameraInterior" parent="." instance=ExtResource("2_vh4lf")]
 
 [node name="Player" parent="." instance=ExtResource("7_llsmb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.908801, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05344, 0.0669036, 0.955022)
 
 [editable path="Environments/PortalToKitchen"]
