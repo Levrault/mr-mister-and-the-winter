@@ -1,5 +1,9 @@
 ## Credits
 
+## Textures
+
+https://opengameart.org/content/seamless-snow-texture-0
+
 ## Sounds
 
 [Freesound - &quot;opening_closing_fridge.aiff&quot; by KlankOntwerp](https://freesound.org/people/KlankOntwerp/sounds/106488/)
