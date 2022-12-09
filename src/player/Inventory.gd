@@ -4,7 +4,7 @@ signal inventory_item_equipped(id)
 
 const SHOW_UI_TIME := 1.5
 
-var InventoryItem = preload("res://src/player/ui/InventoryItem.tscn")
+var InventoryItem = preload("res://src/player/hud/InventoryItem.tscn")
 
 var items := []
 var item_to_take_id: int = -1

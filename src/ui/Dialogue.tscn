@@ -1,6 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://duldg06gsyh41"]
+[gd_scene load_steps=6 format=3 uid="uid://duldg06gsyh41"]
 
 [ext_resource type="Script" path="res://src/ui/Dialogue.gd" id="1_3nduq"]
+
+[sub_resource type="Animation" id="Animation_0w7os"]
+resource_name = "interact"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractIcon:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wmu2i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractIcon:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i3nt7"]
+_data = {
+"RESET": SubResource("Animation_wmu2i"),
+"interact": SubResource("Animation_0w7os")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf87p"]
 bg_color = Color(0, 0, 0, 0.784314)
@@ -18,9 +55,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3nduq")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_i3nt7")
+}
+
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(400, 180)
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -36,7 +77,8 @@ pivot_offset = Vector2(200, 90)
 theme_override_styles/panel = SubResource("StyleBoxFlat_bf87p")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-layout_mode = 2
+offset_right = 400.0
+offset_bottom = 180.0
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 8
@@ -44,7 +86,10 @@ theme_override_constants/margin_bottom = 8
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer"]
 unique_name_in_owner = true
-layout_mode = 2
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 392.0
+offset_bottom = 172.0
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat semper risus, porttitor tristique tellus lobortis vel. Phasellus eget rhoncus nisl. Morbi faucibus tortor eget iaculis fringilla."
 scroll_active = false
@@ -52,7 +97,6 @@ scroll_active = false
 [node name="QuestionContainer" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
 visible = false
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -67,10 +111,21 @@ grow_vertical = 2
 theme_override_constants/separation = 32
 
 [node name="No" type="Button" parent="QuestionContainer"]
-layout_mode = 2
 text = "NO
 "
 
 [node name="Yes" type="Button" parent="QuestionContainer"]
-layout_mode = 2
 text = "YES"
+
+[node name="InteractIcon" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 160.0
+offset_top = 82.0
+offset_right = 176.0
+offset_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2

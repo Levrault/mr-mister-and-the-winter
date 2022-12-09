@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://btkr2kjpfejc2"]
+[gd_scene load_steps=26 format=3 uid="uid://cqg3hmfi8tudg"]
 
 [ext_resource type="Script" path="res://src/player/Player.gd" id="1_qler6"]
 [ext_resource type="PackedScene" uid="uid://bff4aanthlaj1" path="res://assets_raw/mr_mister.glb" id="1_xktf5"]
@@ -7,16 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://c7n5qpyc1a8ti" path="res://assets/textures/shadow.png" id="3_3mvop"]
 [ext_resource type="Script" path="res://src/commons/state_machine/StateMachine.gd" id="3_7asoy"]
 [ext_resource type="Texture2D" uid="uid://by4uw7cp10553" path="res://assets/textures/interrrogation_point.png" id="3_k2y4x"]
-[ext_resource type="Script" path="res://src/player/state_machine/Move.gd" id="4_d3e3n"]
 [ext_resource type="PackedScene" uid="uid://dgqetnxlxf3bf" path="res://src/environment/Cup.tscn" id="5_1dfnk"]
-[ext_resource type="Script" path="res://src/player/state_machine/Idle.gd" id="5_r30nh"]
-[ext_resource type="Script" path="res://src/player/state_machine/Walk.gd" id="6_p7rhy"]
 [ext_resource type="PackedScene" uid="uid://dmpqfa7egcxtn" path="res://src/environment/ThermostatButton.tscn" id="7_lnxki"]
 [ext_resource type="PackedScene" uid="uid://d2odaiw3v6a6q" path="res://src/environment/Wheel.tscn" id="8_xenq2"]
-[ext_resource type="Script" path="res://src/player/state_machine/Interact.gd" id="9_w1d6x"]
-[ext_resource type="Script" path="res://src/player/state_machine/Take.gd" id="12_n2yqy"]
-[ext_resource type="Script" path="res://src/player/state_machine/CheckInventory.gd" id="12_o3ux7"]
+[ext_resource type="Script" path="res://src/player/state_machine/Move/Move.gd" id="11_aelo5"]
 [ext_resource type="Script" path="res://src/player/Inventory.gd" id="12_u387h"]
+[ext_resource type="Script" path="res://src/player/state_machine/Move/Idle/Idle.gd" id="12_y1i7i"]
+[ext_resource type="Script" path="res://src/player/state_machine/Move/Idle/Interact.gd" id="13_1ctiu"]
+[ext_resource type="Script" path="res://src/player/state_machine/Move/Idle/Take.gd" id="14_7il23"]
+[ext_resource type="Script" path="res://src/player/state_machine/Move/Idle/CheckInventory.gd" id="15_x1ldk"]
+[ext_resource type="Script" path="res://src/player/state_machine/Move/Walk.gd" id="16_w7rwn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pxdd2"]
 radius = 0.22014
@@ -792,23 +792,25 @@ texture = ExtResource("3_3mvop")
 script = ExtResource("3_7asoy")
 initial_state = NodePath("Move/Idle")
 
+[node name="Cinematic" type="Node3D" parent="StateMachine"]
+
 [node name="Move" type="Node3D" parent="StateMachine"]
-script = ExtResource("4_d3e3n")
+script = ExtResource("11_aelo5")
 
 [node name="Idle" type="Node3D" parent="StateMachine/Move"]
-script = ExtResource("5_r30nh")
+script = ExtResource("12_y1i7i")
 
 [node name="Interact" type="Node3D" parent="StateMachine/Move/Idle"]
-script = ExtResource("9_w1d6x")
+script = ExtResource("13_1ctiu")
 
 [node name="Take" type="Node3D" parent="StateMachine/Move/Idle"]
-script = ExtResource("12_n2yqy")
+script = ExtResource("14_7il23")
 
 [node name="CheckInventory" type="Node3D" parent="StateMachine/Move/Idle"]
-script = ExtResource("12_o3ux7")
+script = ExtResource("15_x1ldk")
 
 [node name="Walk" type="Node3D" parent="StateMachine/Move"]
-script = ExtResource("6_p7rhy")
+script = ExtResource("16_w7rwn")
 
 [node name="Inventory" type="Control" parent="."]
 top_level = true
@@ -834,6 +836,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Inventory/PanelContainer"]
+offset_right = 400.0
+offset_bottom = 32.0
 
 [editable path="Pivot/Model"]
 [editable path="Pivot/Model/HandRight/Cup"]

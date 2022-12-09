@@ -27,7 +27,7 @@ _global_script_classes=[{
 "base": "State",
 "class": &"Move",
 "language": &"GDScript",
-"path": "res://src/player/state_machine/Move.gd"
+"path": "res://src/player/state_machine/Move/Move.gd"
 }, {
 "base": "CharacterBody3D",
 "class": &"Player",
@@ -37,7 +37,7 @@ _global_script_classes=[{
 "base": "State",
 "class": &"PlayerWalkState",
 "language": &"GDScript",
-"path": "res://src/player/state_machine/Walk.gd"
+"path": "res://src/player/state_machine/Move/Walk.gd"
 }, {
 "base": "Node",
 "class": &"State",

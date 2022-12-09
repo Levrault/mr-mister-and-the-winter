@@ -1,0 +1,34 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://8sotxxfa8y0q"]
+
+[sub_resource type="Shader" id="1"]
+code = "shader_type canvas_item;
+
+uniform bool enabled = true;
+uniform vec2 target = vec2(0.5);
+uniform vec2 offset = vec2(-0.01, -0.05);
+uniform float circle_size: hint_range(0.0, 1.0);
+
+void fragment() {
+	
+	// keep current texture
+	COLOR = texture(TEXTURE, UV);
+	
+	if (enabled) {
+		// Convert to match aspect ratio
+		vec2 resolution = 1.0 / SCREEN_PIXEL_SIZE;
+		vec2 current_pixel = SCREEN_UV * resolution;
+		vec2 offset_target = target + offset;
+		vec2 target_pixel = vec2(offset_target.x, 1.0 - offset_target.y) * resolution;
+		float dist = distance(current_pixel, target_pixel);
+		float radius = circle_size * length(resolution);
+		COLOR.a = clamp(1.0 + dist - radius, 0.0, 1.0);
+	}
+
+}"
+
+[resource]
+shader = SubResource("1")
+shader_parameter/circle_size = 0.0
+shader_parameter/enabled = true
+shader_parameter/offset = null
+shader_parameter/target = null
