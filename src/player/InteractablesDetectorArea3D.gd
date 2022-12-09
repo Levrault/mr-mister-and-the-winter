@@ -25,9 +25,11 @@ func _on_Body_exited(_body: Node3D) -> void:
 
 
 # Used for portals
-func _on_Area_entered(_area: Area3D) -> void:
+func _on_Area_entered(area: Area3D) -> void:
 	owner.interaction_indicator.show()
+	owner.object_to_interact = area.owner
 
 
 func _on_Area_exited(_area: Area3D) -> void:
 	owner.interaction_indicator.hide()
+	owner.object_to_interact = null

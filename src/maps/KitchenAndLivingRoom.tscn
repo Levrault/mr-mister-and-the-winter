@@ -116,20 +116,20 @@ transform = Transform3D(-3.06289e-08, 0, -0.605259, 0, 0.273133, 0, 0.700707, 0,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.568153, 0, -2.53733)
 
 [node name="PortalToBedroom" parent="Environments" instance=ExtResource("19_0po74")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.09161, 0.0725, -0.875809)
 next_map = "res://src/maps/Bedroom.tscn"
 portal_id = "PortalToKitchen"
 
 [node name="DoorInterior" parent="Environments/PortalToBedroom" instance=ExtResource("21_2lvg4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0860081, 0.067885, -0.0666816)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.000769898, -0.193104)
 
 [node name="PortalToYard" parent="Environments" instance=ExtResource("19_0po74")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0174669, 0, -2.84473)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0174669, 0.0725001, -2.84473)
 next_map = "res://src/maps/Yard.tscn"
 portal_id = "PortalToKitchen"
 
 [node name="DoorExterior" parent="Environments/PortalToYard" instance=ExtResource("22_28po3")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0.0427649)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0523438, -0.0676001, 0.0183866)
 
 [node name="CoffeeMachine" parent="Environments" instance=ExtResource("24_0mhiy")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.74548, 0.609096, 2.27117)

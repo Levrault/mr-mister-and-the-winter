@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdtexyp8rblq2"]
-
-[ext_resource type="PackedScene" uid="uid://ffgpkouclfho" path="res://src/player/ui/InventoryItem.tscn" id="1_iwvdu"]
-[ext_resource type="Texture2D" uid="uid://dr7sgyqwbn44m" path="res://assets/textures/inventory/tire.png" id="2_u6fvw"]
-
-[node name="InventoryItemTire" instance=ExtResource("1_iwvdu")]
-texture_normal = ExtResource("2_u6fvw")

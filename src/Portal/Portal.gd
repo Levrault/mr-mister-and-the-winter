@@ -1,31 +1,20 @@
-extends Node3D
+extends Interactable
 
 @export var next_map := ""
 @export var portal_id := ""
+
+var is_active := true
+
 @onready var spawn := $Spawn
 @onready var look_at := $LookAt
 
 
-func _ready() -> void:
-	$Area3D.body_entered.connect(_on_Body_entered)
-	$Area3D.body_exited.connect(_on_Body_exited)
-	set_process_unhandled_input(false)
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	if (event.is_action_pressed("interact")):
+func start_interaction() -> void:
+	if is_active:
 		Events.map_changed_for.emit(next_map, portal_id)
-
-
-func _on_Body_entered(body: Node3D) -> void:
-	if not body is Player:
 		return
-	body.interaction_indicator.show()
-	set_process_unhandled_input(true)
+	Events.dialogue_interaction_started.emit(text)
 
 
-func _on_Body_exited(body: Node3D) -> void:
-	if not body is Player:
-		return
-	body.interaction_indicator.hide()
-	set_process_unhandled_input(false)
+func stop_interaction() -> void:
+	Events.dialogue_finished.emit()

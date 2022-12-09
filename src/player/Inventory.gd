@@ -2,7 +2,7 @@ extends Control
 
 signal inventory_item_equipped(id)
 
-const SHOW_UI_TIME := 3
+const SHOW_UI_TIME := 1.5
 
 var InventoryItem = preload("res://src/player/ui/InventoryItem.tscn")
 
@@ -65,7 +65,7 @@ func add_item(id: InventoryManager.Item) -> void:
 	inventory_item.pressed.connect(_on_Inventory_item_pressed.bind(id))
 	
 	show()
-	var tween_control = get_tree().create_tween().set_trans(Tween.TRANS_SINE)
+	var tween_control = create_tween().set_trans(Tween.TRANS_SINE)
 	tween_control.tween_property(self, "position", show_position, .25)
 	tween_control.tween_interval(SHOW_UI_TIME)
 	tween_control.tween_property(self, "position", hidden_position, .25)
@@ -90,7 +90,7 @@ func show_ui() -> void:
 		return
 	print_debug("Player SHOW his inventory")
 	show()
-	var tween_control = get_tree().create_tween().set_trans(Tween.TRANS_SINE)
+	var tween_control = create_tween().set_trans(Tween.TRANS_SINE)
 	tween_control.tween_property(self, "position", show_position, .25)
 	
 	if hbox_container.get_child_count() > 0:
@@ -101,7 +101,7 @@ func hide_ui() -> void:
 	if not visible:
 		return
 	print_debug("Player HIDE his inventory")
-	var tween_control = get_tree().create_tween().set_trans(Tween.TRANS_SINE)
+	var tween_control = create_tween().set_trans(Tween.TRANS_SINE)
 	tween_control.tween_property(self, "position", hidden_position, .25)
 	tween_control.tween_callback(
 		func():

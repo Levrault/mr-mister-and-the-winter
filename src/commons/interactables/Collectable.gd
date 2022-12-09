@@ -1,19 +1,20 @@
 extends Interactable
 class_name Collectable
 
+@export var quest: GameManager.Quest = GameManager.Quest.UNASSIGNED
 @export var id: InventoryManager.Item
-@export var can_be_queue_free := true
 
 
 func _ready() -> void:
-	add_to_group("collectable")
-	
-	if not can_be_queue_free:
+	if owner is Player:
 		return
 	
-	Events.inventory_item_added.connect(_on_Inventory_item_added)
-	if InventoryManager.has_item(id):
+	if InventoryManager.has_item(id) or GameManager.is_quest_accomplished(quest):
 		queue_free()
+		return
+	
+	add_to_group("collectable")
+	Events.inventory_item_added.connect(_on_Inventory_item_added)
 
 
 func start_collect() -> void:
