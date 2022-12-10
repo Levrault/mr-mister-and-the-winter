@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxbt37ugjy25j"]
+[gd_scene load_steps=9 format=3 uid="uid://c2c3p5ut8i17w"]
 
-[ext_resource type="Script" path="res://src/transitions/LoadingScreen.gd" id="1_j6ibr"]
-[ext_resource type="PackedScene" uid="uid://dprjlpxmbe257" path="res://src/Portal/DoorInterior.tscn" id="1_pxrw6"]
-[ext_resource type="PackedScene" uid="uid://bypeafkir4xg8" path="res://src/Portal/DoorExterior.tscn" id="2_6g57f"]
-[ext_resource type="AudioStream" uid="uid://cjlrthpe2ghuh" path="res://assets/sfx/doorOpen_1.ogg" id="3_gg10h"]
+[ext_resource type="Script" path="res://src/loading_screens/LoadingScreenPortal.gd" id="1_q51g7"]
+[ext_resource type="PackedScene" uid="uid://dprjlpxmbe257" path="res://src/portal/DoorInterior.tscn" id="2_op65o"]
+[ext_resource type="PackedScene" uid="uid://bypeafkir4xg8" path="res://src/portal/DoorExterior.tscn" id="3_ituer"]
+[ext_resource type="AudioStream" uid="uid://cjlrthpe2ghuh" path="res://assets/sfx/doorOpen_1.ogg" id="4_a2n6o"]
 
-[sub_resource type="Animation" id="Animation_kjwiw"]
+[sub_resource type="Animation" id="Animation_s6won"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -68,7 +68,7 @@ tracks/4/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_rjk1v"]
+[sub_resource type="Animation" id="Animation_3i7wa"]
 resource_name = "open"
 length = 2.5
 tracks/0/type = "value"
@@ -132,38 +132,38 @@ tracks/4/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ca66e"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ihi8s"]
 _data = {
-"RESET": SubResource("Animation_kjwiw"),
-"open": SubResource("Animation_rjk1v")
+"RESET": SubResource("Animation_s6won"),
+"open": SubResource("Animation_3i7wa")
 }
 
-[sub_resource type="Environment" id="Environment_4s1u3"]
+[sub_resource type="Environment" id="Environment_mboc2"]
 background_mode = 1
 background_energy_multiplier = 0.0
 ambient_light_source = 1
 reflected_light_source = 1
 
-[node name="LoadingScreen" type="Node3D"]
-script = ExtResource("1_j6ibr")
+[node name="LoadingScreenPortal" type="Node3D"]
+script = ExtResource("1_q51g7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ca66e")
+"": SubResource("AnimationLibrary_ihi8s")
 }
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_4s1u3")
+environment = SubResource("Environment_mboc2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.99923, 0.0392423, 0, -0.0392423, -0.99923, -0.437333, 0.67866, -1.86558)
 
 [node name="Pivot" type="Node3D" parent="."]
 
-[node name="DoorInterior" parent="Pivot" instance=ExtResource("1_pxrw6")]
+[node name="DoorInterior" parent="Pivot" instance=ExtResource("2_op65o")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.599337, 0, 0)
 
-[node name="DoorExterior" parent="Pivot" instance=ExtResource("2_6g57f")]
+[node name="DoorExterior" parent="Pivot" instance=ExtResource("3_ituer")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.379265, -0.0784139, 0.0498173)
 visible = false
 
@@ -171,7 +171,7 @@ visible = false
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -0.39907, 0.679967, -1.56646)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_gg10h")
+stream = ExtResource("4_a2n6o")
 
 [node name="Control" type="Control" parent="."]
 visible = false
@@ -183,7 +183,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Fade" type="ColorRect" parent="Control"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

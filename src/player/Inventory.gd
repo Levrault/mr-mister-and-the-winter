@@ -20,14 +20,19 @@ func _ready() -> void:
 	
 	hidden_position = Vector2(position.x, position.y + custom_minimum_size.y)
 	show_position = position
-	print(hidden_position)
-	print(show_position)
 	
 	for item in owner.pivot.get_node("Model/HandRight").get_children():
 		items.append(item)
 	for item in InventoryManager.items:
 		add_item(item)
 	hide_ui()
+
+
+func is_physical_item(id: InventoryManager.Item) -> bool:
+	for item in items:
+		if item.id == id:
+			return true
+	return false
 
 
 func show_item(id: InventoryManager.Item) -> void:
@@ -59,6 +64,9 @@ func show_equipped_item() -> void:
 
 func add_item(id: InventoryManager.Item) -> void:
 	print_debug("%s has been added to inventory" % InventoryManager.Item.find_key(id))
+	if not is_physical_item(id):
+		return
+	
 	var inventory_item := InventoryItem.instantiate()
 	hbox_container.add_child(inventory_item)
 	inventory_item.set_id(id)

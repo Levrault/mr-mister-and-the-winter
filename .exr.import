@@ -1,0 +1,28 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://cyyrha51w7i7c"
+path.etc2="res://.godot/imported/.exr-a7725c7e971a9679cf60303f5fa7defa.etc2.ctexarray"
+path.s3tc="res://.godot/imported/.exr-a7725c7e971a9679cf60303f5fa7defa.s3tc.ctexarray"
+metadata={
+"imported_formats": ["etc2", "s3tc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://.exr"
+dest_files=["res://.godot/imported/.exr-a7725c7e971a9679cf60303f5fa7defa.etc2.ctexarray", "res://.godot/imported/.exr-a7725c7e971a9679cf60303f5fa7defa.s3tc.ctexarray"]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/bptc_ldr=0
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=4
