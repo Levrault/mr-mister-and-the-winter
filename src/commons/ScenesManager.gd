@@ -71,7 +71,7 @@ func load_maps(path: String) -> void:
 	loading_screen.show()
 
 
-func _on_Map_changed_for(path: String, portal_id: String) -> void:
+func _on_Map_changed_for(path: String, portal_id: String, is_door_exterior := false) -> void:
 	set_process(true)
 	scene_path = path
 	last_portal_id = portal_id
@@ -83,6 +83,8 @@ func _on_Map_changed_for(path: String, portal_id: String) -> void:
 
 	# transition
 	loading_screen = LoadingScreenPortal.instantiate()
+	if is_door_exterior:
+		loading_screen.use_exterior_door_model()
 	add_child(loading_screen)
 	loading_screen.show()
 

@@ -21,8 +21,7 @@ func cinematic_finished(id: GameManager.Cinematic) -> void:
 	Events.dialogue_finished.disconnect($IntroductionCinematic/AnimationPlayer.play)
 	$Player.set_active(true)
 	$IntroductionCinematic.queue_free()
-	
-
+  
 
 func show_radio_text() -> void:
 	Events.dialogue_interaction_started.emit(radio_text)

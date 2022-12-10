@@ -2,12 +2,14 @@ extends Node
 
 enum Item {
 	CUP,
+	HAT,
 	THERMOSTAT_BUTTON,
 	TIRE_1,
 	TIRE_2,
 	TIRE_3,
 	TIRE_4,
-	SHOVEL
+	SHOVEL,
+	UNASSIGNED
 }
 
 var items := []

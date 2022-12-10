@@ -11,7 +11,7 @@ signal dialogue_question_answered(answer)
 
 signal loading_screen_animation_finished
 
-signal map_changed_for(path, portal_id)
+signal map_changed_for(path, portal_id, is_door_exterior)
 
 signal inventory_item_added(id)
 

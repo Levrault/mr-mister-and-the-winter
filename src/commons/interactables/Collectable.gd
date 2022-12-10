@@ -3,6 +3,7 @@ class_name Collectable
 
 @export var quest: GameManager.Quest = GameManager.Quest.UNASSIGNED
 @export var id: InventoryManager.Item
+@export var complete_quest_by_being_collected := false
 
 
 func _ready() -> void:
@@ -28,4 +29,6 @@ func show_text() -> void:
 func _on_Inventory_item_added(item_id: InventoryManager.Item) -> void:
 	if item_id != id:
 		return
+	if complete_quest_by_being_collected:
+		GameManager.quest_done(quest)
 	queue_free()

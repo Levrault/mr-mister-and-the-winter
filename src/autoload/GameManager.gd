@@ -2,6 +2,8 @@ extends Node
 
 enum Quest {
 	THERMOSTAT,
+	BOOTS,
+	HAT,
 	TIRE_1,
 	TIRE_2,
 	TIRE_3,
@@ -47,6 +49,8 @@ func is_cinematic_accomplished(id: Cinematic) -> bool:
 
 
 func quest_done(id: Quest) -> void:
+	if id == Quest.UNASSIGNED:
+		return
 	print_debug("%s quest has been accomplished" % Quest.find_key(id))
 	flags_list[Quest.find_key(id)] = true
 	Events.quest_accomplished.emit(id)
