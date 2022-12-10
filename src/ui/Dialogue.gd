@@ -9,6 +9,7 @@ func _ready() -> void:
 	Events.dialogue_finished.connect(_on_Dialogue_finished)
 	$QuestionContainer/Yes.pressed.connect(_on_Yes_pressed)
 	$QuestionContainer/No.pressed.connect(_on_No_pressed)
+	$InteractIcon.hide()
 	hide()
 
 
@@ -17,7 +18,14 @@ func reset_dialogue_before_animation(text: String) -> void:
 	%RichTextLabel.visible_ratio = 0
 	$PanelContainer.scale = Vector2.ZERO
 	%QuestionContainer.hide()
+	$InteractIcon.hide()
+	$AnimationPlayer.stop()
 	show()
+
+
+func enable_interact_icone() -> void:
+	$InteractIcon.show()
+	$AnimationPlayer.play("interact")
 
 
 func _on_Dialogue_interaction_started(text: String) -> void:
@@ -32,6 +40,7 @@ func _on_Dialogue_interaction_started(text: String) -> void:
 			tween_rich_text.tween_callback(
 				func():
 					Events.dialogue_text_displayed.emit()
+					enable_interact_icone()
 			)
 
 	)
@@ -48,8 +57,8 @@ func _on_Dialogue_collectable_started(text: String) -> void:
 			tween_rich_text.tween_property(%RichTextLabel, "visible_ratio", 1, .5)
 			tween_rich_text.tween_callback(
 				func():
-						%QuestionContainer.show()
-						%QuestionContainer.get_node("Yes").grab_focus()
+					%QuestionContainer.show()
+					%QuestionContainer.get_node("Yes").grab_focus()
 			)
 	)
 
@@ -66,6 +75,7 @@ func _on_Dialogue_combinable_started(text: String) -> void:
 			tween_rich_text.tween_callback(
 				func():
 					Events.dialogue_text_displayed.emit()
+					enable_interact_icone()
 			)
 	)
 

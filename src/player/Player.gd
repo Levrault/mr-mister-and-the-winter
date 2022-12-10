@@ -14,3 +14,11 @@ var object_to_interact: Node3D = null
 
 func _ready() -> void:
 	GameManager.player = self
+
+
+func set_active(value: bool) -> void:
+	set_process(value)
+	state_machine.set_process(value)
+	state_machine.set_physics_process(value)
+	state_machine.set_process_input(value)
+	state_machine.set_process_unhandled_input(value)

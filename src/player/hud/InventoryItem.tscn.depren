@@ -1,0 +1,3 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/player/ui/InventoryItem.gd" id="1_pgnrq"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://sg2dlio0327v"]
+
+[ext_resource type="Script" path="res://src/player/hud/InventoryItem.gd" id="1_l83h0"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uocjn"]
+size = Vector2(32, 32)
+
+[node name="InventoryItem" type="TextureButton"]
+custom_minimum_size = Vector2(32, 32)
+texture_focused = SubResource("PlaceholderTexture2D_uocjn")
+script = ExtResource("1_l83h0")

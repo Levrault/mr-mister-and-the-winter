@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://8slan00w6ex0"]
+
+[ext_resource type="PackedScene" uid="uid://bff4aanthlaj1" path="res://assets_raw/mr_mister.glb" id="1_36fi8"]
+
+[node name="PlayerModel" instance=ExtResource("1_36fi8")]

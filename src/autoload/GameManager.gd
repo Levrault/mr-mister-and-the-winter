@@ -8,6 +8,11 @@ enum Quest {
 	TIRE_4,
 	UNASSIGNED
 }
+enum Cinematic {
+	INTRODUCTION_CINEMATIC,
+	CAR_CINEMATIC,
+	END_CREDITS
+}
 
 var player: Player = null
 var flags_list := {}
@@ -15,6 +20,8 @@ var flags_list := {}
 
 func _ready() -> void:
 	for key in Quest.keys():
+		flags_list[key] = false
+	for key in Cinematic.keys():
 		flags_list[key] = false
 
 
@@ -31,8 +38,16 @@ func is_quest_accomplished(id: Quest) -> bool:
 	return flags_list[Quest.find_key(id)]
 
 
+func is_cinematic_accomplished(id: Cinematic) -> bool:
+	return flags_list[Quest.find_key(id)]
+
+
 func quest_done(id: Quest) -> void:
 	print_debug("%s quest has been accomplished" % Quest.find_key(id))
 	flags_list[Quest.find_key(id)] = true
 	Events.quest_accomplished.emit(id)
 
+
+func cinematic_done(id: Cinematic) -> void:
+	print_debug("%s cinematic is overd" % Cinematic.find_key(id))
+	flags_list[Cinematic.find_key(id)] = true
