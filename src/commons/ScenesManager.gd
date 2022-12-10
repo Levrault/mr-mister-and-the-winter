@@ -1,6 +1,24 @@
 extends Node
+class_name SceneManager
 
-var LoadingScreen := preload("res://src/transitions/LoadingScreen.tscn")
+enum Maps {
+	BEDROOM,
+	KITCHEN_LIVING_ROOM,
+	YARD
+}
+enum LoadingType {
+	Portal,
+	Transition
+}
+
+const BEDROOM_MAP_PATH := "res://src/maps/Bedroom.tscn"
+const KITCHEN_LIVING_ROOM_MAP_PATH := "res://src/maps/KitchenAndLivingRoom.tscn"
+const YARD_PATH := "res://src/maps/Yard.tscn"
+
+@export var map = Maps.BEDROOM
+
+var LoadingScreenPortal := preload("res://src/loading_screens/LoadingScreenPortal.tscn")
+var LoadingScreenText := preload("res://src/loading_screens/LoadingScreenText.tscn")
 var current_scene: Node3D = null
 var status := 0
 var scene_path := ""
@@ -9,10 +27,22 @@ var last_portal_id := ""
 var loading_screen = null
 
 
+static func get_map_path(id: Maps) -> String:
+	match id:
+		Maps.BEDROOM:
+			return BEDROOM_MAP_PATH
+		Maps.KITCHEN_LIVING_ROOM:
+			return KITCHEN_LIVING_ROOM_MAP_PATH
+		Maps.YARD:
+			return YARD_PATH
+	printerr("the path doesn't map any Map enum")
+	return ""
+
+
 func _ready() -> void:
 	Events.map_changed_for.connect(_on_Map_changed_for)
-	current_scene = get_child(0)
-	set_process(false)
+	
+	load_maps(SceneManager.get_map_path(map))
 
 
 func _process(_delta: float):
@@ -22,7 +52,23 @@ func _process(_delta: float):
 		current_scene = resource.instantiate()
 		add_child(current_scene)
 		can_add_resource_on_process = false
+		loading_screen.queue_free()
 		set_process(false)
+
+
+func load_maps(path: String) -> void:
+	set_process(true)
+	scene_path = path
+	ResourceLoader.load_threaded_request(scene_path)
+	
+	if get_child_count() > 0:
+		get_child(0).queue_free() 
+	Events.loading_screen_animation_finished.connect(_on_Loading_screen_animation_finished)
+
+	# transition
+	loading_screen = LoadingScreenText.instantiate()
+	add_child(loading_screen)
+	loading_screen.show()
 
 
 func _on_Map_changed_for(path: String, portal_id: String) -> void:
@@ -30,11 +76,13 @@ func _on_Map_changed_for(path: String, portal_id: String) -> void:
 	scene_path = path
 	last_portal_id = portal_id
 	ResourceLoader.load_threaded_request(scene_path)
-	current_scene.queue_free() 
+	
+	if get_child_count() > 0:
+		get_child(0).queue_free() 
 	Events.loading_screen_animation_finished.connect(_on_Loading_screen_animation_finished)
 
 	# transition
-	loading_screen = LoadingScreen.instantiate()
+	loading_screen = LoadingScreenPortal.instantiate()
 	add_child(loading_screen)
 	loading_screen.show()
 

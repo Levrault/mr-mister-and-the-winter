@@ -1,0 +1,6 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://src/loading_screens/LoadingScreen.gd" id="1_dgneb"]
+[ext_resource type="PackedScene" uid="uid://dprjlpxmbe257" path="res://src/portal/DoorInterior.tscn" id="2_8dw0l"]
+[ext_resource type="PackedScene" uid="uid://bypeafkir4xg8" path="res://src/portal/DoorExterior.tscn" id="3_odihu"]
+[ext_resource type="AudioStream" uid="uid://cjlrthpe2ghuh" path="res://assets/sfx/doorOpen_1.ogg" id="4_6nfb5"]

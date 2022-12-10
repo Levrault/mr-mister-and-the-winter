@@ -23,6 +23,10 @@ func _ready() -> void:
 		flags_list[key] = false
 	for key in Cinematic.keys():
 		flags_list[key] = false
+	
+	# fake flag to remove
+	flags_list[Quest.find_key(Quest.THERMOSTAT)] = true
+	flags_list[Quest.find_key(Cinematic.INTRODUCTION_CINEMATIC)] = true
 
 
 func spawn_player(portal_id: String) -> void:

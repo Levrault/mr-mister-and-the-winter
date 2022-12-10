@@ -40,6 +40,11 @@ _global_script_classes=[{
 "path": "res://src/player/state_machine/Move/Walk.gd"
 }, {
 "base": "Node",
+"class": &"SceneManager",
+"language": &"GDScript",
+"path": "res://src/commons/ScenesManager.gd"
+}, {
+"base": "Node",
 "class": &"State",
 "language": &"GDScript",
 "path": "res://src/commons/state_machine/State.gd"
@@ -56,6 +61,7 @@ _global_script_class_icons={
 "Move": "",
 "Player": "",
 "PlayerWalkState": "",
+"SceneManager": "",
 "State": "res://editor/icons/state.svg",
 "StateMachine": "res://editor/icons/state_machine.svg"
 }

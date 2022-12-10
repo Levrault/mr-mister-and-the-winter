@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ntp16k7odix"]
+[gd_scene load_steps=8 format=3 uid="uid://ntp16k7odix"]
 
 [ext_resource type="Material" uid="uid://udnog05k51g5" path="res://assets/shaders/gausian-blur.tres" id="1_3tc83"]
 [ext_resource type="Script" path="res://src/Main.gd" id="1_yu8vo"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://duldg06gsyh41" path="res://src/ui/Dialogue.tscn" id="5_llyv1"]
 [ext_resource type="Material" uid="uid://b3qmyswubafo1" path="res://assets/shaders/crt_tv.tres" id="5_lx0oi"]
 [ext_resource type="Script" path="res://src/commons/ScenesManager.gd" id="6_12i7x"]
-[ext_resource type="PackedScene" uid="uid://b3vhkfr4rj3ki" path="res://src/maps/Bedroom.tscn" id="7_52t4k"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_yu8vo")
@@ -59,8 +58,7 @@ render_target_update_mode = 4
 [node name="ScenesManager" type="Node3D" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport"]
 process_mode = 1
 script = ExtResource("6_12i7x")
-
-[node name="Bedroom" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport/ScenesManager" instance=ExtResource("7_52t4k")]
+map = 1
 
 [node name="CrtTvEffect" type="ColorRect" parent="N64Layer"]
 unique_name_in_owner = true
