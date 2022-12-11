@@ -4,13 +4,11 @@ enum Quest {
 	THERMOSTAT,
 	BOOTS,
 	HAT,
-	SHOVEL,
-	TIRE_1,
-	TIRE_2,
-	TIRE_3,
-	TIRE_4,
+	TIRES,
+	CAR_TIRES,
 	UNASSIGNED
 }
+
 enum Cinematic {
 	INTRODUCTION_CINEMATIC,
 	CAR_CINEMATIC,
@@ -32,6 +30,7 @@ func _ready() -> void:
 	flags_list[Quest.find_key(Cinematic.INTRODUCTION_CINEMATIC)] = true
 	flags_list[Quest.find_key(Quest.BOOTS)] = true
 	flags_list[Quest.find_key(Quest.HAT)] = true
+	flags_list[Quest.find_key(Quest.TIRES)] = true
 
 
 func spawn_player(portal_id: String) -> void:

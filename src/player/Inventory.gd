@@ -86,7 +86,7 @@ func add_item(id: InventoryManager.Item) -> void:
 func remove_item(id: InventoryManager.Item) -> void:
 	hide_item()
 	items.erase(id)
-	
+	item_equipped_id = -1
 	for item in hbox_container.get_children():
 		if item.id == id:
 			item.queue_free()

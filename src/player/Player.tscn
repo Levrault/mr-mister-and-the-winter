@@ -756,7 +756,40 @@ collision_layer = 0
 [node name="CollisionShape3D" parent="Pivot/Model/HandRight/Wheel/Wheel/StaticBody3D" index="0"]
 disabled = true
 
-[node name="Shovel" parent="Pivot/Model/HandRight" index="3" instance=ExtResource("9_gdr1j")]
+[node name="Wheel2" parent="Pivot/Model/HandRight" index="3" instance=ExtResource("8_xenq2")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.160667, -0.0296003, 0.0508756)
+visible = false
+id = 4
+
+[node name="StaticBody3D" parent="Pivot/Model/HandRight/Wheel2/Wheel" index="0"]
+collision_layer = 0
+
+[node name="CollisionShape3D" parent="Pivot/Model/HandRight/Wheel2/Wheel/StaticBody3D" index="0"]
+disabled = true
+
+[node name="Wheel3" parent="Pivot/Model/HandRight" index="4" instance=ExtResource("8_xenq2")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.160667, -0.0296003, 0.0508756)
+visible = false
+id = 5
+
+[node name="StaticBody3D" parent="Pivot/Model/HandRight/Wheel3/Wheel" index="0"]
+collision_layer = 0
+
+[node name="CollisionShape3D" parent="Pivot/Model/HandRight/Wheel3/Wheel/StaticBody3D" index="0"]
+disabled = true
+
+[node name="Wheel4" parent="Pivot/Model/HandRight" index="5" instance=ExtResource("8_xenq2")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.160667, -0.0296003, 0.0508756)
+visible = false
+id = 6
+
+[node name="StaticBody3D" parent="Pivot/Model/HandRight/Wheel4/Wheel" index="0"]
+collision_layer = 0
+
+[node name="CollisionShape3D" parent="Pivot/Model/HandRight/Wheel4/Wheel/StaticBody3D" index="0"]
+disabled = true
+
+[node name="Shovel" parent="Pivot/Model/HandRight" index="6" instance=ExtResource("9_gdr1j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0746738, 0, 0.0750061)
 visible = false
 
@@ -858,4 +891,7 @@ offset_bottom = 32.0
 [editable path="Pivot/Model/HandRight/Cup"]
 [editable path="Pivot/Model/HandRight/ThermostatButton"]
 [editable path="Pivot/Model/HandRight/Wheel"]
+[editable path="Pivot/Model/HandRight/Wheel2"]
+[editable path="Pivot/Model/HandRight/Wheel3"]
+[editable path="Pivot/Model/HandRight/Wheel4"]
 [editable path="Pivot/Model/HandRight/Shovel"]
