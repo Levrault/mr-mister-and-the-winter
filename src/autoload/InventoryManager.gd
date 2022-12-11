@@ -16,6 +16,10 @@ var items := []
 var destroyed_items := []
 
 
+func _ready() -> void:
+	add_item(Item.SHOVEL)
+
+
 func add_item(id: Item) -> void:
 	items.append(id)
 	Events.inventory_item_added.emit(id)

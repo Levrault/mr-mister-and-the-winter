@@ -9,6 +9,7 @@ var ThermostatButtonTextureFocused = preload("res://assets/textures/inventory/th
 var TireTexture = preload("res://assets/textures/inventory/tire.png")
 var TireTextureFocused = preload("res://assets/textures/inventory/tire_focused.png")
 var ShovelTexture = preload("res://assets/textures/inventory/shovel.png")
+var ShovelTextureFocused = preload("res://assets/textures/inventory/shovel_focused.png")
 
 
 func set_id(item_id: InventoryManager.Item) -> void:
@@ -23,6 +24,7 @@ func set_id(item_id: InventoryManager.Item) -> void:
 			texture_focused = ThermostatButtonTextureFocused
 		InventoryManager.Item.SHOVEL:
 			texture_normal = ShovelTexture
+			texture_focused = ShovelTextureFocused
 		InventoryManager.Item.TIRE_1:
 			texture_normal = TireTexture
 			texture_focused = TireTextureFocused

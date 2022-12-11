@@ -58,7 +58,7 @@ render_target_update_mode = 4
 [node name="ScenesManager" type="Node3D" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport"]
 process_mode = 1
 script = ExtResource("6_12i7x")
-map = 1
+map = 2
 
 [node name="CrtTvEffect" type="ColorRect" parent="N64Layer"]
 unique_name_in_owner = true

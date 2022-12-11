@@ -4,6 +4,7 @@ enum Quest {
 	THERMOSTAT,
 	BOOTS,
 	HAT,
+	SHOVEL,
 	TIRE_1,
 	TIRE_2,
 	TIRE_3,
@@ -29,6 +30,8 @@ func _ready() -> void:
 	# fake flag to remove
 	flags_list[Quest.find_key(Quest.THERMOSTAT)] = true
 	flags_list[Quest.find_key(Cinematic.INTRODUCTION_CINEMATIC)] = true
+	flags_list[Quest.find_key(Quest.BOOTS)] = true
+	flags_list[Quest.find_key(Quest.HAT)] = true
 
 
 func spawn_player(portal_id: String) -> void:

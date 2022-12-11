@@ -15,6 +15,8 @@ var object_to_interact: Node3D = null
 
 func _ready() -> void:
 	GameManager.player = self
+	for child in $Pivot/Model/HandRight.get_children():
+		child.hide()
 	if GameManager.is_quest_accomplished(GameManager.Quest.HAT):
 		hat.show()
 		return

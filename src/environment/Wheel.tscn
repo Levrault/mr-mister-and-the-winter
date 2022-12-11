@@ -8,8 +8,8 @@ data = PackedVector3Array(-0.2302, -0.0328, -0.1428, -0.0086, 0.0328, -0.2708, -
 
 [node name="Wheel" instance=ExtResource("1_k4403")]
 script = ExtResource("2_jqbl4")
-quest = 1
-id = 2
+quest = 3
+id = 3
 
 [node name="Wheel" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00925145, 0)

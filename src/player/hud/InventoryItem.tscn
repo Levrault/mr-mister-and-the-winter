@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://src/player/hud/InventoryItem.gd" id="1_l83h0"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uocjn"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wasao"]
 size = Vector2(32, 32)
 
 [node name="InventoryItem" type="TextureButton"]
 custom_minimum_size = Vector2(32, 32)
-texture_focused = SubResource("PlaceholderTexture2D_uocjn")
+texture_focused = SubResource("PlaceholderTexture2D_wasao")
 script = ExtResource("1_l83h0")

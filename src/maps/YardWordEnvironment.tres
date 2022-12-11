@@ -1,0 +1,16 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://f0uah03n4vaq"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_nawgl"]
+turbidity = 214.3
+
+[sub_resource type="Sky" id="Sky_6622i"]
+sky_material = SubResource("PhysicalSkyMaterial_nawgl")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_6622i")
+fog_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0749
+volumetric_fog_albedo = Color(0.521569, 0.72549, 0.909804, 1)
+volumetric_fog_emission = Color(0.878431, 0.905882, 0.952941, 1)
