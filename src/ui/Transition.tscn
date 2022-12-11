@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3n6w63ne60mw"]
+
+[ext_resource type="Material" uid="uid://8sotxxfa8y0q" path="res://assets/shaders/irish_shot.tres" id="1_mnclp"]
+[ext_resource type="Texture2D" uid="uid://qppj6x3erx5c" path="res://assets/textures/black_320x240.png" id="2_tvken"]
+
+[node name="Transition" type="TextureRect"]
+visible = false
+material = ExtResource("1_mnclp")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tvken")

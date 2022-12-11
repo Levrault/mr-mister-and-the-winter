@@ -58,8 +58,15 @@ func _on_Dialogue_text_displayed_success() -> void:
 		$Tire4.show()
 	
 	if quest != GameManager.Quest.UNASSIGNED and items_list_id_to_combine_with.is_empty():
-		GameManager.quest_done(quest)
+		Events.dialogue_finished.connect(_on_Dialogue_finished)
 
 	if destroy_inventory_item_on_success:
 		print_debug("%s has destroyed %s in player inventory" % [get_name(), InventoryManager.item_to_string(last_item_combined)])
 		InventoryManager.destroy_item(last_item_combined)
+
+
+func _on_Dialogue_finished() -> void:
+	GameManager.quest_done(quest)
+	Events.dialogue_finished.disconnect(_on_Dialogue_finished)
+	
+	

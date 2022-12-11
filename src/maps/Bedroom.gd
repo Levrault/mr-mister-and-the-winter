@@ -9,6 +9,7 @@ func _ready() -> void:
 		Events.quest_accomplished.connect(_on_Quest_accomplished)
 	
 	if not GameManager.is_cinematic_accomplished(GameManager.Cinematic.INTRODUCTION_CINEMATIC):
+		$IntroductionCinematic.show()
 		$IntroductionCinematic/AnimationPlayer.play("introduction")
 		$Player.hide()
 		$Player.set_active(false)

@@ -16,12 +16,8 @@ var items := []
 var destroyed_items := []
 
 
-func _ready() -> void:
-	add_item(Item.SHOVEL)
-	add_item(Item.TIRE_1)
-	add_item(Item.TIRE_2)
-	add_item(Item.TIRE_3)
-	add_item(Item.TIRE_4)
+#func _ready() -> void:
+#	add_item(Item.SHOVEL)
 
 
 func add_item(id: Item) -> void:

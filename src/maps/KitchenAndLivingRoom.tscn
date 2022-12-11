@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://db2yplxya10o7"]
+[gd_scene load_steps=41 format=3 uid="uid://db2yplxya10o7"]
 
 [ext_resource type="LightmapGIData" uid="uid://cqddx3twj841w" path="res://src/maps/KitchenAndLivingRoom.lmbake" id="1_4gxxf"]
 [ext_resource type="Script" path="res://src/maps/KitchenAndLivingRoom.gd" id="1_t78lk"]
@@ -8,8 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://bnq1tmpsus5f8" path="res://src/vfx/DirectionalLightInterior.tscn" id="3_rh4jf"]
 [ext_resource type="PackedScene" path="res://src/environment/StorageCabinet.tscn" id="4_v5llw"]
 [ext_resource type="PackedScene" uid="uid://yapvtgc75htw" path="res://src/environment/Fridge.tscn" id="5_1vd32"]
+[ext_resource type="PackedScene" uid="uid://c3n6w63ne60mw" path="res://src/ui/Transition.tscn" id="5_m4dva"]
+[ext_resource type="Script" path="res://src/commons/cinematic/Cinematic.gd" id="5_p146g"]
+[ext_resource type="PackedScene" uid="uid://8slan00w6ex0" path="res://src/player/PlayerModel.tscn" id="5_qkapy"]
 [ext_resource type="PackedScene" uid="uid://b3idgts06d20d" path="res://src/environment/Stove.tscn" id="6_b8yh6"]
 [ext_resource type="PackedScene" uid="uid://c3t13xp7bqqsv" path="res://src/environment/Sink.tscn" id="7_sfcht"]
+[ext_resource type="Texture2D" uid="uid://c2v6hg47tj3j7" path="res://assets/textures/zelda_intro.jpg" id="8_0lamc"]
 [ext_resource type="PackedScene" uid="uid://dsljrlewhs2e8" path="res://src/environment/Table.tscn" id="8_h7npr"]
 [ext_resource type="PackedScene" uid="uid://bjje2t0htyrms" path="res://src/environment/Chair.tscn" id="9_g6jtb"]
 [ext_resource type="PackedScene" uid="uid://dgqetnxlxf3bf" path="res://src/environment/Cup.tscn" id="10_61pxw"]
@@ -32,6 +36,217 @@
 [ext_resource type="PackedScene" uid="uid://djvu2oh1f6cj2" path="res://src/environment/Shovel.tscn" id="28_rhrub"]
 [ext_resource type="PackedScene" uid="uid://d2odaiw3v6a6q" path="res://src/environment/Wheel.tscn" id="29_xht3y"]
 
+[sub_resource type="Animation" id="Animation_a213y"]
+resource_name = "start"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:current")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Transition:material:shader_parameter/circle_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerModel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%Player:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera3D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.382909, 1.04783, 1.11912), Vector3(-0.382909, 1.04783, 1.11912), Vector3(-0.382909, 5.72811, 1.11912)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TheEnd:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(11.2, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TheEnd:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 11.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_aoid1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:current")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Transition:material:shader_parameter/circle_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerModel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%Player:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera3D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.382909, 1.04783, 1.11912)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TheEnd:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TheEnd:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_twwgn"]
+_data = {
+"RESET": SubResource("Animation_aoid1"),
+"start": SubResource("Animation_a213y")
+}
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_e1jf8"]
+size = Vector2(0.539, 0.477)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xmods"]
+albedo_texture = ExtResource("8_0lamc")
+
 [node name="KitchenAndLivingRoom" type="Node3D"]
 script = ExtResource("1_t78lk")
 
@@ -45,6 +260,64 @@ quality = 0
 interior = true
 light_data = ExtResource("1_4gxxf")
 script = ExtResource("3_2cuf3")
+
+[node name="Cinematic" type="Node3D" parent="."]
+script = ExtResource("5_p146g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cinematic"]
+libraries = {
+"": SubResource("AnimationLibrary_twwgn")
+}
+
+[node name="Transition" parent="Cinematic" instance=ExtResource("5_m4dva")]
+visible = true
+
+[node name="TheEnd" type="Control" parent="Cinematic"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Cinematic/TheEnd"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.5
+offset_top = -26.0
+offset_right = 75.5
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "The END
+A Game by Levrault"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerModel" parent="Cinematic" instance=ExtResource("5_qkapy")]
+transform = Transform3D(-0.0394517, 0, 0.999222, 0, 1, 0, -0.999222, 0, -0.0394517, 0.673816, 0.277262, 1.11427)
+visible = false
+
+[node name="HandLeft" parent="Cinematic/PlayerModel" index="0"]
+transform = Transform3D(-0.0336462, 0.894937, -0.444923, -0.0116923, 0.444792, 0.895558, 0.999366, 0.0353342, -0.00450172, 0.0623506, 0.324332, 0.248504)
+
+[node name="HandRight" parent="Cinematic/PlayerModel" index="1"]
+transform = Transform3D(0.0242767, -0.984748, 0.172288, -0.0873497, 0.16959, 0.981636, -0.995882, -0.0388802, -0.0819003, -0.122679, 0.324332, 0.258039)
+
+[node name="Camera3D" type="Camera3D" parent="Cinematic"]
+transform = Transform3D(-2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, -0.382909, 1.04783, 1.11912)
+current = true
+fov = 50.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cinematic"]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 2.47916, 0.872328, 1.0842)
+mesh = SubResource("PlaneMesh_e1jf8")
+surface_material_override/0 = SubResource("StandardMaterial3D_xmods")
 
 [node name="Lights" type="Node3D" parent="."]
 
@@ -115,10 +388,11 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.174544, 0.621467, -0.189725
 [node name="LowTable" parent="Environments" instance=ExtResource("11_0dlgj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71124, 0, 0.998221)
 
-[node name="n64" parent="Environments" instance=ExtResource("12_5cbjx")]
+[node name="N64" parent="Environments" instance=ExtResource("12_5cbjx")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72423, 0, 2.1707)
 
-[node name="N64CartridgesPile" parent="Environments/n64" instance=ExtResource("13_y3ri3")]
+[node name="N64CartridgesPile" parent="Environments/N64" instance=ExtResource("13_y3ri3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0208552, 0.10721, -0.310762)
 
 [node name="TvFurniture" parent="Environments" instance=ExtResource("14_xs8cb")]
@@ -158,9 +432,10 @@ transform = Transform3D(1, 0, 0, 0, 0.650708, -0.759328, 0, 0.759328, 0.650708, 
 id = 5
 
 [node name="Player" parent="." instance=ExtResource("19_5454n")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.236271, 0.081886, -1.40402)
 
 [node name="CameraInterior" parent="." instance=ExtResource("24_sgcm8")]
-current = false
 
+[editable path="Cinematic/PlayerModel"]
 [editable path="Portals/PortalToYard"]

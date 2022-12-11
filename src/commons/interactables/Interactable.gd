@@ -1,6 +1,8 @@
 extends Node
 class_name Interactable
 
+signal interacted
+
 @export_multiline var text := "undefined"
 
 
@@ -14,6 +16,7 @@ func start_interaction() -> void:
 
 func stop_interaction() -> void:
 	Events.dialogue_finished.emit()
+	interacted.emit()
 
 
 func show_text() -> void:

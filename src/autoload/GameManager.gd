@@ -24,13 +24,14 @@ func _ready() -> void:
 		flags_list[key] = false
 	for key in Cinematic.keys():
 		flags_list[key] = false
-	
-	# fake flag to remove
-	flags_list[Quest.find_key(Quest.THERMOSTAT)] = true
-	flags_list[Quest.find_key(Cinematic.INTRODUCTION_CINEMATIC)] = true
-	flags_list[Quest.find_key(Quest.BOOTS)] = true
-	flags_list[Quest.find_key(Quest.HAT)] = true
-	flags_list[Quest.find_key(Quest.TIRES)] = true
+#	# fake flag to remove
+#	flags_list[Quest.find_key(Quest.THERMOSTAT)] = true
+#	flags_list[Cinematic.find_key(Cinematic.INTRODUCTION_CINEMATIC)] = true
+#	flags_list[Quest.find_key(Quest.BOOTS)] = true
+#	flags_list[Quest.find_key(Quest.HAT)] = true
+#	flags_list[Quest.find_key(Quest.TIRES)] = true
+#	flags_list[Quest.find_key(Quest.CAR_TIRES)] = true
+#	flags_list[Cinematic.find_key(Cinematic.CAR_CINEMATIC)] = true
 
 
 func spawn_player(portal_id: String) -> void:
@@ -47,7 +48,7 @@ func is_quest_accomplished(id: Quest) -> bool:
 
 
 func is_cinematic_accomplished(id: Cinematic) -> bool:
-	return flags_list[Quest.find_key(id)]
+	return flags_list[Cinematic.find_key(id)]
 
 
 func quest_done(id: Quest) -> void:

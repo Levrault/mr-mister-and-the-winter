@@ -29,6 +29,8 @@ func _ready() -> void:
 
 
 func is_physical_item(id: InventoryManager.Item) -> bool:
+	if id == InventoryManager.Item.HAT:
+		return false
 	for item in items:
 		if item.id == id:
 			return true
