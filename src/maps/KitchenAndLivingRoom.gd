@@ -7,7 +7,7 @@ func _ready() -> void:
 		Events.quest_accomplished.connect(_on_Quest_accomplished)
 
 
-func _on_Quest_accomplished(id: GameManager.Quest) -> void:
+func _on_Quest_accomplished(_id: GameManager.Quest) -> void:
 	if GameManager.is_quest_accomplished(GameManager.Quest.BOOTS) and GameManager.is_quest_accomplished(GameManager.Quest.HAT):
 		%PortalToYard.is_active = true
 		Events.quest_accomplished.disconnect(_on_Quest_accomplished)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://db2yplxya10o7"]
+[gd_scene load_steps=32 format=3 uid="uid://db2yplxya10o7"]
 
 [ext_resource type="LightmapGIData" uid="uid://cqddx3twj841w" path="res://src/maps/KitchenAndLivingRoom.lmbake" id="1_4gxxf"]
 [ext_resource type="Script" path="res://src/maps/KitchenAndLivingRoom.gd" id="1_t78lk"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" path="res://src/environment/KitchenInvisibleWalls.tscn" id="25_ypq1y"]
 [ext_resource type="PackedScene" uid="uid://cbkuyuvoarrho" path="res://src/environment/Hat.tscn" id="27_2fndl"]
 [ext_resource type="PackedScene" uid="uid://djvu2oh1f6cj2" path="res://src/environment/Shovel.tscn" id="28_rhrub"]
+[ext_resource type="PackedScene" uid="uid://d2odaiw3v6a6q" path="res://src/environment/Wheel.tscn" id="29_xht3y"]
 
 [node name="KitchenAndLivingRoom" type="Node3D"]
 script = ExtResource("1_t78lk")
@@ -151,6 +152,10 @@ transform = Transform3D(0.907602, 0.419832, 0, -0.419832, 0.907602, 0, 0, 0, 1, 
 
 [node name="shovel" parent="Environments" instance=ExtResource("28_rhrub")]
 transform = Transform3D(2.98023e-08, 0, 1, 0.258819, -0.965926, -7.71341e-09, 0.965926, 0.258819, -2.87868e-08, 1.22603, 0.525153, -2.78458)
+
+[node name="Wheel" parent="Environments" instance=ExtResource("29_xht3y")]
+transform = Transform3D(1, 0, 0, 0, 0.650708, -0.759328, 0, 0.759328, 0.650708, 0.573155, 0.302321, 1.94245)
+id = 5
 
 [node name="Player" parent="." instance=ExtResource("19_5454n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.236271, 0.081886, -1.40402)
