@@ -25,8 +25,8 @@ func _ready() -> void:
 	for key in Cinematic.keys():
 		flags_list[key] = false
 #	# fake flag to remove
-#	flags_list[Quest.find_key(Quest.THERMOSTAT)] = true
 #	flags_list[Cinematic.find_key(Cinematic.INTRODUCTION_CINEMATIC)] = true
+#	flags_list[Quest.find_key(Quest.THERMOSTAT)] = true
 #	flags_list[Quest.find_key(Quest.BOOTS)] = true
 #	flags_list[Quest.find_key(Quest.HAT)] = true
 #	flags_list[Quest.find_key(Quest.TIRES)] = true

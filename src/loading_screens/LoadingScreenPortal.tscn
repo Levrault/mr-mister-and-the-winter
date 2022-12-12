@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bypeafkir4xg8" path="res://src/portal/DoorExterior.tscn" id="3_ituer"]
 [ext_resource type="AudioStream" uid="uid://cjlrthpe2ghuh" path="res://assets/sfx/doorOpen_1.ogg" id="4_a2n6o"]
 
-[sub_resource type="Animation" id="Animation_53drm"]
+[sub_resource type="Animation" id="Animation_mx2v0"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -68,7 +68,7 @@ tracks/4/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_arfhb"]
+[sub_resource type="Animation" id="Animation_kmhnk"]
 resource_name = "open"
 length = 2.5
 tracks/0/type = "value"
@@ -132,13 +132,13 @@ tracks/4/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ct5w1"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iewod"]
 _data = {
-"RESET": SubResource("Animation_53drm"),
-"open": SubResource("Animation_arfhb")
+"RESET": SubResource("Animation_mx2v0"),
+"open": SubResource("Animation_kmhnk")
 }
 
-[sub_resource type="Environment" id="Environment_kgcrp"]
+[sub_resource type="Environment" id="Environment_2t8v0"]
 background_mode = 1
 background_energy_multiplier = 0.0
 ambient_light_source = 1
@@ -149,11 +149,11 @@ script = ExtResource("1_q51g7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ct5w1")
+"": SubResource("AnimationLibrary_iewod")
 }
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_kgcrp")
+environment = SubResource("Environment_2t8v0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.99923, 0.0392423, 0, -0.0392423, -0.99923, -0.437333, 0.67866, -1.86558)
