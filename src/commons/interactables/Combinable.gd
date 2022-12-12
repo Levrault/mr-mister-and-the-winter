@@ -51,6 +51,7 @@ func start_combine(item_id: InventoryManager.Item) -> void:
 
 func _on_Dialogue_text_displayed_success() -> void:
 	Events.dialogue_text_displayed.disconnect(_on_Dialogue_text_displayed_success)
+	Events.combine_succeed.emit()
 	success_feedback.play()
 	
 	if quest != GameManager.Quest.UNASSIGNED:

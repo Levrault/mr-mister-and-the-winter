@@ -29,6 +29,7 @@ func enter(_msg: Dictionary = {}) -> void:
 		print_debug("Player can tried to COMBINED %s with %s" % [owner.object_to_interact.get_name(), InventoryManager.item_to_string(owner.inventory.item_equipped_id)])
 		owner.object_to_interact.start_combine(owner.inventory.item_equipped_id)
 		Events.dialogue_text_displayed.connect(_on_Dialogue_text_displayed)
+		Events.combine_succeed.connect(_on_Combine_succeed)
 		return
 
 	print_debug("%s can be INTERACTED with" % owner.object_to_interact.get_name())
@@ -54,3 +55,8 @@ func _on_Dialogue_question_answered(answer) -> void:
 
 func _on_Dialogue_text_displayed() -> void:
 	_state_machine.set_process_unhandled_input(true)
+
+
+func _on_Combine_succeed() -> void:
+	owner.combine_indicator.hide()
+	owner.interaction_indicator.show()
