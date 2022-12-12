@@ -1,6 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://duldg06gsyh41"]
+[gd_scene load_steps=10 format=3 uid="uid://duldg06gsyh41"]
 
 [ext_resource type="Script" path="res://src/ui/Dialogue.gd" id="1_3nduq"]
+[ext_resource type="AudioStream" uid="uid://rqtrrr8tbc5c" path="res://assets/sfx/click_002.ogg" id="2_rahxp"]
+[ext_resource type="AudioStream" uid="uid://br5c3ft51vs40" path="res://assets/sfx/confirmation_001.ogg" id="3_rf7xl"]
+[ext_resource type="AudioStream" uid="uid://b3s578elao01r" path="res://assets/sfx/error_001.ogg" id="4_irxn0"]
+[ext_resource type="AudioStream" uid="uid://c0fq5kfh630sc" path="res://assets/sfx/click_005.ogg" id="5_jj1al"]
 
 [sub_resource type="Animation" id="Animation_wmu2i"]
 length = 0.001
@@ -62,7 +66,6 @@ libraries = {
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(400, 180)
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -78,7 +81,8 @@ pivot_offset = Vector2(200, 90)
 theme_override_styles/panel = SubResource("StyleBoxFlat_bf87p")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-layout_mode = 2
+offset_right = 400.0
+offset_bottom = 180.0
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 8
@@ -86,7 +90,10 @@ theme_override_constants/margin_bottom = 8
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer"]
 unique_name_in_owner = true
-layout_mode = 2
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 392.0
+offset_bottom = 172.0
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat semper risus, porttitor tristique tellus lobortis vel. Phasellus eget rhoncus nisl. Morbi faucibus tortor eget iaculis fringilla."
 scroll_active = false
@@ -94,7 +101,6 @@ scroll_active = false
 [node name="QuestionContainer" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
 visible = false
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -109,16 +115,13 @@ grow_vertical = 2
 theme_override_constants/separation = 32
 
 [node name="No" type="Button" parent="QuestionContainer"]
-layout_mode = 2
 text = "NO
 "
 
 [node name="Yes" type="Button" parent="QuestionContainer"]
-layout_mode = 2
 text = "YES"
 
 [node name="InteractIcon" type="ColorRect" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -130,3 +133,19 @@ offset_right = 176.0
 offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ClickAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rahxp")
+bus = &"SFX"
+
+[node name="ConfirmationAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rf7xl")
+bus = &"SFX"
+
+[node name="ErrorAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_irxn0")
+bus = &"SFX"
+
+[node name="SelectAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jj1al")
+bus = &"SFX"

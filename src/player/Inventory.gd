@@ -25,7 +25,7 @@ func _ready() -> void:
 		items.append(item)
 	for item in InventoryManager.items:
 		add_item(item)
-	hide_ui()
+	hide()
 
 
 func is_physical_item(id: InventoryManager.Item) -> bool:
@@ -73,6 +73,10 @@ func add_item(id: InventoryManager.Item) -> void:
 	hbox_container.add_child(inventory_item)
 	inventory_item.set_id(id)
 	inventory_item.pressed.connect(_on_Inventory_item_pressed.bind(id))
+	inventory_item.focus_entered.connect(
+		func():
+			$ClickAudioStreamPlayer.play()
+	)
 	
 	show()
 	var tween_control = create_tween().set_trans(Tween.TRANS_SINE)

@@ -40,4 +40,4 @@ func _on_Timeout() -> void:
 	footstep_index += 1
 	if footstep_index >= owner.footstep_sfx.size():
 		footstep_index = 0
-	owner.footstep_sfx[footstep_index].playing = true
+	owner.footstep_sfx[footstep_index].play()

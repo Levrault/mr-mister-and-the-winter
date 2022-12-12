@@ -60,13 +60,12 @@ visible = false
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport"]
 stream = ExtResource("6_s1kxt")
-volume_db = -10.0
+bus = &"Music"
 script = ExtResource("7_elk27")
 
 [node name="ScenesManager" type="Node3D" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport"]
 process_mode = 1
 script = ExtResource("6_12i7x")
-map = 1
 
 [node name="CrtTvEffect" type="ColorRect" parent="N64Layer"]
 unique_name_in_owner = true
