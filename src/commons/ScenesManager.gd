@@ -44,9 +44,8 @@ static func get_map_path(id: Maps) -> String:
 	return ""
 
 
-func _ready() -> void:
+func init() -> void:
 	Events.map_changed_for.connect(_on_Map_changed_for)
-	
 	load_maps(SceneManager.get_map_path(map))
 
 

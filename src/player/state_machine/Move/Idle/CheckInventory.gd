@@ -32,7 +32,7 @@ func _on_Animation_finished(_anim_name: String) -> void:
 	_state_machine.transition_to("Move/Idle")
 
 
-func _on_Inventory_item_equipped(id: InventoryManager.Item):
+func _on_Inventory_item_equipped(_id: InventoryManager.Item):
 	owner.animation_player.play_backwards("check_inventory")
 	owner.animation_player.animation_finished.connect(_on_Animation_finished)
 	if owner.object_to_interact != null:

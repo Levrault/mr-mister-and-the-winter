@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ntp16k7odix"]
+[gd_scene load_steps=11 format=3 uid="uid://ntp16k7odix"]
 
 [ext_resource type="Material" uid="uid://udnog05k51g5" path="res://assets/shaders/gausian-blur.tres" id="1_3tc83"]
 [ext_resource type="Script" path="res://src/Main.gd" id="1_yu8vo"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://src/commons/ScenesManager.gd" id="6_12i7x"]
 [ext_resource type="AudioStream" uid="uid://1fxmnrykf5sk" path="res://assets/music/Estimable.ogg" id="6_s1kxt"]
 [ext_resource type="Script" path="res://src/audio/BackgroundMusic.gd" id="7_elk27"]
+[ext_resource type="PackedScene" uid="uid://6kcy07pskr6" path="res://src/ui/StartScreen.tscn" id="9_7y7a5"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_yu8vo")
@@ -62,6 +63,8 @@ visible = false
 stream = ExtResource("6_s1kxt")
 bus = &"Music"
 script = ExtResource("7_elk27")
+
+[node name="StartScreen" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport" instance=ExtResource("9_7y7a5")]
 
 [node name="ScenesManager" type="Node3D" parent="N64Layer/HBlur/SubViewport/DitherBand/SubViewport"]
 process_mode = 1
