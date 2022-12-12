@@ -4,6 +4,8 @@ class_name Player
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var object_to_interact: Node3D = null
 
+var footstep_sfx := []
+
 @onready var pivot := $Pivot
 @onready var animation_player := $AnimationPlayer
 @onready var interaction_indicator := $InteractionIndicator
@@ -15,6 +17,12 @@ var object_to_interact: Node3D = null
 
 func _ready() -> void:
 	GameManager.player = self
+	
+	if GameManager.current_map == SceneManager.Maps.YARD:
+		footstep_sfx = $Footstep/Snow.get_children()
+	else:
+		footstep_sfx = $Footstep/Concrete.get_children()
+
 	for child in $Pivot/Model/HandRight.get_children():
 		child.hide()
 	if GameManager.is_quest_accomplished(GameManager.Quest.HAT):

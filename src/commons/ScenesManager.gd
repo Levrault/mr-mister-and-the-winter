@@ -15,7 +15,12 @@ const BEDROOM_MAP_PATH := "res://src/maps/Bedroom.tscn"
 const KITCHEN_LIVING_ROOM_MAP_PATH := "res://src/maps/KitchenAndLivingRoom.tscn"
 const YARD_PATH := "res://src/maps/Yard.tscn"
 
-@export var map = Maps.BEDROOM
+@export var map = Maps.BEDROOM:
+	set(value):
+		map = value
+		GameManager.current_map = value
+	get:
+		return map
 
 var LoadingScreenPortal := preload("res://src/loading_screens/LoadingScreenPortal.tscn")
 var LoadingScreenText := preload("res://src/loading_screens/LoadingScreenText.tscn")

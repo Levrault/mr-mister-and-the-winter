@@ -13,6 +13,7 @@ var is_active := true
 func start_interaction() -> void:
 	if is_active:
 		Events.map_changed_for.emit(SceneManager.get_map_path(next_map), portal_id, exterior_door_mesh)
+		GameManager.current_map = next_map
 		return
 	Events.dialogue_interaction_started.emit(text)
 
