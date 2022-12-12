@@ -1,4 +1,5 @@
 extends Interactable
+class_name Portal
 
 @export var next_map: SceneManager.Maps
 @export var portal_id := ""

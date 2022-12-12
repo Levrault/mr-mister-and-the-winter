@@ -34,11 +34,16 @@ func enter(_msg: Dictionary = {}) -> void:
 
 	print_debug("%s can be INTERACTED with" % owner.object_to_interact.get_name())
 	Events.dialogue_text_displayed.connect(_on_Dialogue_text_displayed)
+	if owner.inventory.has_item_equipped() and not owner.object_to_interact is Portal:
+		owner.object_to_interact.text = "I can't combine these two"
 	owner.object_to_interact.start_interaction()
 
 
 func exit() -> void:
 	_state_machine.set_process_unhandled_input(true)
+	if Events.combine_succeed.is_connected(_on_Combine_succeed):
+		Events.combine_succeed.disconnect(_on_Combine_succeed)
+	
 	if Events.dialogue_text_displayed.is_connected(_on_Dialogue_text_displayed):
 		Events.dialogue_text_displayed.disconnect(_on_Dialogue_text_displayed)
 

@@ -124,11 +124,18 @@ func hide_ui() -> void:
 
 
 func has_item_equipped() -> bool:
-	return item_equipped_id != -1
+	return item_equipped_id != -1 and item_equipped_id != InventoryManager.Item.UNASSIGNED
 
 
 func _on_Inventory_item_pressed(id: InventoryManager.Item) -> void:
 	print_debug("Player has choose %s from his inventory" % InventoryManager.item_to_string(id))
+	
+	if item_equipped_id == id:
+		inventory_item_equipped.emit(InventoryManager.Item.UNASSIGNED)
+		item_equipped_id = InventoryManager.Item.UNASSIGNED
+		hide_item()
+		return
+	
 	inventory_item_equipped.emit(id)
 	item_equipped_id = id
 	show_equipped_item()

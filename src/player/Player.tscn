@@ -926,7 +926,6 @@ grow_vertical = 0
 script = ExtResource("12_u387h")
 
 [node name="PanelContainer" type="PanelContainer" parent="Inventory"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -934,7 +933,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Inventory/PanelContainer"]
-layout_mode = 2
+offset_right = 400.0
+offset_bottom = 32.0
 
 [node name="ClickAudioStreamPlayer" type="AudioStreamPlayer" parent="Inventory"]
 stream = ExtResource("26_h0akg")

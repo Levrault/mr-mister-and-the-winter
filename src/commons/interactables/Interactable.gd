@@ -5,6 +5,8 @@ signal interacted
 
 @export_multiline var text := "undefined"
 
+var text_default := text
+
 
 func _ready() -> void:
 	add_to_group("interactable")
@@ -17,6 +19,7 @@ func start_interaction() -> void:
 func stop_interaction() -> void:
 	Events.dialogue_finished.emit()
 	interacted.emit()
+	text = text_default
 
 
 func show_text() -> void:

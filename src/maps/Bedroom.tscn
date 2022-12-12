@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://8j5jsecexg3a"]
+[gd_scene load_steps=79 format=3 uid="uid://8j5jsecexg3a"]
 
 [ext_resource type="Environment" uid="uid://ck1htmu8kds5b" path="res://src/maps/WorldEnvironment.tres" id="1_asfp0"]
 [ext_resource type="Script" path="res://src/maps/Bedroom.gd" id="1_pn465"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://bim0vpmsghyo3" path="res://src/environment/GameboyAdvance.tscn" id="23_64odn"]
 [ext_resource type="PackedScene" uid="uid://cc7ihstkgux0a" path="res://src/environment/Picture.tscn" id="24_erw4k"]
 [ext_resource type="PackedScene" uid="uid://u4u2phopj4p" path="res://src/environment/Paint.tscn" id="25_x7lfs"]
+[ext_resource type="Material" uid="uid://c4ermwnnb83es" path="res://assets/materials/paint.tres" id="26_njaak"]
 [ext_resource type="PackedScene" uid="uid://bsm3vt4yktoy3" path="res://src/environment/GameboyCartridges.tscn" id="27_3g3hk"]
 
 [sub_resource type="Animation" id="Animation_in04g"]
@@ -1231,6 +1232,16 @@ script = ExtResource("9_4dgvj")
 
 [node name="DirectionalLight3D" parent="Lights" instance=ExtResource("2_5la2y")]
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86068, 0.639242, -0.962359)
+light_energy = 0.5
+light_bake_mode = 1
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86068, 0.639242, 2.30582)
+light_energy = 0.5
+light_bake_mode = 1
+
 [node name="Portals" type="Node3D" parent="."]
 
 [node name="PortalToKitchen" parent="Portals" instance=ExtResource("4_nnb2x")]
@@ -1306,6 +1317,9 @@ text = "A beautifull picture of me and my mommy <3"
 [node name="Paint" parent="Environments" instance=ExtResource("25_x7lfs")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.26099, 0.925427, -1.90576)
 text = "Well this is not the best portrait I have"
+
+[node name="Paint" parent="Environments/Paint" index="0"]
+surface_material_override/1 = ExtResource("26_njaak")
 
 [node name="GameboyCartridges" parent="Environments" instance=ExtResource("27_3g3hk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0726, 0.538143, 1.69912)
