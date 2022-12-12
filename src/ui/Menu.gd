@@ -7,6 +7,8 @@ func _ready() -> void:
 		func():
 			get_tree().quit()
 	)
+	set_process_unhandled_input(false)
+	owner.pause_menu_activated.connect(set_process_unhandled_input.bind(true))
 
 
 func _unhandled_input(event: InputEvent) -> void:

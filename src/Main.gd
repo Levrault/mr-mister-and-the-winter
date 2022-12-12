@@ -1,5 +1,7 @@
 extends Node3D
 
+signal pause_menu_activated
+
 
 func _ready() -> void:
 	Events.retro_filter_changed.connect(_on_Retro_filter_changed)

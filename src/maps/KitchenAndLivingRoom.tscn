@@ -329,16 +329,15 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Cinematic/TheEnd"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -75.5
-offset_top = -26.0
-offset_right = 75.5
-offset_bottom = 26.0003
+offset_left = 564.5
+offset_top = 334.0
+offset_right = 715.5
+offset_bottom = 386.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "The END
@@ -347,16 +346,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="Cinematic/TheEnd"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -421.5
-offset_top = 377.0
-offset_right = 421.5
-offset_bottom = 793.0
+offset_left = 218.5
+offset_top = 737.0
+offset_right = 1061.5
+offset_bottom = 1153.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "CREDITS
@@ -441,12 +439,15 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0523
 
 [node name="StorageCabinet" parent="Environments" instance=ExtResource("4_v5llw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58024, 0, 0.372358)
+text = "This where I hide all my best coffee beans"
 
 [node name="StorageCabinet2" parent="Environments" instance=ExtResource("4_v5llw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.71027, 0, -2.21416)
+text = "Well nothing of interest in there"
 
 [node name="Fridge" parent="Environments" instance=ExtResource("5_1vd32")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.867052, 0, -2.53111)
+text = "Well this look more empty since I have removed my boots from there"
 
 [node name="Stove" parent="Environments" instance=ExtResource("6_b8yh6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.80529, 0, -2.52476)
@@ -462,6 +463,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.744668)
 
 [node name="Cup" parent="Environments/Table" instance=ExtResource("10_61pxw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.174544, 0.621467, -0.189725)
+text = "My favorite  cup, I paint it myself...but everyone think it a gif for my 6 years old nephew.
+
+Should It take it with me?"
 
 [node name="LowTable" parent="Environments" instance=ExtResource("11_0dlgj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71124, 0, 0.998221)
@@ -469,6 +473,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71124, 0, 0.998221)
 [node name="N64" parent="Environments" instance=ExtResource("12_5cbjx")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72423, 0, 2.1707)
+text = "Almost 26 years old, this thing still run a smooth 20 frame per second"
 
 [node name="N64CartridgesPile" parent="Environments/N64" instance=ExtResource("13_y3ri3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0208552, 0.10721, -0.310762)
@@ -496,18 +501,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.568153, 0, -2.53733)
 
 [node name="CoffeeMachine" parent="Environments" instance=ExtResource("24_0mhiy")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.74548, 0.609096, 2.27117)
+text = "My best friend, my wonderfull coffee machine"
 
 [node name="InvisibleWall" parent="Environments" instance=ExtResource("25_ypq1y")]
 
 [node name="Hat" parent="Environments" instance=ExtResource("27_2fndl")]
 transform = Transform3D(0.907602, 0.419832, 0, -0.419832, 0.907602, 0, 0, 0, 1, 0.766508, 0.451592, 0.218817)
+text = "My favorite hat! Keeping warm in cold day.
+
+Should I take it with me?"
 
 [node name="shovel" parent="Environments" instance=ExtResource("28_rhrub")]
 transform = Transform3D(2.98023e-08, 0, 1, 0.258819, -0.965926, -7.71341e-09, 0.965926, 0.258819, -2.87868e-08, 1.22603, 0.525153, -2.78458)
+text = "The perfect tools during a snowy day!
+
+Should I take it with me?"
 
 [node name="Wheel" parent="Environments" instance=ExtResource("29_xht3y")]
 transform = Transform3D(1, 0, 0, 0, 0.650708, -0.759328, 0, 0.759328, 0.650708, 0.573155, 0.302321, 1.94245)
 id = 5
+text = "Well, why did I put this tire here!
+
+Should I take it with me?"
 
 [node name="Player" parent="." instance=ExtResource("19_5454n")]
 unique_name_in_owner = true

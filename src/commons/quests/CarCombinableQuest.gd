@@ -6,6 +6,7 @@ var items_list_id_to_combine_with: Array[InventoryManager.Item] = []
 
 
 func _ready() -> void:
+	text_default = text
 	items_list_id_to_combine_with.append(InventoryManager.Item.TIRE_1)
 	items_list_id_to_combine_with.append(InventoryManager.Item.TIRE_2)
 	items_list_id_to_combine_with.append(InventoryManager.Item.TIRE_3)
@@ -37,7 +38,6 @@ func start_combine(item_id: InventoryManager.Item) -> void:
 	print_debug("MULTI combinaison SUCCESS")	
 	last_item_combined = item_id
 	items_list_id_to_combine_with.erase(item_id)
-	
 	if items_list_id_to_combine_with.is_empty():
 		combine_succeed = true
 	Events.dialogue_combinable_started.emit(combine_success_text)
@@ -47,6 +47,7 @@ func start_combine(item_id: InventoryManager.Item) -> void:
 func _on_Dialogue_text_displayed_success() -> void:
 	Events.dialogue_text_displayed.disconnect(_on_Dialogue_text_displayed_success)
 	success_feedback.play()
+	Events.combine_succeed.emit()
 	
 	if last_item_combined == InventoryManager.Item.TIRE_1:
 		$Tire1.show()

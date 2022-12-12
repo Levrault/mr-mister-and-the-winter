@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bawkkxoecl6nk"]
+
+[ext_resource type="Texture2D" uid="uid://byjfd8288m2ei" path="res://assets/textures/snow.png" id="1_d7ao2"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tk1ja"]
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+angular_velocity_max = 156.83
+linear_accel_max = 7.92
+scale_min = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ss11"]
+albedo_texture = ExtResource("1_d7ao2")
+disable_receive_shadows = true
+billboard_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wwvki"]
+material = SubResource("StandardMaterial3D_2ss11")
+size = Vector2(0.1, 0.1)
+orientation = 2
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.495891, 0)
+amount = 10
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_tk1ja")
+draw_pass_1 = SubResource("PlaneMesh_wwvki")

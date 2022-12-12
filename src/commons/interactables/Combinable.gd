@@ -1,6 +1,8 @@
 extends Interactable
 class_name Combinable
 
+var SnowGPUParticule = preload("res://src/vfx/SnowGPUParticules.tscn")
+
 @export var quest: GameManager.Quest = GameManager.Quest.UNASSIGNED
 @export var item_id_to_combine_with: InventoryManager.Item
 @export var destroy_item_on_combine := false
@@ -27,7 +29,12 @@ func start_interaction() -> void:
 
 func stop_interaction() -> void:
 	if destroy_item_on_combine and combine_succeed:
-		queue_free()
+		$Timer.wait_time = $GPUParticles3D.lifetime
+		$Timer.timeout.connect(queue_free)
+		$GPUParticles3D.emitting = true
+		$Timer.start()
+		$Cube009.hide()
+		$Cube009/StaticBody3D/CollisionShape3D.disabled = true
 		return
 	super()
 
