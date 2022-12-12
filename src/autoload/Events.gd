@@ -16,3 +16,6 @@ signal map_changed_for(path, portal_id, is_door_exterior)
 signal inventory_item_added(id)
 
 signal quest_accomplished(id)
+
+signal background_music_started
+signal background_music_stopped

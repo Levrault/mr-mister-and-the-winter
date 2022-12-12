@@ -1,6 +1,6 @@
 extends Node3D
 
-@export_multiline var radio_text := "GOOODDDD MORNING! Beware there is big storm coming out! I hope you all have installer your winter tires!"
+@export_multiline var radio_text := "GOOODDDD MORNING EVERYOONNE! I hope you already have taken your morning cofffe because it's gonna be a cold snowy day! I hope you all installed your winter tire!"
 
 
 func _ready() -> void:
@@ -22,6 +22,7 @@ func cinematic_finished(id: GameManager.Cinematic) -> void:
 	Events.dialogue_finished.disconnect($IntroductionCinematic/AnimationPlayer.play)
 	$Player.set_active(true)
 	$IntroductionCinematic.queue_free()
+	Events.background_music_started.emit()
   
 
 func show_radio_text() -> void:
