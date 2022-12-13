@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://6kcy07pskr6"]
+[gd_scene load_steps=6 format=3 uid="uid://6kcy07pskr6"]
 
 [ext_resource type="Script" path="res://src/ui/StartScreen.gd" id="1_rfkox"]
+[ext_resource type="Texture2D" uid="uid://cqv8pxnblsd3p" path="res://assets/textures/godot.svg" id="2_41j6w"]
 
 [sub_resource type="Animation" id="Animation_kivkt"]
 length = 0.001
@@ -93,3 +94,27 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "Mr Mister vs the winter"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -87.5
+offset_top = -50.0
+offset_right = 87.5
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+texture = ExtResource("2_41j6w")
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Made with Godot"
