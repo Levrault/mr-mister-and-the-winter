@@ -74,7 +74,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Mr-mister-and-the-winter"
+config/name="Mr-mister-vs-the-winter"
 run/main_scene="res://src/Main.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.png"
