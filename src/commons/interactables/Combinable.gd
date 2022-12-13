@@ -35,6 +35,7 @@ func stop_interaction() -> void:
 		$Timer.start()
 		$Cube009.hide()
 		$Cube009/StaticBody3D/CollisionShape3D.disabled = true
+		$ShovelSnow.play()
 		return
 	super()
 

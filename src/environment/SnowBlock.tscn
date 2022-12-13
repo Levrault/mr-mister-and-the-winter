@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dts177icifk8x"]
+[gd_scene load_steps=10 format=3 uid="uid://dts177icifk8x"]
 
 [ext_resource type="PackedScene" uid="uid://cq5hefidqsa04" path="res://assets_raw/snow_block.glb" id="1_diel8"]
 [ext_resource type="Script" path="res://src/commons/interactables/Combinable.gd" id="2_c14m8"]
 [ext_resource type="Texture2D" uid="uid://byjfd8288m2ei" path="res://assets/textures/snow.png" id="2_fciwc"]
+[ext_resource type="AudioStream" uid="uid://3q0ci5thybwh" path="res://assets/sfx/shovel_snow.ogg" id="4_i01lc"]
 [ext_resource type="PackedScene" uid="uid://bawkkxoecl6nk" path="res://src/vfx/SnowGPUParticules.tscn" id="4_pbt2q"]
+[ext_resource type="AudioStream" uid="uid://cbhfwh44ssnm2" path="res://assets/sfx/success-jingle.ogg" id="4_wuimq"]
+[ext_resource type="AudioStream" uid="uid://bdqoexf6euh70" path="res://assets/sfx/error_008.ogg" id="5_dy1m8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87lca"]
 albedo_texture = ExtResource("2_fciwc")
@@ -31,11 +34,16 @@ collision_layer = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube009/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_e7vmn")
 
-[node name="CombineSuccessFeedback" type="AudioStreamPlayer" parent="." index="1"]
+[node name="ShovelSnow" type="AudioStreamPlayer" parent="." index="1"]
+stream = ExtResource("4_i01lc")
 
-[node name="CombineFailedFeedback" type="AudioStreamPlayer" parent="." index="2"]
+[node name="CombineSuccessFeedback" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("4_wuimq")
 
-[node name="GPUParticles3D" parent="." index="3" instance=ExtResource("4_pbt2q")]
+[node name="CombineFailedFeedback" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("5_dy1m8")
+
+[node name="GPUParticles3D" parent="." index="4" instance=ExtResource("4_pbt2q")]
 emitting = false
 
-[node name="Timer" type="Timer" parent="." index="4"]
+[node name="Timer" type="Timer" parent="." index="5"]
