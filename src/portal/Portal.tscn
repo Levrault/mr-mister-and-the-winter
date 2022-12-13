@@ -29,6 +29,6 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_vbfiu")
 
 [node name="PortalDirection" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.357, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.357, 0.015, 0)
 mesh = SubResource("PlaneMesh_pji5i")
 surface_material_override/0 = SubResource("StandardMaterial3D_m8wnf")

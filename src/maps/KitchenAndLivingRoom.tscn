@@ -479,7 +479,7 @@ text = "My favorite  cup, I paint it myself...but everyone think it a gif for my
 Should It take it with me?"
 
 [node name="LowTable" parent="Environments" instance=ExtResource("11_0dlgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71124, 0, 0.998221)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71124, 0, 0.774837)
 
 [node name="N64" parent="Environments" instance=ExtResource("12_5cbjx")]
 unique_name_in_owner = true
@@ -490,7 +490,7 @@ text = "Almost 26 years old, this thing still run a smooth 20 frame per second"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0208552, 0.10721, -0.310762)
 
 [node name="TvFurniture" parent="Environments" instance=ExtResource("14_xs8cb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69345, 0, 1.05331)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69345, 0, 0.829926)
 
 [node name="TV" parent="Environments/TvFurniture" instance=ExtResource("15_etraq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.090523, 0.572947, 0.0280211)
@@ -605,7 +605,7 @@ transform = Transform3D(0.579651, 0, -0.814865, 0, 1, 0, 0.814865, 0, 0.579651, 
 transform = Transform3D(0.967498, 0, 0.25288, 0, 1, 0, -0.25288, 0, 0.967498, -0.139896, 0.451718, -0.389821)
 
 [node name="Couch" parent="Environments" instance=ExtResource("16_lcit1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.466805, 0, 0.955842)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.466805, 0, 0.732458)
 
 [node name="Tablet" parent="Environments" instance=ExtResource("17_rt0y8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17955, 1.05166, -2.50992)
@@ -637,13 +637,13 @@ transform = Transform3D(-7.17562e-09, -8.44439e-08, -1, 8.9407e-08, 1, -8.44439e
 [node name="InvisibleWall" parent="Environments" instance=ExtResource("25_ypq1y")]
 
 [node name="Hat" parent="Environments" instance=ExtResource("27_2fndl")]
-transform = Transform3D(0.907602, 0.419832, 0, -0.419832, 0.907602, 0, 0, 0, 1, 0.766508, 0.451592, 0.218817)
+transform = Transform3D(0.907602, 0.419832, 0, -0.419832, 0.907602, 0, 0, 0, 1, 0.766508, 0.451592, -0.00456703)
 text = "My favorite hat! Keeping warm in cold day.
 
 Should I take it with me?"
 
 [node name="Wheel" parent="Environments" instance=ExtResource("29_xht3y")]
-transform = Transform3D(1, 0, 0, 0, 0.650708, -0.759328, 0, 0.759328, 0.650708, 0.573155, 0.302321, 1.94245)
+transform = Transform3D(1, 0, 0, 0, 0.650708, -0.759328, 0, 0.759328, 0.650708, 0.573155, 0.302321, 1.67041)
 id = 5
 text = "Well, why did I put this tire here!
 
@@ -661,4 +661,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.236271, 0.081886, -1.40402)
 [node name="CameraInterior" parent="." instance=ExtResource("24_sgcm8")]
 
 [editable path="Cinematic/PlayerModel"]
-[editable path="Portals/PortalToYard"]
