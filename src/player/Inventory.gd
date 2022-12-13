@@ -24,7 +24,7 @@ func _ready() -> void:
 	for item in owner.pivot.get_node("Model/HandRight").get_children():
 		items.append(item)
 	for item in InventoryManager.items:
-		add_item(item)
+		add_item(item, false)
 	hide()
 
 
@@ -64,11 +64,12 @@ func show_equipped_item() -> void:
 		item.hide()
 
 
-func add_item(id: InventoryManager.Item) -> void:
+func add_item(id: InventoryManager.Item, display_ui := true) -> void:
 	print_debug("%s has been added to inventory" % InventoryManager.Item.find_key(id))
 	if not is_physical_item(id):
 		return
 	
+	print_debug("Inventory ui is displayed")
 	var inventory_item := InventoryItem.instantiate()
 	hbox_container.add_child(inventory_item)
 	inventory_item.set_id(id)
@@ -77,6 +78,9 @@ func add_item(id: InventoryManager.Item) -> void:
 		func():
 			$ClickAudioStreamPlayer.play()
 	)
+
+	if not display_ui:
+		return
 	
 	show()
 	var tween_control = create_tween().set_trans(Tween.TRANS_SINE)

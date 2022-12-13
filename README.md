@@ -10,6 +10,8 @@ https://opengameart.org/content/seamless-snow-texture-0
 
 ## Sounds
 
+[Freesound - &quot;Shovel - Sand/Gravel/Snow&quot; by Bricklover](https://freesound.org/people/Bricklover/sounds/560957/)
+
 [Freesound - &quot;Coffee machine.m4a&quot; by sofiamadeira](https://freesound.org/people/sofiamadeira/sounds/508692/)
 
 [Freesound - &quot;Analog Alarm Clock&quot; by bone666138](https://freesound.org/people/bone666138/sounds/198841/)
