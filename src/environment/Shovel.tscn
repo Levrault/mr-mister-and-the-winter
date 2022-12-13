@@ -9,6 +9,9 @@ data = PackedVector3Array(0, -0.1405, -0.0181, 0.0157, 0.1405, -0.009, 0, 0.1405
 [node name="Shovel" instance=ExtResource("1_t7gpi")]
 script = ExtResource("2_f8d7e")
 id = 7
+text = "A shovel! The perfect tools during a snowy day!
+
+Should I take it with me?"
 
 [node name="Shovel" parent="." index="0"]
 transform = Transform3D(0.551285, 0, 0, 0, 1.05257, 0, 0, 0, 0.551285, 0, 0.148884, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://db2yplxya10o7"]
+[gd_scene load_steps=46 format=3 uid="uid://db2yplxya10o7"]
 
 [ext_resource type="LightmapGIData" uid="uid://cqddx3twj841w" path="res://src/maps/KitchenAndLivingRoom.lmbake" id="1_4gxxf"]
 [ext_resource type="Script" path="res://src/maps/KitchenAndLivingRoom.gd" id="1_t78lk"]
@@ -28,13 +28,16 @@
 [ext_resource type="PackedScene" uid="uid://gu206vgjtmd6" path="res://src/portal/Portal.tscn" id="19_0po74"]
 [ext_resource type="PackedScene" uid="uid://cqg3hmfi8tudg" path="res://src/player/Player.tscn" id="19_5454n"]
 [ext_resource type="PackedScene" uid="uid://dprjlpxmbe257" path="res://src/portal/DoorInterior.tscn" id="21_2lvg4"]
+[ext_resource type="PackedScene" uid="uid://crmxe1jwab836" path="res://src/environment/CommonCup.tscn" id="21_dh6p4"]
 [ext_resource type="PackedScene" uid="uid://bypeafkir4xg8" path="res://src/portal/DoorExterior.tscn" id="22_28po3"]
-[ext_resource type="PackedScene" uid="uid://bweb5oil4fa3" path="res://src/environment/CoffeeMachine.tscn" id="24_0mhiy"]
+[ext_resource type="PackedScene" uid="uid://b8xkcdorlse3m" path="res://src/environment/CoffeeMachine.tscn" id="24_0mhiy"]
 [ext_resource type="PackedScene" uid="uid://fcpswayn6336" path="res://src/camera/CameraInterior.tscn" id="24_sgcm8"]
 [ext_resource type="PackedScene" path="res://src/environment/KitchenInvisibleWalls.tscn" id="25_ypq1y"]
 [ext_resource type="PackedScene" uid="uid://cbkuyuvoarrho" path="res://src/environment/Hat.tscn" id="27_2fndl"]
+[ext_resource type="PackedScene" uid="uid://cok3qxilyy4yw" path="res://src/environment/CommonCupInteractable.tscn" id="27_ix3gj"]
 [ext_resource type="PackedScene" uid="uid://djvu2oh1f6cj2" path="res://src/environment/Shovel.tscn" id="28_rhrub"]
 [ext_resource type="PackedScene" uid="uid://d2odaiw3v6a6q" path="res://src/environment/Wheel.tscn" id="29_xht3y"]
+[ext_resource type="PackedScene" uid="uid://cc7ihstkgux0a" path="res://src/environment/Picture.tscn" id="31_ruykr"]
 
 [sub_resource type="Animation" id="Animation_aoid1"]
 length = 0.001
@@ -295,6 +298,12 @@ size = Vector2(0.539, 0.477)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xmods"]
 albedo_texture = ExtResource("8_0lamc")
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_q8ovq"]
+size = Vector2(0.7, 0.7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8xv6"]
+albedo_color = Color(0.0313726, 0.301961, 0.207843, 1)
+
 [node name="KitchenAndLivingRoom" type="Node3D"]
 script = ExtResource("1_t78lk")
 
@@ -329,15 +338,16 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Cinematic/TheEnd"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 564.5
-offset_top = 334.0
-offset_right = 715.5
-offset_bottom = 386.0
+offset_left = -75.5
+offset_top = -26.0
+offset_right = 75.5
+offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "The END
@@ -346,15 +356,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="Cinematic/TheEnd"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 218.5
-offset_top = 737.0
-offset_right = 1061.5
-offset_bottom = 1179.0
+offset_left = -421.5
+offset_top = 377.0
+offset_right = 421.5
+offset_bottom = 819.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "CREDITS
@@ -488,6 +499,112 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.090523, 0.572947, 0.028021
 [node name="TvFurniture2" parent="Environments" instance=ExtResource("14_xs8cb")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.80616, 0.00690004, 1.85632)
 
+[node name="CoffeeMachine" parent="Environments/TvFurniture2" instance=ExtResource("24_0mhiy")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0606799, 0.602196, -0.41485)
+combine_success_text = "Oh lord of the great coffe bean! Give me that good roast taste! I could drink those non-stop!"
+text = "My best friend, my wonderfull coffee machine"
+
+[node name="CommonCup" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0.113593, 0.635227, 0.326205)
+
+[node name="CommonCup2" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0.028625, 0.635227, 0.326205)
+
+[node name="CommonCup3" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.809663, 0, -0.586895, 0, 1, 0, 0.586895, 0, 0.809663, 0.028625, 0.635227, 0.0763719)
+
+[node name="CommonCup4" parent="Environments/TvFurniture2" instance=ExtResource("27_ix3gj")]
+
+[node name="CommonCup5" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.776453, 0, 0.630174, 0, 1, 0, -0.630174, 0, 0.776453, 0.127076, 0.635227, 0.175625)
+
+[node name="CommonCup6" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.630174, 0, -0.776453, 0, 1, 0, 0.776453, 0, 0.630174, -0.0517819, 0.635227, 0.175625)
+
+[node name="CommonCup7" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.630174, 0, -0.776453, 0, 1, 0, 0.776453, 0, 0.630174, -0.0517819, 0.635227, -0.00550652)
+
+[node name="CommonCup8" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.630174, 0, -0.776453, 0, 1, 0, 0.776453, 0, 0.630174, -0.199213, 0.635227, -0.00550652)
+
+[node name="CommonCup9" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.997239, 0, 0.074265, 0, 1, 0, -0.074265, 0, 0.997239, -0.199213, 0.635227, 0.44503)
+
+[node name="CommonCup10" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.579651, 0, -0.814865, 0, 1, 0, 0.814865, 0, 0.579651, -0.0304341, 0.635227, 0.44503)
+
+[node name="CommonCup11" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.579651, 0, -0.814865, 0, 1, 0, 0.814865, 0, 0.579651, -0.139896, 0.635227, 0.352842)
+
+[node name="CommonCup12" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.967498, 0, 0.25288, 0, 1, 0, -0.25288, 0, 0.967498, -0.139896, 0.635227, 0.0981189)
+
+[node name="CommonCup13" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0.113593, 0.451718, 0.326205)
+
+[node name="CommonCup14" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0.028625, 0.451718, 0.326205)
+
+[node name="CommonCup15" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.809663, 0, -0.586895, 0, 1, 0, 0.586895, 0, 0.809663, 0.028625, 0.451718, 0.0763719)
+
+[node name="CommonCup16" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.407741, 0, -0.913098, 0, 1, 0, 0.913098, 0, 0.407741, -0.118124, 0.451718, 0.252022)
+
+[node name="CommonCup17" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.776453, 0, 0.630174, 0, 1, 0, -0.630174, 0, 0.776453, 0.127076, 0.451718, 0.175625)
+
+[node name="CommonCup18" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.630174, 0, -0.776453, 0, 1, 0, 0.776453, 0, 0.630174, -0.0517819, 0.451718, 0.175625)
+
+[node name="CommonCup19" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.630174, 0, -0.776453, 0, 1, 0, 0.776453, 0, 0.630174, -0.0517819, 0.451718, -0.00550652)
+
+[node name="CommonCup20" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.630174, 0, -0.776453, 0, 1, 0, 0.776453, 0, 0.630174, -0.199213, 0.451718, -0.00550652)
+
+[node name="CommonCup21" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.997239, 0, 0.074265, 0, 1, 0, -0.074265, 0, 0.997239, -0.199213, 0.451718, 0.44503)
+
+[node name="CommonCup22" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.579651, 0, -0.814865, 0, 1, 0, 0.814865, 0, 0.579651, -0.0304341, 0.451718, 0.44503)
+
+[node name="CommonCup23" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.579651, 0, -0.814865, 0, 1, 0, 0.814865, 0, 0.579651, -0.139896, 0.451718, 0.352842)
+
+[node name="CommonCup24" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.967498, 0, 0.25288, 0, 1, 0, -0.25288, 0, 0.967498, -0.139896, 0.451718, 0.0981189)
+
+[node name="CommonCup25" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0.113593, 0.451718, -0.161734)
+
+[node name="CommonCup26" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0.028625, 0.451718, -0.161734)
+
+[node name="CommonCup27" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.809663, 0, -0.586895, 0, 1, 0, 0.586895, 0, 0.809663, 0.028625, 0.451718, -0.411568)
+
+[node name="CommonCup28" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.407741, 0, -0.913098, 0, 1, 0, 0.913098, 0, 0.407741, -0.118124, 0.451718, -0.235918)
+
+[node name="CommonCup29" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.776453, 0, 0.630174, 0, 1, 0, -0.630174, 0, 0.776453, 0.127076, 0.451718, -0.312314)
+
+[node name="CommonCup30" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.630174, 0, -0.776453, 0, 1, 0, 0.776453, 0, 0.630174, -0.0517819, 0.451718, -0.312314)
+
+[node name="CommonCup31" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.630174, 0, -0.776453, 0, 1, 0, 0.776453, 0, 0.630174, -0.0517819, 0.451718, -0.493446)
+
+[node name="CommonCup32" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.630174, 0, -0.776453, 0, 1, 0, 0.776453, 0, 0.630174, -0.199213, 0.451718, -0.493446)
+
+[node name="CommonCup35" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.579651, 0, -0.814865, 0, 1, 0, 0.814865, 0, 0.579651, -0.139896, 0.451718, -0.135098)
+
+[node name="CommonCup36" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
+transform = Transform3D(0.967498, 0, 0.25288, 0, 1, 0, -0.25288, 0, 0.967498, -0.139896, 0.451718, -0.389821)
+
 [node name="Couch" parent="Environments" instance=ExtResource("16_lcit1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.466805, 0, 0.955842)
 
@@ -497,12 +614,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17955, 1.05166, -2.50992)
 [node name="Tablet2" parent="Environments" instance=ExtResource("17_rt0y8")]
 transform = Transform3D(-3.06289e-08, 0, -0.605259, 0, 0.273133, 0, 0.700707, 0, -2.64567e-08, -2.93377, 1.05166, 1.81752)
 
-[node name="Can" parent="Environments" instance=ExtResource("18_p864y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.568153, 0, -2.53733)
+[node name="N64CartridgesPile2" parent="Environments/Tablet2" instance=ExtResource("13_y3ri3")]
+transform = Transform3D(1.43083, 0, 0.713564, 0, 3.66121, 0, -0.826091, 0, 1.23593, 0.0605361, 0.455553, -0.0758185)
 
-[node name="CoffeeMachine" parent="Environments" instance=ExtResource("24_0mhiy")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.74548, 0.609096, 2.27117)
-text = "My best friend, my wonderfull coffee machine"
+[node name="N64CartridgesPile3" parent="Environments/Tablet2" instance=ExtResource("13_y3ri3")]
+transform = Transform3D(-1.43083, 0, 0.713564, 0, 3.66121, 0, -0.826091, 0, -1.23593, 0.319207, 0.455553, -0.0758185)
+
+[node name="N64CartridgesPile4" parent="Environments/Tablet2" instance=ExtResource("13_y3ri3")]
+transform = Transform3D(-1.16827, 0, 1.00913, 0, 3.66121, 0, -1.16827, 0, -1.00913, -0.298321, 0.455553, -0.0758185)
+
+[node name="Picture" parent="Environments/Tablet2" instance=ExtResource("31_ruykr")]
+transform = Transform3D(-0.258819, 0, 0.965925, 0, 0.999999, 0, -0.965925, 0, -0.258819, 0.645327, 0.50511, 0)
+
+[node name="Picture2" parent="Environments/Tablet2" instance=ExtResource("31_ruykr")]
+transform = Transform3D(0.499999, 0, 0.866024, 0, 0.999998, 0, -0.866024, 0, 0.499999, -0.60429, 0.50511, -0.000108719)
+
+[node name="Can" parent="Environments" instance=ExtResource("18_p864y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01719, 0, -2.53733)
+
+[node name="Shovel" parent="Environments/Can" instance=ExtResource("28_rhrub")]
+transform = Transform3D(-7.17562e-09, -8.44439e-08, -1, 8.9407e-08, 1, -8.44439e-08, 1, -8.9407e-08, -7.17561e-09, 0.0755569, 0.239106, 0.0576084)
 
 [node name="InvisibleWall" parent="Environments" instance=ExtResource("25_ypq1y")]
 
@@ -512,18 +643,17 @@ text = "My favorite hat! Keeping warm in cold day.
 
 Should I take it with me?"
 
-[node name="shovel" parent="Environments" instance=ExtResource("28_rhrub")]
-transform = Transform3D(2.98023e-08, 0, 1, 0.258819, -0.965926, -7.71341e-09, 0.965926, 0.258819, -2.87868e-08, 1.22603, 0.525153, -2.78458)
-text = "The perfect tools during a snowy day!
-
-Should I take it with me?"
-
 [node name="Wheel" parent="Environments" instance=ExtResource("29_xht3y")]
 transform = Transform3D(1, 0, 0, 0, 0.650708, -0.759328, 0, 0.759328, 0.650708, 0.573155, 0.302321, 1.94245)
 id = 5
 text = "Well, why did I put this tire here!
 
 Should I take it with me?"
+
+[node name="PortalDirection" type="MeshInstance3D" parent="Environments"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.356945, 0, 1.03392e-08)
+mesh = SubResource("PlaneMesh_q8ovq")
+surface_material_override/0 = SubResource("StandardMaterial3D_a8xv6")
 
 [node name="Player" parent="." instance=ExtResource("19_5454n")]
 unique_name_in_owner = true

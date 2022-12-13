@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://8j5jsecexg3a"]
+[gd_scene load_steps=77 format=3 uid="uid://8j5jsecexg3a"]
 
 [ext_resource type="Environment" uid="uid://ck1htmu8kds5b" path="res://src/maps/WorldEnvironment.tres" id="1_asfp0"]
 [ext_resource type="Script" path="res://src/maps/Bedroom.gd" id="1_pn465"]
@@ -1116,12 +1116,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_28p8o")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_1lhbj"]
-size = Vector2(0.7, 0.7)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5hc42"]
-albedo_color = Color(0.0313726, 0.301961, 0.207843, 1)
-
 [node name="Bedroom" type="Node3D"]
 script = ExtResource("1_pn465")
 radio_text = "GOOODDDD MORNING EVERYOONNE! I hope you already dring your morning cofffe because it's gonna be a snowy day! I hope you all installed your winter tires!"
@@ -1252,11 +1246,6 @@ next_map = 1
 portal_id = "PortalToBedroom"
 text = "GRRRRR! It's way too cold to leave this room! I need to setup the temperature for tonigh"
 
-[node name="PortalDirection" type="MeshInstance3D" parent="Portals/PortalToKitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.356945, 0, 1.03392e-08)
-mesh = SubResource("PlaneMesh_1lhbj")
-surface_material_override/0 = SubResource("StandardMaterial3D_5hc42")
-
 [node name="Environments" type="Node3D" parent="."]
 
 [node name="BedroomFloorAndWalls" parent="Environments" instance=ExtResource("2_56vnp")]
@@ -1344,5 +1333,4 @@ text = "Metroid, Golden Sun and all my childhood"
 [node name="Player" parent="." instance=ExtResource("7_llsmb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05344, 0.0669036, 0.955022)
 
-[editable path="Portals/PortalToKitchen"]
 [editable path="Environments/Paint"]
