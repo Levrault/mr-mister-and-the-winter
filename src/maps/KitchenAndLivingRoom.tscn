@@ -354,7 +354,7 @@ anchor_bottom = 0.5
 offset_left = 218.5
 offset_top = 737.0
 offset_right = 1061.5
-offset_bottom = 1153.0
+offset_bottom = 1179.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "CREDITS
@@ -365,6 +365,7 @@ Music
 \"Estimable\" by Patrick De Arteaga
 
 Sounds
+Freesound - \"Coffee machine.m4a\" by sofiamadeira
 Freesound - \"Analog Alarm Clock\" by bone666138 Freesound - \"MaleSnore_Raw_bip.wav\" by passAirmangrace 
 Freesound - \"opening_closing_fridge.aiff\" by KlankOntwerp
 Freesound - \"Success Jingle\" by Kastenfrosch 

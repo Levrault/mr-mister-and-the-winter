@@ -5,6 +5,7 @@ extends Node
 
 var original_text_dialogue = ""
 
+
 func _ready() -> void:
 	await owner.ready
 	if GameManager.is_quest_accomplished(quest):
@@ -17,7 +18,12 @@ func _ready() -> void:
 
 func _on_Animation_finished(anim_name: String) -> void:
 	if anim_name != "open":
+		if Events.dialogue_text_displayed.is_connected(get_parent().get_node("SuccessFeedback").play):
+			Events.dialogue_text_displayed.disconnect(get_parent().get_node("SuccessFeedback").play)
+			queue_free()
 		return
-	owner.animation_player.animation_finished.disconnect(_on_Animation_finished)
 	GameManager.quest_done(quest)
 	owner.text = original_text_dialogue
+	
+	if get_parent().has_node("SuccessFeedback"):
+		Events.dialogue_text_displayed.connect(get_parent().get_node("SuccessFeedback").play)

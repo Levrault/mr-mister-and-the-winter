@@ -4,13 +4,13 @@
 
 https://opengameart.org/content/seamless-snow-texture-0
 
-
 ## Music
 
 [&quot;Estimable&quot; by Patrick De Arteaga](https://patrickdearteaga.com/arcade-music/)
 
-
 ## Sounds
+
+[Freesound - &quot;Coffee machine.m4a&quot; by sofiamadeira](https://freesound.org/people/sofiamadeira/sounds/508692/)
 
 [Freesound - &quot;Analog Alarm Clock&quot; by bone666138](https://freesound.org/people/bone666138/sounds/198841/)
 
@@ -23,7 +23,6 @@ https://opengameart.org/content/seamless-snow-texture-0
 [Kenney &bull; RPG Audio](https://www.kenney.nl/assets/rpg-audio)
 
 [Kenney &bull; Impack sound](https://www.kenney.nl/assets/impact-sounds)
-
 
 ### Shaders
 
