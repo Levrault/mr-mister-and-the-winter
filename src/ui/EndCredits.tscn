@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3 uid="uid://eld2tq4igspp"]
+
+[ext_resource type="Script" path="res://src/ui/EndCredits.gd" id="1_jshto"]
+
+[node name="EndCredits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jshto")
+
+[node name="Author" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.5
+offset_top = -26.0
+offset_right = 75.5
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "The END
+A Game by Levrault
+
+Press Start to quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -421.5
+offset_top = 371.0
+offset_right = 421.5
+offset_bottom = 891.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CREDITS
+Textures
+https://opengameart.org/content/seamless-snow-texture-0
+
+Music
+\"Estimable\" by Patrick De Arteaga
+
+Soundss
+\"Shovel - Sand/Gravel/Snow\" by Bricklover
+\"Coffee machine.m4a\" by sofiamadeira
+Analog Alarm Clock\" by bone666138 
+\"MaleSnore_Raw_bip.wav\" by passAirmangrace 
+\"opening_closing_fridge.aiff\" by KlankOntwerp
+\"Success Jingle\" by Kastenfrosch 
+Kenney • RPG Audio
+Kenney • Impack sound
+
+Shaders
+GitHub - MenacingMecha/godot-n64-shader-demo:
+Retro TV shader - Godot Shaders"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -116,13 +116,14 @@ func show_ui() -> void:
 	var tween_control = create_tween().set_trans(Tween.TRANS_SINE)
 	tween_control.tween_property(self, "position", show_position, .25)
 	
-	if hbox_container.get_child_count() > 0:
-		if item_equipped_id != InventoryManager.Item.UNASSIGNED:
-			for item in hbox_container.get_children():
-				if item.id == item_equipped_id:
-					item.grab_focus()
-		else:
-			hbox_container.get_child(0).grab_focus()
+	var has_focused := false
+	for item in hbox_container.get_children():
+		if item.id == item_equipped_id:
+			item.grab_focus()
+			has_focused = true
+	
+	if not has_focused:
+		hbox_container.get_child(0).grab_focus()
 
 
 func hide_ui() -> void:

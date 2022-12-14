@@ -31,8 +31,8 @@ func _ready() -> void:
 #	flags_list[Quest.find_key(Quest.BOOTS)] = true
 #	flags_list[Quest.find_key(Quest.HAT)] = true
 #	flags_list[Quest.find_key(Quest.TIRES)] = true
-#	flags_list[Quest.find_key(Quest.CAR_TIRES)] = true
-#	flags_list[Cinematic.find_key(Cinematic.CAR_CINEMATIC)] = true
+##	flags_list[Quest.find_key(Quest.CAR_TIRES)] = true
+##	flags_list[Cinematic.find_key(Cinematic.CAR_CINEMATIC)] = true
 
 
 func spawn_player(portal_id: String) -> void:

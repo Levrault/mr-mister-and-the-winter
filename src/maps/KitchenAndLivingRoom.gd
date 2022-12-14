@@ -12,6 +12,10 @@ func _ready() -> void:
 		return
 
 
+func show_end_credit() -> void:
+	Events.end_credit_displayed.emit()
+
+
 func _on_Quest_accomplished(_id: GameManager.Quest) -> void:
 	if GameManager.is_quest_accomplished(GameManager.Quest.BOOTS) and GameManager.is_quest_accomplished(GameManager.Quest.HAT):
 		%PortalToYard.is_active = true
@@ -20,5 +24,7 @@ func _on_Quest_accomplished(_id: GameManager.Quest) -> void:
 
 func _on_N64_interacted() -> void:
 	%Player.set_active(false)
+	%Player.queue_free()
 	$Cinematic.show()
 	$Cinematic/AnimationPlayer.play("start")
+

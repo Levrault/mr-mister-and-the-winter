@@ -22,3 +22,5 @@ signal quest_accomplished(id)
 
 signal background_music_started
 signal background_music_stopped
+
+signal end_credit_displayed
