@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/morning_transition_music.ogg-c4206debce01e18b
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

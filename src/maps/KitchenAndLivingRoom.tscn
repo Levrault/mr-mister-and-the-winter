@@ -271,7 +271,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(11.2, 17),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(218.5, 737), Vector2(218.5, -454)]
+"values": [Vector2(109.25, 737), Vector2(109.25, -454)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -280,10 +280,10 @@ tracks/9/path = NodePath("TheEnd/Author:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(11.2, 15.8711, 18.1),
+"times": PackedFloat32Array(11.2, 15.9, 18.1),
 "transitions": PackedFloat32Array(1, 2, 1),
 "update": 0,
-"values": [Vector2(564.5, 742), Vector2(564.5, 742), Vector2(564.5, 334)]
+"values": [Vector2(282.25, 742), Vector2(282.25, 742), Vector2(282.25, 334)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_twwgn"]
@@ -338,15 +338,16 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Author" type="Label" parent="Cinematic/TheEnd"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 564.5
-offset_top = 334.0
-offset_right = 715.5
-offset_bottom = 386.0
+offset_left = -75.5
+offset_top = -26.0
+offset_right = 75.5
+offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "The END
@@ -355,15 +356,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Credits" type="Label" parent="Cinematic/TheEnd"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 218.5
-offset_top = 737.0
-offset_right = 1061.5
-offset_bottom = 1205.0
+offset_left = -421.5
+offset_top = 377.0
+offset_right = 421.5
+offset_bottom = 845.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "CREDITS
@@ -402,7 +404,7 @@ transform = Transform3D(-2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, -0.382
 fov = 50.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cinematic"]
-transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 2.47916, 0.872328, 1.0842)
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 2.47916, 0.872328, 0.861593)
 mesh = SubResource("PlaneMesh_e1jf8")
 surface_material_override/0 = SubResource("StandardMaterial3D_xmods")
 

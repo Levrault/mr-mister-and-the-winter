@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/male_snore.ogg-2eb7396a6fa3de5ff448f1369a555e
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

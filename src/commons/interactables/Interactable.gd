@@ -19,7 +19,10 @@ func start_interaction() -> void:
 func stop_interaction() -> void:
 	Events.dialogue_finished.emit()
 	interacted.emit()
-	text = text_default
+	
+	# I have no shame for this hack
+	if text_default != "undefined":
+		text = text_default
 
 
 func show_text() -> void:
