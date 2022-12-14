@@ -14,6 +14,7 @@ func physics_process(_delta: float) -> void:
 func enter(msg: Dictionary = {}) -> void:
 	owner.animation_player.animation_finished.connect(_on_Animation_finished)
 	owner.animation_player.play("take")
+	owner.inventory.item_equipped_id = InventoryManager.Item.UNASSIGNED
 	
 	if "id" in msg:
 		owner.inventory.item_to_take_id = msg.id

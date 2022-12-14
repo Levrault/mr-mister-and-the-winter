@@ -16,6 +16,7 @@ signal loading_screen_animation_finished
 signal map_changed_for(path, portal_id, is_door_exterior)
 
 signal inventory_item_added(id)
+signal inventory_focus_removed
 
 signal quest_accomplished(id)
 

@@ -26,6 +26,11 @@ func _ready() -> void:
 	for item in InventoryManager.items:
 		add_item(item, false)
 	hide()
+	Events.inventory_focus_removed.connect(
+		func():
+			for item in hbox_container.get_children():
+				item.release_focus()
+	)
 
 
 func is_physical_item(id: InventoryManager.Item) -> bool:
@@ -112,7 +117,12 @@ func show_ui() -> void:
 	tween_control.tween_property(self, "position", show_position, .25)
 	
 	if hbox_container.get_child_count() > 0:
-		hbox_container.get_child(0).grab_focus()
+		if item_equipped_id != InventoryManager.Item.UNASSIGNED:
+			for item in hbox_container.get_children():
+				if item.id == item_equipped_id:
+					item.grab_focus()
+		else:
+			hbox_container.get_child(0).grab_focus()
 
 
 func hide_ui() -> void:
@@ -125,7 +135,6 @@ func hide_ui() -> void:
 		func():
 			hide()
 	)
-
 
 func has_item_equipped() -> bool:
 	return item_equipped_id != -1 and item_equipped_id != InventoryManager.Item.UNASSIGNED
