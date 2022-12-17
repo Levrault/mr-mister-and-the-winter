@@ -303,7 +303,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0174
 next_map = 2
 portal_id = "PortalToKitchen"
 exterior_door_mesh = true
-text = "I'm sorry, but if I don't have my boots and my hat, I will freeze like a popcycle in no time"
+text = "I can hear the storm outside. It must be very cold. I should put my boots and my hat or I will freeze like a popcycle."
 
 [node name="DoorExterior" parent="Portals/PortalToYard" instance=ExtResource("22_28po3")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0523438, -0.0676001, 0.0183866)
@@ -314,11 +314,14 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0523
 
 [node name="StorageCabinet" parent="Environments" instance=ExtResource("4_v5llw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58024, 0, 0.372358)
-text = "This where I hide all my best coffee beans"
+text = "I could survivre a nuclear winter with all those reserves of coffee beans."
 
 [node name="StorageCabinet2" parent="Environments" instance=ExtResource("4_v5llw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.71027, 0, -2.21416)
-text = "Well nothing of interest in there"
+text = "Well nothing of interest in there.
+Well no there is something
+But the dev didn't have to time to do some cool with soooo
+There is nothing"
 
 [node name="Fridge" parent="Environments" instance=ExtResource("5_1vd32")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.867052, 0, -2.53111)
@@ -338,9 +341,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.744668)
 
 [node name="Cup" parent="Environments/Table" instance=ExtResource("10_61pxw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.174544, 0.621467, -0.189725)
-text = "My favorite  cup, I paint it myself...but everyone think it a gif for my 6 years old nephew.
-
-Should It take it with me?"
 
 [node name="LowTable" parent="Environments" instance=ExtResource("11_0dlgj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71124, 0, 0.774837)
@@ -488,9 +488,11 @@ transform = Transform3D(-1.16827, 0, 1.00913, 0, 3.66121, 0, -1.16827, 0, -1.009
 
 [node name="Picture" parent="Environments/Tablet2" instance=ExtResource("31_ruykr")]
 transform = Transform3D(-0.258819, 0, 0.965925, 0, 0.999999, 0, -0.965925, 0, -0.258819, 0.645327, 0.50511, 0)
+text = "You should'nt be able to read this"
 
 [node name="Picture2" parent="Environments/Tablet2" instance=ExtResource("31_ruykr")]
 transform = Transform3D(0.499999, 0, 0.866024, 0, 0.999998, 0, -0.866024, 0, 0.499999, -0.60429, 0.50511, -0.000108719)
+text = "You should'nt be able to read this"
 
 [node name="Can" parent="Environments" instance=ExtResource("18_p864y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01719, 0, -2.53733)
@@ -502,14 +504,14 @@ transform = Transform3D(-7.17562e-09, -8.44439e-08, -1, 8.9407e-08, 1, -8.44439e
 
 [node name="Hat" parent="Environments" instance=ExtResource("27_2fndl")]
 transform = Transform3D(0.907602, 0.419832, 0, -0.419832, 0.907602, 0, 0, 0, 1, 0.766508, 0.451592, -0.00456703)
-text = "My favorite hat! Keeping warm in cold day.
+text = "My favorite hat! Keeping me warm all the time
 
 Should I take it with me?"
 
 [node name="Wheel" parent="Environments" instance=ExtResource("29_xht3y")]
 transform = Transform3D(1, 0, 0, 0, 0.650708, -0.759328, 0, 0.759328, 0.650708, 0.573155, 0.302321, 1.67041)
 id = 5
-text = "Well, why did I put this tire here!
+text = "I don't have any explanations how it ended up here.
 
 Should I take it with me?"
 

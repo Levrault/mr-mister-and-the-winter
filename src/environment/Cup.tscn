@@ -9,7 +9,9 @@ data = PackedVector3Array(0.0004, -0.021, -0.0593, 0.0358, 0.033, -0.0336, 0.000
 [node name="Cup" instance=ExtResource("1_me4ql")]
 script = ExtResource("2_xt22g")
 id = 0
-text = "My favorite cup. Should It take it with me?"
+text = "My favorite  cup, I paint it myself...but everyone think it's have been made by a 4 years :'(
+
+Should It take it with me?"
 
 [node name="Cup" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0360801, 0)

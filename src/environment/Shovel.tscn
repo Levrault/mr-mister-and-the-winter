@@ -9,7 +9,7 @@ data = PackedVector3Array(0, -0.1405, -0.0181, 0.0157, 0.1405, -0.009, 0, 0.1405
 [node name="Shovel" instance=ExtResource("1_t7gpi")]
 script = ExtResource("2_f8d7e")
 id = 7
-text = "A shovel! The perfect tools during a snowy day!
+text = "A shovel! The perfect tool during a snow storm!
 
 Should I take it with me?"
 

@@ -19,10 +19,10 @@ script = ExtResource("2_c14m8")
 item_id_to_combine_with = 7
 destroy_item_on_combine = true
 destroy_inventory_item_on_success = false
-combine_success_text = "I'm the winter shovel knight! There no snow in this world that I can't shovel"
-combine_failed_text = "This won't help getting rid off this snow"
+combine_success_text = "I'm the shovel knight! There no snow in this world that I can't shovel!"
+combine_failed_text = "This won't help me getting rid off this snow"
 combine_done = "That's better"
-text = "Damn, that a big pile off snow. It blocking the path to my car my car"
+text = "Damn, that a big pile off snow. It blocking the path to my car my car."
 
 [node name="Cube009" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.575, 0)

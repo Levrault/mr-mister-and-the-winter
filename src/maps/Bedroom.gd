@@ -1,6 +1,6 @@
 extends Node3D
 
-@export_multiline var radio_text := "GOOODDDD MORNING EVERYOONNE! I hope you already have taken your morning cofffe because it's gonna be a cold snowy day! I hope you all installed your winter tire!"
+@export_multiline var radio_text := ""
 
 
 func _ready() -> void:
