@@ -314,18 +314,16 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0523
 
 [node name="StorageCabinet" parent="Environments" instance=ExtResource("4_v5llw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58024, 0, 0.372358)
-text = "I could survivre a nuclear winter with all those reserves of coffee beans."
+text = "I could survivre a nuclear winter with that stack of coffee beans."
 
 [node name="StorageCabinet2" parent="Environments" instance=ExtResource("4_v5llw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.71027, 0, -2.21416)
-text = "Well nothing of interest in there.
-Well no there is something
-But the dev didn't have to time to do some cool with soooo
-There is nothing"
+text = "Nothing of interest in there.
+The dev didn't have to time to do something cool with it."
 
 [node name="Fridge" parent="Environments" instance=ExtResource("5_1vd32")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.867052, 0, -2.53111)
-text = "Well this look more empty since I have removed my boots from there"
+text = "This looks emptier since I have removed my boots from there."
 
 [node name="Stove" parent="Environments" instance=ExtResource("6_b8yh6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.80529, 0, -2.52476)
@@ -341,6 +339,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.744668)
 
 [node name="Cup" parent="Environments/Table" instance=ExtResource("10_61pxw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.174544, 0.621467, -0.189725)
+text = "My favorite  mug. I painted it myself...but everyone thinks that my 4 years old nephew did it :'(
+
+Should It take it with me?"
 
 [node name="LowTable" parent="Environments" instance=ExtResource("11_0dlgj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71124, 0, 0.774837)
@@ -348,7 +349,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71124, 0, 0.774837)
 [node name="N64" parent="Environments" instance=ExtResource("12_5cbjx")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72423, 0, 2.1707)
-text = "Almost 26 years old, this thing still run a smooth 20 frame per second"
+text = "Almost 26 years old. This thing still run a smooth 20 frames per second."
 
 [node name="N64CartridgesPile" parent="Environments/N64" instance=ExtResource("13_y3ri3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0208552, 0.10721, -0.310762)
@@ -358,14 +359,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69345, 0, 0.829926)
 
 [node name="TV" parent="Environments/TvFurniture" instance=ExtResource("15_etraq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.090523, 0.572947, 0.0280211)
+text = "A good old CRT TV to play all my old video games!"
 
 [node name="TvFurniture2" parent="Environments" instance=ExtResource("14_xs8cb")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.80616, 0.00690004, 1.85632)
 
 [node name="CoffeeMachine" parent="Environments/TvFurniture2" instance=ExtResource("24_0mhiy")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0606799, 0.602196, -0.41485)
-combine_success_text = "Oh lord of the great coffe bean! Give me that good roast taste! I could drink those non-stop!"
-text = "My best friend, my wonderfull coffee machine"
+combine_success_text = "Oh Lord of the Great Coffee Beans! Give me that addictive roast taste! I could drink those non-stop!"
+combine_failed_text = "You can't make a coffee with that."
+combine_done = "This text should not appear
+
+  --- The dev"
+text = "My best friend, my wonderful coffee machine. Where is my mug!? I need one right now!"
 
 [node name="CommonCup" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0.113593, 0.635227, 0.326205)
@@ -377,6 +383,7 @@ transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0.028625
 transform = Transform3D(0.809663, 0, -0.586895, 0, 1, 0, 0.586895, 0, 0.809663, 0.028625, 0.635227, 0.0763719)
 
 [node name="CommonCup4" parent="Environments/TvFurniture2" instance=ExtResource("27_ix3gj")]
+text = "I should reconsider my life choices regarding my addiction to coffee. I should also clean those cups."
 
 [node name="CommonCup5" parent="Environments/TvFurniture2" instance=ExtResource("21_dh6p4")]
 transform = Transform3D(0.776453, 0, 0.630174, 0, 1, 0, -0.630174, 0, 0.776453, 0.127076, 0.635227, 0.175625)
@@ -504,14 +511,14 @@ transform = Transform3D(-7.17562e-09, -8.44439e-08, -1, 8.9407e-08, 1, -8.44439e
 
 [node name="Hat" parent="Environments" instance=ExtResource("27_2fndl")]
 transform = Transform3D(0.907602, 0.419832, 0, -0.419832, 0.907602, 0, 0, 0, 1, 0.766508, 0.451592, -0.00456703)
-text = "My favorite hat! Keeping me warm all the time
+text = "My favorite hat! Keeping me warm all the time.
 
 Should I take it with me?"
 
 [node name="Wheel" parent="Environments" instance=ExtResource("29_xht3y")]
 transform = Transform3D(1, 0, 0, 0, 0.650708, -0.759328, 0, 0.759328, 0.650708, 0.573155, 0.302321, 1.67041)
 id = 5
-text = "I don't have any explanations how it ended up here.
+text = "I don't have any explanations of how it ended up here.
 
 Should I take it with me?"
 

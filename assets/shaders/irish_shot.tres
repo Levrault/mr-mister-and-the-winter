@@ -28,7 +28,7 @@ void fragment() {
 
 [resource]
 shader = SubResource("1")
-shader_parameter/circle_size = 0.0
 shader_parameter/enabled = true
-shader_parameter/offset = null
 shader_parameter/target = null
+shader_parameter/offset = null
+shader_parameter/circle_size = 0.0

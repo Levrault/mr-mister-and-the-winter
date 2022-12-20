@@ -93,7 +93,7 @@ offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-text = "Mr Mister vs the winter"
+text = "Mr Mister VS the Winter"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
